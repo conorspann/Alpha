@@ -62,7 +62,7 @@
 	<string>
 	<vector>
 
-1577997435 source:c:\users\conor\documents\dev\alpha\main.cpp
+1577997871 source:c:\users\conor\documents\dev\alpha\main.cpp
 	"loader.h"
 	"parser.h"
 	"command.h"
@@ -198,7 +198,7 @@
 	<vector>
 	<map>
 
-1577908071 source:c:\users\conor\documents\dev\alpha\calculator.cpp
+1578744637 source:c:\users\conor\documents\dev\alpha\calculator.cpp
 	<algorithm>
 	<iterator>
 	"calculator.h"
@@ -491,4 +491,20 @@
 	<ctime>
 	<algorithm>
 	<cassert>
+
+1578000298 source:c:\users\conor\documents\dev\alpha\loader_test.cpp
+	"catch.h"
+	"loader.h"
+	<iostream>
+	<fstream>
+	<string>
+	<vector>
+	<cstdio>
+
+1578746010 source:c:\users\conor\documents\dev\alpha\parser_test.cpp
+	"catch.h"
+	"parser.h"
+	"command.h"
+	"console_out.h"
+	<iostream>
 

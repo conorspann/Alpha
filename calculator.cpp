@@ -26,9 +26,22 @@ bool Calculator::isSymbol(char c)
 
 std::string Calculator::calculate(std::vector<std::pair<std::string, int>> params)
 {
+    /** Maybe for floats, keep separate track of decimal part, if greater than zero by end,
+     result is a float
+
+     maybe keep track of a string flag, if a string exists in the calculation,
+     concatenate rather than add?
+
+     maybe need to implement some kind of bidmas + ordering brackets
+        maybe having a concatenation operator will help, since only need to do int calcs if theres no concat op
+     Should return type as well?
+     */
+
     std::string result(params[0].first);
     if(params.size() > 1){
-        int r = 0;
+        int intResult = 0;
+        std::string strResult;
+        bool isString = false;
         void (Calculator::*currentOp)(int*, int) = add;
         for(auto i : params){
             if(isSymbol(i.first[0])){ /** && if length == 1 ?? */
@@ -38,28 +51,24 @@ std::string Calculator::calculate(std::vector<std::pair<std::string, int>> param
                 }
                 continue;
             }
-            /** TODO: Enable string/int etc concatenation */
-            //  for now bomb out an error if string cant be converted to int
             if(i.second == Command::Type::STRING){
-                std::string errMsg = "Error: Cannot calculate using non-numeric value: " + i.first + " In expression: ";
-                for(auto j : params){
-                    errMsg += j.first;
+                isString = true;
+                if(intResult != 0){
+                    strResult = std::to_string(intResult);
                 }
-                throw std::runtime_error(errMsg);
             }
-            (this->*currentOp)(&r, std::stoi(i.first)); // doesn't work for strings
-            /**
-                maybe always set the first param to result first i.e. no add DONE=Y
-                also make concatenation operator for string/int additions    DONE=N
-                otherwise throw type/wrong operator exception                DONE=N
+            if(isString){
+                strResult += i.first;
+            }else{
+                (this->*currentOp)(&intResult, std::stoi(i.first));
+            }
 
-                if cannot be converted to int
-
-                WARNING: if do decide to use concatenation operator, beware of the '.''s in decimals
-                i.e. 3.2 != 3 concatenate 2 and in strings
-            */
         }
-        result = std::to_string(r);
+        if(isString){
+            result = strResult;
+        }else{
+            result = std::to_string(intResult);
+        }
     }
 
     return result;

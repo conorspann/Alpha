@@ -1,24 +1,5 @@
 
 
-ConsoleOut("idk some calculation")
+ConsoleOut("hello")
 
-ConsoleOut("HE,,LLO,")
-
-@data = 10 * 81
-
-If(@data = 810)
-	ConsoleOut("data is 810")
-EndIf
-
-If(@data = 10)
-	ConsoleOut("data is 10")
-EndIf
-
-ConsoleOut("Countdown! Lol")
-@foo = 20
-While(@foo > 10)
-	ConsoleOut(@foo)
-	@foo = @foo - 1
-EndWhile
-
-ConsoleOut("Exiting")
+ConsoleOut( "hello" + 1 + 1 * 100 + " after some numbers")
