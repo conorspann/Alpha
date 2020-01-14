@@ -35,7 +35,6 @@ std::string Calculator::calculate(std::vector<std::pair<std::string, int>> param
         maybe having a concatenation operator will help, since only need to do int calcs if theres no concat op
      Should return type as well?
      */
-
     std::string result(params[0].first);
     if(params.size() > 1){
         int intResult = 0;
@@ -46,7 +45,7 @@ std::string Calculator::calculate(std::vector<std::pair<std::string, int>> param
             std::string paramStr = param.first;
             int paramType = param.second;
             if(isSymbol(paramStr[0])){ /** && if length == 1 ?? */
-                setCurrentOperation(paramStr);
+                currentOp = setCurrentOperation(paramStr);
                 continue;
             }
             if(paramType == Command::Type::STRING){

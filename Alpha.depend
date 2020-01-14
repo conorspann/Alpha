@@ -525,7 +525,7 @@
 	<memory>
 	"../runtime/resolver.h"
 
-1578939682 c:\users\conor\documents\dev\alpha\include\runtime\resolver.h
+1579025209 c:\users\conor\documents\dev\alpha\include\runtime\resolver.h
 	<string>
 	<map>
 	<vector>
@@ -654,7 +654,7 @@
 	<string>
 	<vector>
 
-1578940067 source:c:\users\conor\documents\dev\alpha\src\runtime\calculator.cpp
+1579030381 source:c:\users\conor\documents\dev\alpha\src\runtime\calculator.cpp
 	<algorithm>
 	<iterator>
 	"../../include/runtime/calculator.h"
@@ -696,9 +696,10 @@
 	<iostream>
 	<map>
 
-1578940115 source:c:\users\conor\documents\dev\alpha\src\runtime\resolver.cpp
+1579030240 source:c:\users\conor\documents\dev\alpha\src\runtime\resolver.cpp
 	"../../include/runtime/resolver.h"
 	<utility>
+	<iostream>
 
 1578940145 source:c:\users\conor\documents\dev\alpha\src\init\parser.cpp
 	<iostream>
@@ -1004,4 +1005,11 @@
 
 1578940308 source:c:\users\conor\documents\dev\alpha\src\testmain.cpp
 	"../include/catch.h"
+
+1578940353 source:c:\users\conor\documents\dev\alpha\src\init\parser_test.cpp
+	"../../include/catch.h"
+	"../../include/init/parser.h"
+	"../../include/commands/command.h"
+	"../../include/commands/console_out.h"
+	<iostream>
 

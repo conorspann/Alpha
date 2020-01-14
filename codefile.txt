@@ -1,5 +1,16 @@
 
 
-ConsoleOut("hello")
 
-ConsoleOut( "hello" + 1 + 1 * 100 + " after some numbers")
+ConsoleOut(89 * 10)
+
+ConsoleOut(123 + 2 * 2)
+
+ConsoleOut("eleven should be concatenated here: " + 1 + 1)
+
+If(1 = 1)
+	ConsoleOut("one is equal to one")
+EndIf
+
+If(2 = 1)
+	ConsoleOut("this shouldnt display")
+EndIf

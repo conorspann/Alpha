@@ -2,6 +2,7 @@
 #include "../../include/runtime/resolver.h"
 
 #include <utility>
+#include <iostream>
 
 
 /** Maybe could use some sort of rule table? Similar rules e.g. for strings in Formatter
@@ -19,23 +20,28 @@ int Resolver::determineType(std::string param)
     if(param.find_first_not_of("0123456789") != std::string::npos){
         return Command::Type::STRING;
     }
+
     return Command::Type::INT;
 }
 
-std::pair<std::string, int> Resolver::isVariable(std::string param, const std::map<std::string, std::pair<std::string, int>> * globalDataPool)
+std::pair<std::string, int> Resolver::resolveParam(std::string param, const std::map<std::string, std::pair<std::string, int>> * globalDataPool)
+{
+    std::string identifier = param.substr(1, std::string::npos);
+    std::map<std::string, std::pair<std::string, int>>::const_iterator it;
+    it = globalDataPool->find(identifier);
+    std::pair<std::string, int> data("Null", Command::Type::UNKNOWN);
+    if(it != globalDataPool->end()){
+        data.first = it->second.first; //value
+        data.second = it->second.second; //type
+    }
+    return data;
+}
+
+std::pair<std::string, int> Resolver::getData(std::string param, const std::map<std::string, std::pair<std::string, int>> * globalDataPool)
 {
     std::pair<std::string, int> p;
     if(param[0] == '@'){
-        std::string identifier = param.substr(1, std::string::npos);
-        std::map<std::string, std::pair<std::string, int>>::const_iterator it;
-        it = globalDataPool->find(identifier);
-        if(it != globalDataPool->end()){
-            p.first = it->second.first; //value
-            p.second = it->second.second; //type
-        }else{
-            p.first = "Null";
-            p.second = Command::Type::UNKNOWN;
-        }
+        p = resolveParam(param, globalDataPool);
     }else{
         p.first = param;
         p.second = determineType(param);
@@ -49,55 +55,58 @@ std::string Resolver::resolve(std::string paramStr,  const std::map<std::string,
     return calculator.calculate(parseParam(paramStr, globalDataPool));
 }
 
+void Resolver::setData(std::vector<std::pair<std::string, int>> & parsedParam, const std::map<std::string, std::pair<std::string, int>> * globalDataPool, std::string strVal)
+{
+    std::pair<std::string, int> varData;
+    varData = getData(strVal, globalDataPool);
+    if(varData.first == "Null" || varData.second == Command::Type::UNKNOWN){
+        throw std::runtime_error("Error: Null variable in command.");
+    }
+    parsedParam.push_back(varData);
+}
+
+void Resolver::addChar(std::string & currentParam, char paramChar)
+{
+    if(paramChar != '\"'){
+        currentParam += paramChar;
+    }
+}
+
 /**
     REFACTOR !!
 */
 std::vector<std::pair<std::string, int>> Resolver::parseParam(std::string param, const std::map<std::string, std::pair<std::string, int>> * globalDataPool)
 {
     std::vector<std::pair<std::string, int>> parsedParam;
-    std::string val;
-    std::pair<std::string, int> var;
+    std::string currentStrVal;
     bool isString = false;
-    for(int i = 0; i < param.length(); i++){
-        char c = param[i];
-        // need to check if params are valid numbers variables or symbols otherwise throw error
-        if(c == '\"'){
+    int lastCharIndex = param.length() - 1;
+    for(int charIndex = 0; charIndex < param.length(); charIndex++){
+        char paramChar = param[charIndex];
+        if(paramChar == '\"'){
             isString = !isString;
         }
-        if(calculator.isSymbol(c) && !isString){
-            var = isVariable(val, globalDataPool);
-            if(var.first == "Null" || var.second == Command::Type::UNKNOWN){
-                throw std::runtime_error("Error: Null variable in command.");
-            }
-            parsedParam.push_back(var);
-            std::string symbol(std::string(1, c));
-            std::pair<std::string, int> symbolPair;
-            symbolPair.first = symbol;
-            symbolPair.second = Command::Type::SYMBOL;
-            parsedParam.push_back(symbolPair);
-            val = "";
+        if(calculator.isSymbol(paramChar) && !isString){
+            setData(parsedParam, globalDataPool, currentStrVal);
+            std::string symbolStr(std::string(1, paramChar));
+            setData(parsedParam, globalDataPool, symbolStr);
+            currentStrVal = "";
             continue;
-        }else if(i == param.length() - 1){
-            if(c != '\"'){
-                val += c;
-            }
-            var = isVariable(val, globalDataPool);
-            if(var.first == "Null" || var.second == Command::Type::UNKNOWN){
-                throw std::runtime_error("Error: Null variable in command.");
-            }
-            parsedParam.push_back(var);
+        }else if(charIndex == lastCharIndex){
+            addChar(currentStrVal, paramChar);
+            setData(parsedParam, globalDataPool, currentStrVal);
             break;
         }
-        if(c != '\"'){
-            val += c;
-        }
+        addChar(currentStrVal, paramChar);
     }
 
     return parsedParam;
 }
 
 
-/** Maybe put this in it's own Searcher class */
+/** Maybe put this in it's own Searcher class
+    could put the find resolve/search variable bit in that class too
+*/
 int Resolver::findLabel(std::string startLabel, std::string endLabel, int direction, bool jumpPast, std::vector<std::unique_ptr<Command>> & cmds, int * cmdPtr)
 {
     int nestedLevel = 0;
