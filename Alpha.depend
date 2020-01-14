@@ -508,31 +508,32 @@
 	"console_out.h"
 	<iostream>
 
-1578939604 source:c:\users\conor\documents\dev\alpha\src\commands\assign.cpp
+1579034026 source:c:\users\conor\documents\dev\alpha\src\commands\assign.cpp
 	"../../include/commands/assign.h"
 	<iostream>
 
-1577794308 c:\users\conor\documents\dev\alpha\include\commands\assign.h
+1579034026 c:\users\conor\documents\dev\alpha\include\commands\assign.h
 	"command.h"
 	<string>
 	<vector>
 	<memory>
 
-1578939673 c:\users\conor\documents\dev\alpha\include\commands\command.h
+1579033962 c:\users\conor\documents\dev\alpha\include\commands\command.h
 	<string>
 	<vector>
 	<map>
 	<memory>
 	"../runtime/resolver.h"
+	"../runtime/searcher.h"
 
-1579025209 c:\users\conor\documents\dev\alpha\include\runtime\resolver.h
+1579031962 c:\users\conor\documents\dev\alpha\include\runtime\resolver.h
 	<string>
 	<map>
 	<vector>
 	"../commands/command.h"
 	"calculator.h"
 
-1578834472 c:\users\conor\documents\dev\alpha\include\runtime\calculator.h
+1579032494 c:\users\conor\documents\dev\alpha\include\runtime\calculator.h
 	<string>
 	<vector>
 	<map>
@@ -542,63 +543,63 @@
 	<string>
 	<vector>
 
-1578939612 source:c:\users\conor\documents\dev\alpha\src\commands\console_in.cpp
+1579034026 source:c:\users\conor\documents\dev\alpha\src\commands\console_in.cpp
 	"../../include/commands/console_in.h"
 	<string>
 	<iostream>
 
-1577794308 c:\users\conor\documents\dev\alpha\include\commands\console_in.h
+1579033972 c:\users\conor\documents\dev\alpha\include\commands\console_in.h
 	"command.h"
 
-1578939631 source:c:\users\conor\documents\dev\alpha\src\commands\console_out.cpp
+1579034026 source:c:\users\conor\documents\dev\alpha\src\commands\console_out.cpp
 	"../../include/commands/console_out.h"
 	<string>
 	<vector>
 	<iostream>
 
-1577795071 c:\users\conor\documents\dev\alpha\include\commands\console_out.h
+1579033979 c:\users\conor\documents\dev\alpha\include\commands\console_out.h
 	"command.h"
 	<string>
 	<memory>
 
-1578939694 source:c:\users\conor\documents\dev\alpha\src\commands\end_while.cpp
+1579033780 source:c:\users\conor\documents\dev\alpha\src\commands\end_while.cpp
 	"../../include/commands/end_while.h"
 	<iostream>
 
-1577794308 c:\users\conor\documents\dev\alpha\include\commands\end_while.h
+1579033984 c:\users\conor\documents\dev\alpha\include\commands\end_while.h
 	"command.h"
 	<memory>
 
-1578939703 source:c:\users\conor\documents\dev\alpha\src\commands\if.cpp
+1579033858 source:c:\users\conor\documents\dev\alpha\src\commands\if.cpp
 	"../../include/commands/if.h"
 	<iostream>
 
-1577794308 c:\users\conor\documents\dev\alpha\include\commands\if.h
+1579033991 c:\users\conor\documents\dev\alpha\include\commands\if.h
 	"command.h"
 	<memory>
 
-1578939710 source:c:\users\conor\documents\dev\alpha\src\commands\endif.cpp
+1579034026 source:c:\users\conor\documents\dev\alpha\src\commands\endif.cpp
 	"../../include/commands/endif.h"
 
-1577794308 c:\users\conor\documents\dev\alpha\include\commands\endif.h
+1579033988 c:\users\conor\documents\dev\alpha\include\commands\endif.h
 	"command.h"
 
-1578939718 source:c:\users\conor\documents\dev\alpha\src\commands\while.cpp
+1579033885 source:c:\users\conor\documents\dev\alpha\src\commands\while.cpp
 	"../../include/commands/while.h"
 	<iostream>
 
-1577794299 c:\users\conor\documents\dev\alpha\include\commands\while.h
+1579033999 c:\users\conor\documents\dev\alpha\include\commands\while.h
 	"command.h"
 	<memory>
 
-1578939728 source:c:\users\conor\documents\dev\alpha\src\commands\memory_dump.cpp
+1579034026 source:c:\users\conor\documents\dev\alpha\src\commands\memory_dump.cpp
 	"../../include/commands/memory_dump.h"
 	<map>
 	<vector>
 	<string>
 	<iostream>
 
-1577794308 c:\users\conor\documents\dev\alpha\include\commands\memory_dump.h
+1579033994 c:\users\conor\documents\dev\alpha\include\commands\memory_dump.h
 	"command.h"
 	<memory>
 
@@ -680,15 +681,16 @@
 	"mapper.h"
 	<memory>
 
-1578940103 c:\users\conor\documents\dev\alpha\include\runtime\interpreter.h
+1579032997 c:\users\conor\documents\dev\alpha\include\runtime\interpreter.h
 	"../commands/command.h"
 	"resolver.h"
+	"searcher.h"
 	<memory>
 	<vector>
 	<utility>
 	<map>
 
-1578940077 source:c:\users\conor\documents\dev\alpha\src\runtime\interpreter.cpp
+1579033620 source:c:\users\conor\documents\dev\alpha\src\runtime\interpreter.cpp
 	"../../include/runtime/interpreter.h"
 	<vector>
 	<memory>
@@ -696,7 +698,7 @@
 	<iostream>
 	<map>
 
-1579030240 source:c:\users\conor\documents\dev\alpha\src\runtime\resolver.cpp
+1579031738 source:c:\users\conor\documents\dev\alpha\src\runtime\resolver.cpp
 	"../../include/runtime/resolver.h"
 	<utility>
 	<iostream>
@@ -1012,4 +1014,14 @@
 	"../../include/commands/command.h"
 	"../../include/commands/console_out.h"
 	<iostream>
+
+1579033929 c:\users\conor\documents\dev\alpha\include\runtime\searcher.h
+	"../commands/command.h"
+
+1579033909 source:c:\users\conor\documents\dev\alpha\src\runtime\searcher.cpp
+	"../../include/runtime/searcher.h"
+	<string>
+	<vector>
+	<memory>
+	<stdexcept>
 

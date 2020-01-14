@@ -10,7 +10,7 @@
 class ConsoleOut: public Command{
 public:
     ConsoleOut(std::vector<std::string>);
-    void execute(Resolver &, std::map<std::string, std::pair<std::string, int>> *, std::vector<std::unique_ptr<Command>> &, int *);
+    void execute(Resolver &, Searcher &, std::map<std::string, std::pair<std::string, int>> *, std::vector<std::unique_ptr<Command>> &, int *);
     int getNumParams();
     std::string getName();
 };

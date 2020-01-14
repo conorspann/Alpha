@@ -12,7 +12,7 @@ MemoryDump::MemoryDump(std::vector<std::string> params):
 
 }
 
-void MemoryDump::execute(Resolver & resolver, std::map<std::string, std::pair<std::string, int>> * globalDataPool, std::vector<std::unique_ptr<Command>> &, int *)
+void MemoryDump::execute(Resolver & resolver, Searcher & searcher, std::map<std::string, std::pair<std::string, int>> * globalDataPool, std::vector<std::unique_ptr<Command>> &, int *)
 {
     std::map<std::string, std::pair<std::string, int>>::iterator it;
     //std::map<std::string, std::string> vars = & globalDataPool;

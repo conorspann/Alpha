@@ -5,6 +5,7 @@
 
 #include "../commands/command.h"
 #include "resolver.h"
+#include "searcher.h"
 
 #include <memory>
 #include <vector>
@@ -18,7 +19,6 @@ public:
 private:
     std::vector<std::unique_ptr<Command>> commands;
     std::map<std::string, std::pair<std::string, int>> globalDataPool;
-    Resolver resolver;
 };
 
 #endif // INTERPRETER_H

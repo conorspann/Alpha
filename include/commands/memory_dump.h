@@ -9,7 +9,7 @@
 class MemoryDump: public Command{
 public:
     MemoryDump(std::vector<std::string> params);
-    void execute(Resolver &, std::map<std::string, std::pair<std::string, int>> *, std::vector<std::unique_ptr<Command>> &, int *);
+    void execute(Resolver &, Searcher &, std::map<std::string, std::pair<std::string, int>> *, std::vector<std::unique_ptr<Command>> &, int *);
     int getNumParams();
     std::string getName();
 private:

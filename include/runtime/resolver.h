@@ -16,7 +16,6 @@ class Resolver{
 public:
     Resolver();
     std::string resolve(std::string, const std::map<std::string, std::pair<std::string, int>> *);
-    int findLabel(std::string startLabel, std::string endLabel, int, bool, std::vector<std::unique_ptr<Command>> & cmds, int * cmdPtr);
 private:
     Calculator calculator;
     void addChar(std::string & currentParam, char paramChar);

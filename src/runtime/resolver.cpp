@@ -103,37 +103,3 @@ std::vector<std::pair<std::string, int>> Resolver::parseParam(std::string param,
     return parsedParam;
 }
 
-
-/** Maybe put this in it's own Searcher class
-    could put the find resolve/search variable bit in that class too
-*/
-int Resolver::findLabel(std::string startLabel, std::string endLabel, int direction, bool jumpPast, std::vector<std::unique_ptr<Command>> & cmds, int * cmdPtr)
-{
-    int nestedLevel = 0;
-    // implement way to force direction to either be -1 or 1
-    if(direction > 0 ){
-        direction = 1;
-    }else{
-        direction = -1;
-    }
-    for(int i = (*cmdPtr) + direction; i < cmds.size(); i += direction){
-        if(cmds[i]->getName() == startLabel){
-            nestedLevel++;
-        }
-        if(cmds[i]->getName() == endLabel){
-            if(nestedLevel == 0){
-                if(direction == -1){
-                    return i - 1;
-                }
-                return i;
-            }
-            nestedLevel--;
-        }
-    }
-    std::string errMsg = "Error: ";
-    errMsg += startLabel;
-    errMsg += " statement has no ";
-    errMsg += endLabel;
-    throw std::runtime_error(errMsg);
-}
-

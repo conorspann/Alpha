@@ -9,7 +9,6 @@
 class Calculator{
 public:
     Calculator();
-
     bool isSymbol(char);
     std::string calculate(std::vector<std::pair<std::string, int>>);
 private:

@@ -15,7 +15,9 @@ Interpreter::Interpreter(std::vector<std::unique_ptr<Command>> cmds):
 
 void Interpreter::execute()
 {
+    Resolver resolver;
+    Searcher searcher;
     for(int cmdPtr = 0; cmdPtr < commands.size(); cmdPtr++){
-        commands[cmdPtr]->execute(resolver, &globalDataPool, commands, &cmdPtr);
+        commands[cmdPtr]->execute(resolver, searcher, &globalDataPool, commands, &cmdPtr);
     }
 }

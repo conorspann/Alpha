@@ -50,6 +50,7 @@
 		<Unit filename="include/runtime/calculator.h" />
 		<Unit filename="include/runtime/interpreter.h" />
 		<Unit filename="include/runtime/resolver.h" />
+		<Unit filename="include/runtime/searcher.h" />
 		<Unit filename="src/commands/assign.cpp" />
 		<Unit filename="src/commands/command.cpp" />
 		<Unit filename="src/commands/console_in.cpp" />
@@ -76,6 +77,7 @@
 		<Unit filename="src/runtime/calculator.cpp" />
 		<Unit filename="src/runtime/interpreter.cpp" />
 		<Unit filename="src/runtime/resolver.cpp" />
+		<Unit filename="src/runtime/searcher.cpp" />
 		<Unit filename="src/testmain.cpp">
 			<Option target="Debug" />
 		</Unit>

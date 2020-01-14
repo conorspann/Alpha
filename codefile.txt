@@ -14,3 +14,13 @@ EndIf
 If(2 = 1)
 	ConsoleOut("this shouldnt display")
 EndIf
+
+
+@foo = 1
+
+ConsoleOut("Starting loop")
+While(@foo < 10)
+	ConsoleOut(@foo)
+	@foo = @foo + 1
+EndWhile
+ConsoleOut("Finished loop!")

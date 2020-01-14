@@ -11,6 +11,7 @@ class Command;
 class Resolver;
 
 #include "../runtime/resolver.h"
+#include "../runtime/searcher.h"
 
 class Command{
 public:
@@ -21,7 +22,7 @@ public:
         UNKNOWN
     };
     Command(std::vector<std::string>);
-    virtual void execute(Resolver &, std::map<std::string, std::pair<std::string, int>> *, std::vector<std::unique_ptr<Command>> &, int *) =0;
+    virtual void execute(Resolver &, Searcher &, std::map<std::string, std::pair<std::string, int>> *, std::vector<std::unique_ptr<Command>> &, int *) =0;
     virtual int getNumParams() =0;
     virtual std::string getName() =0;
     bool hasCorrectNumParams();
