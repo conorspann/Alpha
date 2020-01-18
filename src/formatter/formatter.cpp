@@ -29,9 +29,5 @@ std::string Formatter::removeWhiteSpace(std::string line)
 
 bool Formatter::isWhiteSpace(char c)
 {
-    if(c == ' ' || c == '\t'){
-        return true;
-    }
-
-    return false;
+    return (c == ' ' || c == '\t');
 }

@@ -659,7 +659,7 @@
 	"../../include/runtime/calculator.h"
 	"../../include/commands/command.h"
 
-1578940034 source:c:\users\conor\documents\dev\alpha\src\main.cpp
+1579378743 source:c:\users\conor\documents\dev\alpha\src\main.cpp
 	"../include/init/loader.h"
 	"../include/init/parser.h"
 	"../include/commands/command.h"

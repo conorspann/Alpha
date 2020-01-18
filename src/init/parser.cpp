@@ -18,7 +18,8 @@ std::vector<std::unique_ptr<Command>> Parser::parse()
     std::vector<std::unique_ptr<Command>> commands;
     for(auto &i : data){
         if(i != ""){
-            std::unique_ptr<Command> cmd = std::move(getCommand(i));
+            std::string formattedLine = formatter.removeWhiteSpace(i);
+            std::unique_ptr<Command> cmd = std::move(getCommand(formattedLine));
             if(cmd != nullptr){
                 commands.push_back(std::move(cmd));
             }
@@ -30,7 +31,7 @@ std::vector<std::unique_ptr<Command>> Parser::parse()
 //may throw exception
 std::unique_ptr<Command> Parser::getCommand(std::string fileLine)
 {
-    fileLine = formatter.removeWhiteSpace(fileLine);
+    // put formatter as a step before parser and preprocessor but after loader
     ExtractedLine extractedLine = commandExtractor.extract(fileLine);
     if(extractedLine.getCommandStr() == ""){
         return nullptr;

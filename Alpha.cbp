@@ -42,8 +42,9 @@
 		<Unit filename="include/commands/if.h" />
 		<Unit filename="include/commands/memory_dump.h" />
 		<Unit filename="include/commands/while.h" />
-		<Unit filename="include/formatter/formatted_line.h" />
 		<Unit filename="include/formatter/formatter.h" />
+		<Unit filename="include/init/command_extractor.h" />
+		<Unit filename="include/init/extracted_line.h" />
 		<Unit filename="include/init/loader.h" />
 		<Unit filename="include/init/mapper.h" />
 		<Unit filename="include/init/parser.h" />
@@ -60,8 +61,9 @@
 		<Unit filename="src/commands/if.cpp" />
 		<Unit filename="src/commands/memory_dump.cpp" />
 		<Unit filename="src/commands/while.cpp" />
-		<Unit filename="src/formatter/formatted_line.cpp" />
 		<Unit filename="src/formatter/formatter.cpp" />
+		<Unit filename="src/init/command_extractor.cpp" />
+		<Unit filename="src/init/extracted_line.cpp" />
 		<Unit filename="src/init/loader.cpp" />
 		<Unit filename="src/init/loader_test.cpp">
 			<Option target="Debug" />

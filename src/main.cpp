@@ -26,7 +26,7 @@ int main(int argc, char ** argv)
         Interpreter interpreter(std::move(parser.parse()));
         interpreter.execute();
     }
-    catch(const std::runtime_error & e )
+    catch(const std::runtime_error & e)
     {
         std::cout << "Exception: " << e.what() << std::endl << "Exiting" << std::endl;
         return -2;
