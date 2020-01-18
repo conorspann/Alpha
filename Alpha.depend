@@ -612,17 +612,15 @@
 	<string>
 	<vector>
 
-1578939756 source:c:\users\conor\documents\dev\alpha\src\formatter\formatter.cpp
+1579371386 source:c:\users\conor\documents\dev\alpha\src\formatter\formatter.cpp
 	"../../include/formatter/formatter.h"
-	"../../include/formatter/formatted_line.h"
 	<iostream>
 	<vector>
 	<string>
 
-1574805494 c:\users\conor\documents\dev\alpha\include\formatter\formatter.h
+1579371376 c:\users\conor\documents\dev\alpha\include\formatter\formatter.h
 	<string>
 	<vector>
-	"formatted_line.h"
 
 1578939829 source:c:\users\conor\documents\dev\alpha\src\init\mapper.cpp
 	"../../include/init/mapper.h"
@@ -672,8 +670,10 @@
 	<memory>
 	<utility>
 
-1578939982 c:\users\conor\documents\dev\alpha\include\init\parser.h
+1579372449 c:\users\conor\documents\dev\alpha\include\init\parser.h
 	"../formatter/formatter.h"
+	"extracted_line.h"
+	"command_extractor.h"
 	<vector>
 	<string>
 	<map>
@@ -690,7 +690,7 @@
 	<utility>
 	<map>
 
-1579033620 source:c:\users\conor\documents\dev\alpha\src\runtime\interpreter.cpp
+1579034108 source:c:\users\conor\documents\dev\alpha\src\runtime\interpreter.cpp
 	"../../include/runtime/interpreter.h"
 	<vector>
 	<memory>
@@ -703,7 +703,7 @@
 	<utility>
 	<iostream>
 
-1578940145 source:c:\users\conor\documents\dev\alpha\src\init\parser.cpp
+1579372744 source:c:\users\conor\documents\dev\alpha\src\init\parser.cpp
 	<iostream>
 	<stdexcept>
 	<memory>
@@ -1024,4 +1024,25 @@
 	<vector>
 	<memory>
 	<stdexcept>
+
+1579371462 c:\users\conor\documents\dev\alpha\include\init\extracted_line.h
+	<string>
+	<vector>
+
+1579371833 c:\users\conor\documents\dev\alpha\include\init\command_extractor.h
+	<string>
+	<vector>
+	"../init/extracted_line.h"
+
+1579371873 source:c:\users\conor\documents\dev\alpha\src\init\command_extractor.cpp
+	"../../include/init/command_extractor.h"
+	"../../include/init/extracted_line.h"
+	<iostream>
+	<vector>
+	<string>
+
+1579371118 source:c:\users\conor\documents\dev\alpha\src\init\extracted_line.cpp
+	"../../include/init/extracted_line.h"
+	<string>
+	<vector>
 

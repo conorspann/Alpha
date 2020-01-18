@@ -30,11 +30,12 @@ std::vector<std::unique_ptr<Command>> Parser::parse()
 //may throw exception
 std::unique_ptr<Command> Parser::getCommand(std::string fileLine)
 {
-    FormattedLine formattedLine = formatter.format(fileLine);
-    if(formattedLine.getCommandStr() == ""){
+    fileLine = formatter.removeWhiteSpace(fileLine);
+    ExtractedLine extractedLine = commandExtractor.extract(fileLine);
+    if(extractedLine.getCommandStr() == ""){
         return nullptr;
     }
-    std::unique_ptr<Command> command = mapper.getNewCommand(formattedLine.getCommandStr(), formattedLine.getParamList());
+    std::unique_ptr<Command> command = mapper.getNewCommand(extractedLine.getCommandStr(), extractedLine.getParamList());
     //maybe add another mapper function to map params?
     //maybe create new class DataType and check for type
 

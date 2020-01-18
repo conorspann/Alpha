@@ -1,14 +1,14 @@
 
-#ifndef FORMATTED_LINE_H
-#define FORMATTED_LINE_H
+#ifndef EXTRACTED_LINE_H
+#define EXTRACTED_LINE_H
 
 #include <string>
 #include <vector>
 
-class FormattedLine
+class ExtractedLine
 {
 public:
-    FormattedLine(std::string, std::vector<std::string>);
+    ExtractedLine(std::string, std::vector<std::string>);
     std::string getCommandStr();
     std::vector<std::string> getParamList();
 private:

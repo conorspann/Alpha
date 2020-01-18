@@ -3,6 +3,8 @@
 #define PARSER_H
 
 #include "../formatter/formatter.h"
+#include "extracted_line.h"
+#include "command_extractor.h"
 
 #include <vector>
 #include <string>
@@ -20,6 +22,7 @@ public:
 private:
     std::vector<std::string> data;
     Formatter formatter;
+    CommandExtractor commandExtractor;
     Mapper mapper;
     std::unique_ptr<Command> getCommand(std::string);
     std::string getWord(std::string);
