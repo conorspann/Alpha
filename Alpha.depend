@@ -612,7 +612,7 @@
 	<string>
 	<vector>
 
-1579371386 source:c:\users\conor\documents\dev\alpha\src\formatter\formatter.cpp
+1579382467 source:c:\users\conor\documents\dev\alpha\src\formatter\formatter.cpp
 	"../../include/formatter/formatter.h"
 	<iostream>
 	<vector>
@@ -703,7 +703,7 @@
 	<utility>
 	<iostream>
 
-1579372744 source:c:\users\conor\documents\dev\alpha\src\init\parser.cpp
+1579451287 source:c:\users\conor\documents\dev\alpha\src\init\parser.cpp
 	<iostream>
 	<stdexcept>
 	<memory>
@@ -1043,6 +1043,15 @@
 
 1579371118 source:c:\users\conor\documents\dev\alpha\src\init\extracted_line.cpp
 	"../../include/init/extracted_line.h"
+	<string>
+	<vector>
+
+1579451297 source:c:\users\conor\documents\dev\alpha\src\commands\custom_command.cpp
+	"../../include/commands/custom_command.h"
+	<string>
+	<vector>
+
+1579451313 c:\users\conor\documents\dev\alpha\include\commands\custom_command.h
 	<string>
 	<vector>
 

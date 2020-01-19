@@ -37,6 +37,7 @@
 		<Unit filename="include/commands/command.h" />
 		<Unit filename="include/commands/console_in.h" />
 		<Unit filename="include/commands/console_out.h" />
+		<Unit filename="include/commands/custom_command.h" />
 		<Unit filename="include/commands/end_while.h" />
 		<Unit filename="include/commands/endif.h" />
 		<Unit filename="include/commands/if.h" />
@@ -48,6 +49,7 @@
 		<Unit filename="include/init/loader.h" />
 		<Unit filename="include/init/mapper.h" />
 		<Unit filename="include/init/parser.h" />
+		<Unit filename="include/init/preprocessor.h" />
 		<Unit filename="include/runtime/calculator.h" />
 		<Unit filename="include/runtime/interpreter.h" />
 		<Unit filename="include/runtime/resolver.h" />
@@ -56,6 +58,7 @@
 		<Unit filename="src/commands/command.cpp" />
 		<Unit filename="src/commands/console_in.cpp" />
 		<Unit filename="src/commands/console_out.cpp" />
+		<Unit filename="src/commands/custom_command.cpp" />
 		<Unit filename="src/commands/end_while.cpp" />
 		<Unit filename="src/commands/endif.cpp" />
 		<Unit filename="src/commands/if.cpp" />
@@ -73,6 +76,7 @@
 		<Unit filename="src/init/parser_test.cpp">
 			<Option target="Debug" />
 		</Unit>
+		<Unit filename="src/init/preprocessor.cpp" />
 		<Unit filename="src/main.cpp">
 			<Option target="Release" />
 		</Unit>

@@ -19,6 +19,7 @@ std::vector<std::unique_ptr<Command>> Parser::parse()
     for(auto &i : data){
         if(i != ""){
             std::string formattedLine = formatter.removeWhiteSpace(i);
+            // pre processor here?
             std::unique_ptr<Command> cmd = std::move(getCommand(formattedLine));
             if(cmd != nullptr){
                 commands.push_back(std::move(cmd));
