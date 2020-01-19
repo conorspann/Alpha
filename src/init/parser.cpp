@@ -16,11 +16,11 @@ Parser::Parser(std::vector<std::string> fileData):
 std::vector<std::unique_ptr<Command>> Parser::parse()
 {
     std::vector<std::unique_ptr<Command>> commands;
-    for(auto &i : data){
+    std::vector<std::string> formattedLines = formatter.removeWhiteSpace(data);
+    for(auto &i : formattedLines){
         if(i != ""){
-            std::string formattedLine = formatter.removeWhiteSpace(i);
             // pre processor here?
-            std::unique_ptr<Command> cmd = std::move(getCommand(formattedLine));
+            std::unique_ptr<Command> cmd = std::move(getCommand(i));
             if(cmd != nullptr){
                 commands.push_back(std::move(cmd));
             }

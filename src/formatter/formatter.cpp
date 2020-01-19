@@ -10,21 +10,26 @@ Formatter::Formatter()
 
 }
 
-std::string Formatter::removeWhiteSpace(std::string line)
+std::vector<std::string> Formatter::removeWhiteSpace(std::vector<std::string> lines)
 {
-    std::string newLine;
-    bool noRemove = false;
-    for(int i = 0; i < line.length(); i++){
-        char c = line[i];
-        if(c == '\"'){
-            noRemove = !noRemove;
+    std::vector<std::string> formattedLines;
+    for(int lineNumber = 0 ; lineNumber < lines.size(); lineNumber++){
+        std::string line = lines[lineNumber];
+        std::string newLine;
+        bool noRemove = false;
+        for(int i = 0; i < line.length(); i++){
+            char c = line[i];
+            if(c == '\"'){
+                noRemove = !noRemove;
+            }
+            if(!isWhiteSpace(c) || noRemove){
+                newLine += c;
+            }
         }
-        if(!isWhiteSpace(c) || noRemove){
-            newLine += c;
-        }
+        formattedLines.push_back(newLine);
     }
 
-    return newLine;
+    return formattedLines;
 }
 
 bool Formatter::isWhiteSpace(char c)

@@ -8,7 +8,7 @@
 class Formatter{
 public:
     Formatter();
-    std::string removeWhiteSpace(std::string);
+    std::vector<std::string> removeWhiteSpace(std::vector<std::string>);
 private:
     bool isWhiteSpace(char);
 };
