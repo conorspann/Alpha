@@ -45,12 +45,12 @@ PreProcessor::PreProcessor(std::vector<std::string> fileLines)
             }
             param += line[charPos];
         }
-        CustomCommand customCommand(cmdName, params);
+        CommandData customCommand(lineIndex, cmdName, params);
         customCommands.push_back(customCommand);
     }
 }
 
-std::vector<CustomCommand> PreProcessor::getCustomCommands()
+std::vector<CommandData> PreProcessor::getCustomCommands()
 {
     return customCommands;
 }

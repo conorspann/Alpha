@@ -10,7 +10,12 @@ public:
     Formatter();
     std::vector<std::string> removeWhiteSpace(std::vector<std::string>);
 private:
-    bool isWhiteSpace(char);
+    std::string symbols = "+-*/?%@=<>,()";
+    bool isWhiteSpace(char c);
+    std::string removeInitialWhiteSpace(std::string line);
+    std::string addSymbolWhiteSpace(std::string line);
+    std::string removeDuplicateWhiteSpace(std::string line);
+    bool isSymbol(char c);
 };
 
 #endif // FORMATTER_H

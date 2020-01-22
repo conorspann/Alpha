@@ -1,0 +1,13 @@
+
+ConsoleOut("hello")
+
+
+Cmd thing()
+
+EndCmd
+
+
+
+Cmd anotherThing()
+
+EndCmd

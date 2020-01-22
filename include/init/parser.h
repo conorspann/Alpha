@@ -2,15 +2,14 @@
 #ifndef PARSER_H
 #define PARSER_H
 
-#include "../formatter/formatter.h"
 #include "extracted_line.h"
 #include "command_extractor.h"
+#include "../commands/command.h"
 
 #include <vector>
 #include <string>
 #include <map>
 
-#include "../commands/command.h"
 #include "mapper.h"
 
 #include <memory>
@@ -21,7 +20,6 @@ public:
     std::vector<std::unique_ptr<Command>> parse();
 private:
     std::vector<std::string> data;
-    Formatter formatter;
     CommandExtractor commandExtractor;
     Mapper mapper;
     std::unique_ptr<Command> getCommand(std::string);

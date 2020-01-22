@@ -612,13 +612,13 @@
 	<string>
 	<vector>
 
-1579452311 source:c:\users\conor\documents\dev\alpha\src\formatter\formatter.cpp
+1579727036 source:c:\users\conor\documents\dev\alpha\src\formatter\formatter.cpp
 	"../../include/formatter/formatter.h"
 	<iostream>
 	<vector>
 	<string>
 
-1579451881 c:\users\conor\documents\dev\alpha\include\formatter\formatter.h
+1579727288 c:\users\conor\documents\dev\alpha\include\formatter\formatter.h
 	<string>
 	<vector>
 
@@ -659,10 +659,11 @@
 	"../../include/runtime/calculator.h"
 	"../../include/commands/command.h"
 
-1579378743 source:c:\users\conor\documents\dev\alpha\src\main.cpp
+1579639114 source:c:\users\conor\documents\dev\alpha\src\main.cpp
 	"../include/init/loader.h"
+	"../include/formatter/formatter.h"
 	"../include/init/parser.h"
-	"../include/commands/command.h"
+	"../include/init/preprocessor.h"
 	"../include/runtime/interpreter.h"
 	<stdexcept>
 	<iostream>
@@ -670,14 +671,13 @@
 	<memory>
 	<utility>
 
-1579372449 c:\users\conor\documents\dev\alpha\include\init\parser.h
-	"../formatter/formatter.h"
+1579638331 c:\users\conor\documents\dev\alpha\include\init\parser.h
 	"extracted_line.h"
 	"command_extractor.h"
+	"../commands/command.h"
 	<vector>
 	<string>
 	<map>
-	"../commands/command.h"
 	"mapper.h"
 	<memory>
 
@@ -703,7 +703,7 @@
 	<utility>
 	<iostream>
 
-1579452409 source:c:\users\conor\documents\dev\alpha\src\init\parser.cpp
+1579638386 source:c:\users\conor\documents\dev\alpha\src\init\parser.cpp
 	<iostream>
 	<stdexcept>
 	<memory>
@@ -1029,12 +1029,12 @@
 	<string>
 	<vector>
 
-1579371833 c:\users\conor\documents\dev\alpha\include\init\command_extractor.h
+1579641389 c:\users\conor\documents\dev\alpha\include\init\command_extractor.h
 	<string>
 	<vector>
 	"../init/extracted_line.h"
 
-1579371873 source:c:\users\conor\documents\dev\alpha\src\init\command_extractor.cpp
+1579641340 source:c:\users\conor\documents\dev\alpha\src\init\command_extractor.cpp
 	"../../include/init/command_extractor.h"
 	"../../include/init/extracted_line.h"
 	<iostream>
@@ -1046,21 +1046,27 @@
 	<string>
 	<vector>
 
-1579451297 source:c:\users\conor\documents\dev\alpha\src\commands\custom_command.cpp
-	"../../include/commands/custom_command.h"
-	<string>
-	<vector>
+1579634267 source:c:\users\conor\documents\dev\alpha\src\commands\custom_command.cpp
 
 1579451313 c:\users\conor\documents\dev\alpha\include\commands\custom_command.h
 	<string>
 	<vector>
 
-1579451344 source:c:\users\conor\documents\dev\alpha\src\init\preprocessor.cpp
+1579635676 source:c:\users\conor\documents\dev\alpha\src\init\preprocessor.cpp
 	"../../include/init/preprocessor.h"
 	<stdexcept>
 
-1579451324 c:\users\conor\documents\dev\alpha\include\init\preprocessor.h
+1579635602 c:\users\conor\documents\dev\alpha\include\init\preprocessor.h
 	<vector>
 	<string>
-	"../commands/custom_command.h"
+	"../runtime/command_data.h"
+
+1579634100 source:c:\users\conor\documents\dev\alpha\src\runtime\command_data.cpp
+	"../../include/runtime/command_data.h"
+	<string>
+	<vector>
+
+1579635561 c:\users\conor\documents\dev\alpha\include\runtime\command_data.h
+	<string>
+	<vector>
 

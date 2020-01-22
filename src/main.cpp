@@ -1,7 +1,8 @@
 
 #include "../include/init/loader.h"
+#include "../include/formatter/formatter.h"
 #include "../include/init/parser.h"
-#include "../include/commands/command.h"
+#include "../include/init/preprocessor.h"
 #include "../include/runtime/interpreter.h"
 
 #include <stdexcept>
@@ -21,8 +22,24 @@ int main(int argc, char ** argv)
     }
     try
     {
+        /**
+            These calls could be grouped together in a different class
+        */
+
         Loader loader(argv[1]);
-        Parser parser(loader.getData());
+
+        Formatter formatter;
+        std::vector<std::string> formattedLines = formatter.removeWhiteSpace(loader.getData());
+
+        PreProcessor preProcessor(formattedLines);
+        std::vector<CommandData> customCommands = preProcessor.getCustomCommands();
+
+        for(auto i : customCommands){
+            std::cout << i.getLineNumber() << i.getName() << std::endl;
+        }
+
+        Parser parser(formattedLines);
+
         Interpreter interpreter(std::move(parser.parse()));
         interpreter.execute();
     }
