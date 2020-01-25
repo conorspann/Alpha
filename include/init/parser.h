@@ -16,15 +16,12 @@
 
 class Parser{
 public:
-    Parser(std::vector<std::string>);
-    std::vector<std::unique_ptr<Command>> parse();
+    Parser();
+    std::vector<std::unique_ptr<Command>> parse(std::vector<std::vector<std::string>> &);
 private:
-    std::vector<std::string> data;
     CommandExtractor commandExtractor;
     Mapper mapper;
-    std::unique_ptr<Command> getCommand(std::string);
-    std::string getWord(std::string);
-    void getParameters(std::string);
+    std::unique_ptr<Command> getCommand(std::vector<std::string>);
 };
 
 #endif // PARSER_H

@@ -10,12 +10,10 @@
 class CommandExtractor{
 public:
     CommandExtractor();
-    ExtractedLine extract(std::string);
+    ExtractedLine extract(std::vector<std::string>);
 private:
-    std::string getCommandStr(std::string);
-    std::vector<std::string> getParamList(std::string);
-    std::vector<std::string> getDefineParamList(std::string);
-    std::string findParams(std::string);
+    std::vector<std::string> getParamList(std::vector<std::string>);
+    std::vector<std::string> getDefineParamList(std::vector<std::string>);
 };
 
 #endif // COMMAND_EXTRACTOR_H

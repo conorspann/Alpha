@@ -1,56 +1,56 @@
 
 #include "../../include/init/preprocessor.h"
+#include "../../include/formatter/formatter.h"
 
 #include <stdexcept>
 
-PreProcessor::PreProcessor(std::vector<std::string> fileLines)
+PreProcessor::PreProcessor()
 {
-    for(int lineIndex = 0; lineIndex < fileLines.size(); lineIndex++){
-        std::string line = fileLines[lineIndex];
-        int cmdPos = line.find("Cmd ");
-        if(cmdPos == std::string::npos){
+
+}
+
+std::vector<CommandData> PreProcessor::getCustomCommands(std::vector<std::vector<std::string>> & formattedLines)
+{
+    std::vector<CommandData> customCommands;
+    for(int lineNumber = 0; lineNumber < formattedLines.size(); lineNumber++){
+        std::vector<std::string> line = formattedLines[lineNumber];
+        if(line.size() < MIN_CMD_SEGMENTS){
             continue;
         }
-        int cmdNamePos = cmdPos + CMD_NAME_POS;
-        std::string cmdName;
-        for(int charPos = cmdNamePos; charPos < line.length(); charPos++){
-            if(line[charPos] == '('){
-                break;
-            }
-            cmdName += line[charPos];
+        std::string segment = line[CMD_SEG_POS];
+        if(segment != "Cmd"){
+            continue;
         }
-        if(cmdName.empty()){
-            throw std::runtime_error("Error: Custom command does not have a name.");
+        std::string cmdName = line[NAME_SEG_POS];
+        if(Formatter::isSymbol(cmdName[0])){
+            throw std::runtime_error("Error: Custom command name is not valid.");
         }
-        int paramPos = line.find("(");
-        if(paramPos == std::string::npos){
-            throw std::runtime_error("Error: Missing parentheses in custom command.");
+        segment = line[BRACKET_SEG_POS];
+        if(segment != "(" || line[line.size() - 1] != ")"){
+            throw std::runtime_error("Error: Custom command missing bracket.");
         }
-        paramPos += 1; // skip bracket
-        std::vector<std::string> params;
+        // loop through params if they exist
         std::string param;
-        for(int charPos = paramPos; charPos < line.length(); charPos++){
-            if(line[charPos] == ')'){
-                if(!param.empty()){
-                    params.push_back(param);
-                } // allow no params
+        std::vector<std::string> params;
+        for(int segNumber = BRACKET_SEG_POS + 1; segNumber < line.size(); segNumber++){
+            std::string segment = line[segNumber];
+            if(segment == ")"){
                 break;
             }
-            if(line[charPos] == ','){
-                if(param.empty()){
-                    throw std::runtime_error("Error, unexpected comma separator in custom command.");
-                }
+            if(segment == ","){
+                params.push_back(param);
+                param = "";
+                continue;
+            }
+            param += segment;
+            if(segNumber == line.size() - 2){
                 params.push_back(param);
                 param = "";
             }
-            param += line[charPos];
         }
-        CommandData customCommand(lineIndex, cmdName, params);
+        CommandData customCommand(lineNumber, cmdName, params);
         customCommands.push_back(customCommand);
     }
-}
 
-std::vector<CommandData> PreProcessor::getCustomCommands()
-{
     return customCommands;
 }

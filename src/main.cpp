@@ -29,18 +29,14 @@ int main(int argc, char ** argv)
         Loader loader(argv[1]);
 
         Formatter formatter;
-        std::vector<std::string> formattedLines = formatter.removeWhiteSpace(loader.getData());
+        std::vector<std::string> statements = formatter.removeBlankLines(loader.getData());
+        std::vector<std::vector<std::string>> formattedLines = formatter.formatLines(statements);
 
-        PreProcessor preProcessor(formattedLines);
-        std::vector<CommandData> customCommands = preProcessor.getCustomCommands();
+        PreProcessor preProcessor;
+        std::vector<CommandData> customCommands = preProcessor.getCustomCommands(formattedLines);
 
-        for(auto i : customCommands){
-            std::cout << i.getLineNumber() << i.getName() << std::endl;
-        }
-
-        Parser parser(formattedLines);
-
-        Interpreter interpreter(std::move(parser.parse()));
+        Parser parser;
+        Interpreter interpreter(std::move(parser.parse(formattedLines)));
         interpreter.execute();
     }
     catch(const std::runtime_error & e)

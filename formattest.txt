@@ -9,3 +9,15 @@
 		
 		
 		ConsoleOut("nvdsklvdnsl  fdsnkdsfkdsl    fdsfkdsl"     , @bla   = " b,b,b,        ,     b")
+		
+		
+		
+		
+		
+		Cmd lol()
+		
+		EndCmd
+		
+		Cmd thing()
+			ConsoleOut()
+		EndCmd

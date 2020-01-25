@@ -8,14 +8,14 @@
 class Formatter{
 public:
     Formatter();
-    std::vector<std::string> removeWhiteSpace(std::vector<std::string>);
+    //std::vector<std::string> removeWhiteSpace(std::vector<std::string>);
+    std::vector<std::string> removeBlankLines(std::vector<std::string>);
+    std::vector<std::string> formatLine(std::string line);
+    std::vector<std::vector<std::string>> formatLines(std::vector<std::string>);
+    static bool isWhiteSpace(char c);
+    static bool isSymbol(char c);
 private:
-    std::string symbols = "+-*/?%@=<>,()";
-    bool isWhiteSpace(char c);
-    std::string removeInitialWhiteSpace(std::string line);
-    std::string addSymbolWhiteSpace(std::string line);
-    std::string removeDuplicateWhiteSpace(std::string line);
-    bool isSymbol(char c);
+    void addSegment(std::vector<std::string> &, std::string &);
 };
 
 #endif // FORMATTER_H
