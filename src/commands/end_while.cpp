@@ -10,7 +10,7 @@ EndWhile::EndWhile(std::vector<std::string> p):
 
 }
 
-void EndWhile::execute(Resolver & resolver, Searcher & searcher, std::map<std::string, std::pair<std::string, int>> * globalDataPool, std::vector<std::unique_ptr<Command>> & cmds, int * cmdPtr)
+void EndWhile::execute(Resolver & resolver, Searcher & searcher, std::map<std::string, std::pair<std::string, int>> * globalDataPool, std::stack<int> &, std::vector<std::unique_ptr<Command>> & cmds, int * cmdPtr)
 {
     *cmdPtr = searcher.findLabel("EndWhile", "While", -1, true, cmds, cmdPtr);
 }

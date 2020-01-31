@@ -9,7 +9,7 @@ While::While(std::vector<std::string> p):
 
 }
 
-void While::execute(Resolver & resolver, Searcher & searcher, std::map<std::string, std::pair<std::string, int>> * globalDataPool, std::vector<std::unique_ptr<Command>> & cmds, int * cmdPtr)
+void While::execute(Resolver & resolver, Searcher & searcher, std::map<std::string, std::pair<std::string, int>> * globalDataPool, std::stack<int> &,  std::vector<std::unique_ptr<Command>> & cmds, int * cmdPtr)
 {
     std::string val = resolver.resolve(params[0], globalDataPool);
     if(val.find_first_not_of("0123456789-") != std::string::npos){

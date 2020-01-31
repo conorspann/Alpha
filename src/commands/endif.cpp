@@ -7,7 +7,7 @@ EndIf::EndIf(std::vector<std::string> p):
 
 }
 
-void EndIf::execute(Resolver & resolver, Searcher & searcher, std::map<std::string, std::pair<std::string, int>> *, std::vector<std::unique_ptr<Command>> &, int *)
+void EndIf::execute(Resolver & resolver, Searcher & searcher, std::map<std::string, std::pair<std::string, int>> *, std::stack<int> &, std::vector<std::unique_ptr<Command>> &, int *)
 {
     // do nothing ??
 }

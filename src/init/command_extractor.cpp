@@ -43,7 +43,7 @@ std::vector<std::string> CommandExtractor::getParamList(std::vector<std::string>
 {
     std::vector<std::string> paramList;
 
-    if(segmentedLine.size() < 2){
+    if(segmentedLine.size() < 2 || segmentedLine[0] == "Cmd"){
         return paramList;
     }
     std::string param;

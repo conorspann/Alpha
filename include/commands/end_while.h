@@ -10,7 +10,7 @@
 class EndWhile: public Command{
 public:
     EndWhile(std::vector<std::string> p);
-    void execute(Resolver &, Searcher &, std::map<std::string, std::pair<std::string, int>> * , std::vector<std::unique_ptr<Command>> &, int *);
+    void execute(Resolver &, Searcher &, std::map<std::string, std::pair<std::string, int>> * , std::stack<int> &, std::vector<std::unique_ptr<Command>> &, int *);
     int getNumParams();
     std::string getName();
 };

@@ -36,7 +36,7 @@ int main(int argc, char ** argv)
         std::vector<CommandData> customCommands = preProcessor.getCustomCommands(formattedLines);
 
         Parser parser;
-        Interpreter interpreter(std::move(parser.parse(formattedLines)));
+        Interpreter interpreter(std::move(parser.parse(formattedLines, customCommands)));
         interpreter.execute();
     }
     catch(const std::runtime_error & e)

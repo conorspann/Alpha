@@ -9,13 +9,17 @@
 #include "../../include/commands/endif.h"
 #include "../../include/commands/while.h"
 #include "../../include/commands/end_while.h"
+#include "../../include/commands/call_command.h"
+#include "../../include/commands/custom_command.h"
+#include "../../include/commands/end_custom_command.h"
+#include "../../include/runtime/command_data.h"
 
 #include <exception>
 #include <stdexcept>
 #include <iostream>
 #include <string>
 
-std::unique_ptr<Command> Mapper::getNewCommand(std::string line, std::vector<std::string> params)
+std::unique_ptr<Command> Mapper::getNewCommand(std::string line, std::vector<std::string> params, std::vector<CommandData> & customCommands)
 {
     //could potentially re write using a map of string->function pointers
     //functions return type of oommand
@@ -41,10 +45,21 @@ std::unique_ptr<Command> Mapper::getNewCommand(std::string line, std::vector<std
         c = std::make_unique<While>(params);
     }else if(line == "EndWhile"){
         c = std::make_unique<EndWhile>(params);
+    }else if(line == "Cmd"){
+        c = std::make_unique<CustomCommand>(params);
+    }else if(line == "EndCmd"){
+        c = std::make_unique<EndCustomCommand>(params);
     }else{
+        for(auto customCommand: customCommands){
+            if(customCommand.getName() == line){
+                std::vector<std::string> paramLineNumber = {std::to_string(customCommand.getLineNumber())};
+                c = std::make_unique<CallCommand>(paramLineNumber);
+                return std::move(c);
+            }
+        }
         throw std::runtime_error("Exception: Command \"" + line + "\" not valid");
     }
-    if(!c->hasCorrectNumParams()){
+    if(c->getNumParams() > 0 && !c->hasCorrectNumParams()){
         throw std::runtime_error("Command: " + c->getName() + " requires " + std::to_string(c->getNumParams()) + " params.");
     }
     return std::move(c);

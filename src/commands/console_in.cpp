@@ -11,7 +11,7 @@ ConsoleIn::ConsoleIn(std::vector<std::string> p):
 }
 
 
-void ConsoleIn::execute(Resolver & resolver, Searcher & searcher, std::map<std::string, std::pair<std::string, int>> * globalDataPool, std::vector<std::unique_ptr<Command>> &, int *)
+void ConsoleIn::execute(Resolver & resolver, Searcher & searcher, std::map<std::string, std::pair<std::string, int>> * globalDataPool, std::stack<int> &, std::vector<std::unique_ptr<Command>> &, int *)
 {
     std::map<std::string, std::pair<std::string, int>>::iterator it;
     it = globalDataPool->find(params[0]);

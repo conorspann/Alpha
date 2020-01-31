@@ -9,7 +9,7 @@ Assign::Assign(std::vector<std::string> params):
 
 }
 
-void Assign::execute(Resolver & resolver, Searcher & searcher, std::map<std::string, std::pair<std::string, int>> * globalDataPool, std::vector<std::unique_ptr<Command>> &, int *)
+void Assign::execute(Resolver & resolver, Searcher & searcher, std::map<std::string, std::pair<std::string, int>> * globalDataPool, std::stack<int> &, std::vector<std::unique_ptr<Command>> &, int *)
 {
     std::string identifier = params[0];
     std::string value = resolver.resolve(params[1], globalDataPool);
