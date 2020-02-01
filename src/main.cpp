@@ -1,15 +1,15 @@
 
-#include "../include/init/loader.h"
-#include "../include/formatter/formatter.h"
-#include "../include/init/parser.h"
-#include "../include/init/preprocessor.h"
-#include "../include/runtime/interpreter.h"
-
 #include <stdexcept>
 #include <iostream>
 #include <vector>
 #include <memory>
 #include <utility>
+
+#include "../include/init/loader.h"
+#include "../include/formatter/formatter.h"
+#include "../include/init/parser.h"
+#include "../include/init/preprocessor.h"
+#include "../include/runtime/interpreter.h"
 
 /** RELEASE ONLY */
 
@@ -34,12 +34,10 @@ int main(int argc, char ** argv)
         std::vector<std::string> statements = formatter.removeBlankLines(rawData);
         std::vector<std::vector<std::string>> formattedLines = formatter.formatLines(statements); // rename to tokenize
 
-
         CommandExtractor commandExtractor;
 
-
-        std::vector<CommandData> customCommands = commandExtractor.getCustomCommands(formattedLines); // needs to be moved to command extactor
-                                                                                                    // re name cextract to tokenExtractor
+        std::vector<CommandData> customCommands = commandExtractor.getCustomCommands(formattedLines);
+        // re name cextract to tokenExtractor
 
         Parser parser;
         Interpreter interpreter(std::move(parser.parse(commandExtractor, formattedLines, customCommands)));

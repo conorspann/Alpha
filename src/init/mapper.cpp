@@ -1,4 +1,8 @@
 
+#include <stdexcept>
+#include <iostream>
+#include <string>
+
 #include "../../include/init/mapper.h"
 #include "../../include/commands/command.h"
 #include "../../include/commands/console_out.h"
@@ -14,10 +18,6 @@
 #include "../../include/commands/end_custom_command.h"
 #include "../../include/runtime/command_data.h"
 
-#include <exception>
-#include <stdexcept>
-#include <iostream>
-#include <string>
 
 std::unique_ptr<Command> Mapper::getNewCommand(std::string line, std::vector<std::string> params, std::vector<CommandData> & customCommands)
 {

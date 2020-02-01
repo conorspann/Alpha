@@ -1,7 +1,9 @@
 
-#include "../../include/commands/call_command.h"
 
 #include <iostream>
+
+#include "../../include/commands/call_command.h"
+
 
 CallCommand::CallCommand(std::vector<std::string> params):
     Command(params)

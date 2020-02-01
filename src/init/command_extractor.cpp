@@ -1,18 +1,17 @@
 
+#include <iostream>
+#include <vector>
+#include <string>
+
 #include "../../include/init/command_extractor.h"
 #include "../../include/init/extracted_line.h"
 #include "../../include/formatter/formatter.h"
 
-#include <iostream>
-#include <vector>
-#include <string>
 
 CommandExtractor::CommandExtractor()
 {
 
 }
-
-// Maybe split this class into other classes
 
 
 ExtractedLine CommandExtractor::extract(std::vector<std::string> segmentedLine)

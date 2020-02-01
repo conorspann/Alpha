@@ -1,8 +1,10 @@
 
-#include "../../include/commands/console_in.h"
 
 #include <string>
 #include <iostream>
+
+#include "../../include/commands/console_in.h"
+
 
 ConsoleIn::ConsoleIn(std::vector<std::string> p):
     Command(p)

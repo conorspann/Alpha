@@ -1,10 +1,12 @@
 
-#include "../../include/commands/memory_dump.h"
 
 #include <map>
 #include <vector>
 #include <string>
 #include <iostream>
+
+#include "../../include/commands/memory_dump.h"
+
 
 MemoryDump::MemoryDump(std::vector<std::string> params):
     Command(params)

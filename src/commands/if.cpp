@@ -1,7 +1,9 @@
 
-#include "../../include/commands/if.h"
 
 #include <iostream>
+
+#include "../../include/commands/if.h"
+
 
 If::If(std::vector<std::string> p):
     Command(p)

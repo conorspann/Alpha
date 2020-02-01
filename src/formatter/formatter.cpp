@@ -1,13 +1,15 @@
 
-#include "../../include/formatter/formatter.h"
-#include "../../include/formatter/formatted_data.h"
 
 #include <iostream>
 #include <vector>
 #include <string>
 
+#include "../../include/formatter/formatter.h"
+#include "../../include/formatter/formatted_data.h"
+
 static const std::string symbols = "+-*/?%@=<>,()";
 static const std::string whiteSpaceChars = " \t";
+
 
 Formatter::Formatter()
 {

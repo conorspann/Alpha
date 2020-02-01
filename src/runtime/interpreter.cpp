@@ -1,11 +1,13 @@
 
-#include "../../include/runtime/interpreter.h"
 
 #include <vector>
 #include <memory>
 #include <utility>
 #include <iostream>
 #include <map>
+
+#include "../../include/runtime/interpreter.h"
+
 
 Interpreter::Interpreter(std::vector<std::unique_ptr<Command>> cmds):
     commands(std::move(cmds))

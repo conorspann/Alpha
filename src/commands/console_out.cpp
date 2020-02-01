@@ -1,10 +1,10 @@
 
-#include "../../include/commands/console_out.h"
-
 #include <string>
 #include <vector>
-
 #include <iostream>
+
+#include "../../include/commands/console_out.h"
+
 
 ConsoleOut::ConsoleOut(std::vector<std::string> params):
     Command(params)

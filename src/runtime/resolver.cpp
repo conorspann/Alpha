@@ -1,8 +1,9 @@
 
-#include "../../include/runtime/resolver.h"
 
 #include <utility>
 #include <iostream>
+
+#include "../../include/runtime/resolver.h"
 
 
 /** Maybe could use some sort of rule table? Similar rules e.g. for strings in Formatter

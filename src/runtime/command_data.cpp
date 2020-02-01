@@ -1,9 +1,10 @@
 
 
-#include "../../include/runtime/command_data.h"
-
 #include <string>
 #include <vector>
+
+#include "../../include/runtime/command_data.h"
+
 
 CommandData::CommandData(int lineNumber, std::string name, std::vector<std::string> params):
     lineNumber(lineNumber),

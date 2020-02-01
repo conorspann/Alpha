@@ -1,14 +1,14 @@
 
-#include "../../include/catch.h"
-
-#include "../../include/init/loader.h"
 
 #include <iostream>
 #include <fstream>
 #include <string>
 #include <vector>
-
 #include <cstdio>
+
+#include "../../include/catch.h"
+
+#include "../../include/init/loader.h"
 
 std::string testFileName = "testFile.txt";
 std::string lineOne = "first test line";

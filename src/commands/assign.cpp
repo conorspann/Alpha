@@ -1,7 +1,9 @@
 
-#include "../../include/commands/assign.h"
 
 #include <iostream>
+
+#include "../../include/commands/assign.h"
+
 
 Assign::Assign(std::vector<std::string> params):
     Command(params)

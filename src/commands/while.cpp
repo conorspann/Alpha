@@ -1,7 +1,9 @@
 
-#include "../../include/commands/while.h"
 
 #include <iostream>
+
+#include "../../include/commands/while.h"
+
 
 While::While(std::vector<std::string> p):
     Command(p)
