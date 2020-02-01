@@ -651,12 +651,12 @@
 	<string>
 	<memory>
 
-1578940045 source:c:\users\conor\documents\dev\alpha\src\init\loader.cpp
+1580555481 source:c:\users\conor\documents\dev\alpha\src\init\loader.cpp
 	<fstream>
 	<stdexcept>
 	"../../include/init/loader.h"
 
-1573725467 c:\users\conor\documents\dev\alpha\include\init\loader.h
+1580554709 c:\users\conor\documents\dev\alpha\include\init\loader.h
 	<string>
 	<vector>
 
@@ -666,7 +666,7 @@
 	"../../include/runtime/calculator.h"
 	"../../include/commands/command.h"
 
-1580504362 source:c:\users\conor\documents\dev\alpha\src\main.cpp
+1580555465 source:c:\users\conor\documents\dev\alpha\src\main.cpp
 	"../include/init/loader.h"
 	"../include/formatter/formatter.h"
 	"../include/init/parser.h"
@@ -1083,7 +1083,7 @@
 
 1579806410 c:\users\conor\documents\dev\alpha\include\formatter\formatted_data.h
 
-1580506948 source:c:\users\conor\documents\dev\alpha\src\commands\call_command.cpp
+1580507594 source:c:\users\conor\documents\dev\alpha\src\commands\call_command.cpp
 	"../../include/commands/call_command.h"
 	<iostream>
 

@@ -25,11 +25,11 @@ int main(int argc, char ** argv)
         /**
             These calls could be grouped together in a different class
         */
-
-        Loader loader(argv[1]);
+        Loader loader;
+        std::vector<std::string> rawData = loader.load(argv[1]);
 
         Formatter formatter;
-        std::vector<std::string> statements = formatter.removeBlankLines(loader.getData());
+        std::vector<std::string> statements = formatter.removeBlankLines(rawData);
         std::vector<std::vector<std::string>> formattedLines = formatter.formatLines(statements);
 
         PreProcessor preProcessor;

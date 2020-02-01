@@ -7,11 +7,8 @@
 
 class Loader{
 public:
-    Loader(std::string);
-    std::vector<std::string> getData();
-    std::string getLine(int);
-private:
-    std::vector<std::string> data;
+    Loader();
+    std::vector<std::string> load(std::string);
 };
 
 #endif // LOADER_H
