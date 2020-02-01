@@ -666,7 +666,7 @@
 	"../../include/runtime/calculator.h"
 	"../../include/commands/command.h"
 
-1580555465 source:c:\users\conor\documents\dev\alpha\src\main.cpp
+1580564986 source:c:\users\conor\documents\dev\alpha\src\main.cpp
 	"../include/init/loader.h"
 	"../include/formatter/formatter.h"
 	"../include/init/parser.h"
@@ -678,7 +678,7 @@
 	<memory>
 	<utility>
 
-1580055540 c:\users\conor\documents\dev\alpha\include\init\parser.h
+1580565081 c:\users\conor\documents\dev\alpha\include\init\parser.h
 	"extracted_line.h"
 	"command_extractor.h"
 	"../commands/command.h"
@@ -710,7 +710,7 @@
 	<utility>
 	<iostream>
 
-1580506712 source:c:\users\conor\documents\dev\alpha\src\init\parser.cpp
+1580565092 source:c:\users\conor\documents\dev\alpha\src\init\parser.cpp
 	<iostream>
 	<stdexcept>
 	<memory>
@@ -1036,12 +1036,13 @@
 	<string>
 	<vector>
 
-1579989385 c:\users\conor\documents\dev\alpha\include\init\command_extractor.h
+1580565056 c:\users\conor\documents\dev\alpha\include\init\command_extractor.h
 	<string>
 	<vector>
 	"../init/extracted_line.h"
+	"../runtime/command_data.h"
 
-1580506345 source:c:\users\conor\documents\dev\alpha\src\init\command_extractor.cpp
+1580564545 source:c:\users\conor\documents\dev\alpha\src\init\command_extractor.cpp
 	"../../include/init/command_extractor.h"
 	"../../include/init/extracted_line.h"
 	"../../include/formatter/formatter.h"
@@ -1062,12 +1063,12 @@
 	<vector>
 	"command.h"
 
-1579975185 source:c:\users\conor\documents\dev\alpha\src\init\preprocessor.cpp
+1580564475 source:c:\users\conor\documents\dev\alpha\src\init\preprocessor.cpp
 	"../../include/init/preprocessor.h"
 	"../../include/formatter/formatter.h"
 	<stdexcept>
 
-1579957829 c:\users\conor\documents\dev\alpha\include\init\preprocessor.h
+1580565047 c:\users\conor\documents\dev\alpha\include\init\preprocessor.h
 	<vector>
 	<string>
 	"../runtime/command_data.h"

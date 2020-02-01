@@ -25,18 +25,24 @@ int main(int argc, char ** argv)
         /**
             These calls could be grouped together in a different class
         */
+        PreProcessor preProcessor; /** TODO: implement include files */
+
         Loader loader;
         std::vector<std::string> rawData = loader.load(argv[1]);
 
         Formatter formatter;
         std::vector<std::string> statements = formatter.removeBlankLines(rawData);
-        std::vector<std::vector<std::string>> formattedLines = formatter.formatLines(statements);
+        std::vector<std::vector<std::string>> formattedLines = formatter.formatLines(statements); // rename to tokenize
 
-        PreProcessor preProcessor;
-        std::vector<CommandData> customCommands = preProcessor.getCustomCommands(formattedLines);
+
+        CommandExtractor commandExtractor;
+
+
+        std::vector<CommandData> customCommands = commandExtractor.getCustomCommands(formattedLines); // needs to be moved to command extactor
+                                                                                                    // re name cextract to tokenExtractor
 
         Parser parser;
-        Interpreter interpreter(std::move(parser.parse(formattedLines, customCommands)));
+        Interpreter interpreter(std::move(parser.parse(commandExtractor, formattedLines, customCommands)));
         interpreter.execute();
     }
     catch(const std::runtime_error & e)

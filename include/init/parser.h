@@ -17,11 +17,11 @@
 class Parser{
 public:
     Parser();
-    std::vector<std::unique_ptr<Command>> parse(std::vector<std::vector<std::string>> &, std::vector<CommandData> &);
+    std::vector<std::unique_ptr<Command>> parse(CommandExtractor &, std::vector<std::vector<std::string>> &, std::vector<CommandData> &);
 private:
     CommandExtractor commandExtractor;
     Mapper mapper;
-    std::unique_ptr<Command> getCommand(std::vector<std::string>, std::vector<CommandData> &);
+    std::unique_ptr<Command> getCommand(CommandExtractor &, std::vector<std::string>, std::vector<CommandData> &);
 };
 
 #endif // PARSER_H

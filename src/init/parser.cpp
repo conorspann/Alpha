@@ -12,18 +12,18 @@ Parser::Parser()
 
 }
 
-std::vector<std::unique_ptr<Command>> Parser::parse(std::vector<std::vector<std::string>> & segmentedData, std::vector<CommandData> & customCommands)
+std::vector<std::unique_ptr<Command>> Parser::parse(CommandExtractor & commandExtractor, std::vector<std::vector<std::string>> & segmentedData, std::vector<CommandData> & customCommands)
 {
     std::vector<std::unique_ptr<Command>> commands;
     for(auto segmentedLine : segmentedData){
-        std::unique_ptr<Command> cmd = std::move(getCommand(segmentedLine, customCommands));
+        std::unique_ptr<Command> cmd = std::move(getCommand(commandExtractor, segmentedLine, customCommands));
         commands.push_back(std::move(cmd));
     }
 
     return std::move(commands);
 }
 //may throw exception
-std::unique_ptr<Command> Parser::getCommand(std::vector<std::string> segmentedLine,  std::vector<CommandData> & customCommands)
+std::unique_ptr<Command> Parser::getCommand(CommandExtractor & commandExtractor, std::vector<std::string> segmentedLine,  std::vector<CommandData> & customCommands)
 {
     ExtractedLine extractedLine = commandExtractor.extract(segmentedLine);
     if(extractedLine.getCommandStr() == ""){
