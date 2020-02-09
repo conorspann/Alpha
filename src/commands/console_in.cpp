@@ -4,7 +4,7 @@
 #include <iostream>
 
 #include "../../include/commands/console_in.h"
-
+#include "../../include/runtime/environment.h"
 
 ConsoleIn::ConsoleIn(std::vector<std::string> p):
     Command(p)
@@ -13,11 +13,15 @@ ConsoleIn::ConsoleIn(std::vector<std::string> p):
 }
 
 
-void ConsoleIn::execute(Resolver & resolver, Searcher & searcher, std::map<std::string, std::pair<std::string, int>> * globalDataPool, std::stack<int> &, std::vector<std::unique_ptr<Command>> &, int *)
+void ConsoleIn::execute(Environment & environment, std::vector<std::unique_ptr<Command>> &, int *)
 {
+    std::stack<int> & callStack = environment.getCallStack();
+    std::map<std::string, std::pair<std::string, int>> & globalDataPool = environment.getGlobalDataPool();
+    Resolver & resolver = environment.getResolver();
+    Searcher & searcher = environment.getSearcher();
     std::map<std::string, std::pair<std::string, int>>::iterator it;
-    it = globalDataPool->find(params[0]);
-    if(it == globalDataPool->end()){
+    it = globalDataPool.find(params[0]);
+    if(it == globalDataPool.end()){
         std::string errMsg = "Error: parameter variable: ";
         errMsg += params[0];
         errMsg += " does not exist";

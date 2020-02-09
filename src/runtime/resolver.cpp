@@ -25,20 +25,20 @@ int Resolver::determineType(std::string param)
     return Command::Type::INT;
 }
 
-std::pair<std::string, int> Resolver::resolveParam(std::string param, const std::map<std::string, std::pair<std::string, int>> * globalDataPool)
+std::pair<std::string, int> Resolver::resolveParam(std::string param, const std::map<std::string, std::pair<std::string, int>> & globalDataPool)
 {
     std::string identifier = param.substr(1, std::string::npos);
     std::map<std::string, std::pair<std::string, int>>::const_iterator it;
-    it = globalDataPool->find(identifier);
+    it = globalDataPool.find(identifier);
     std::pair<std::string, int> data("Null", Command::Type::UNKNOWN);
-    if(it != globalDataPool->end()){
+    if(it != globalDataPool.end()){
         data.first = it->second.first; //value
         data.second = it->second.second; //type
     }
     return data;
 }
 
-std::pair<std::string, int> Resolver::getData(std::string param, const std::map<std::string, std::pair<std::string, int>> * globalDataPool)
+std::pair<std::string, int> Resolver::getData(std::string param, const std::map<std::string, std::pair<std::string, int>> & globalDataPool)
 {
     std::pair<std::string, int> p;
     if(param[0] == '@'){
@@ -51,12 +51,12 @@ std::pair<std::string, int> Resolver::getData(std::string param, const std::map<
     return p;
 }
 
-std::string Resolver::resolve(std::string paramStr,  const std::map<std::string, std::pair<std::string, int>> * globalDataPool)
+std::string Resolver::resolve(std::string paramStr,  const std::map<std::string, std::pair<std::string, int>> & globalDataPool)
 {
     return calculator.calculate(parseParam(paramStr, globalDataPool));
 }
 
-void Resolver::setData(std::vector<std::pair<std::string, int>> & parsedParam, const std::map<std::string, std::pair<std::string, int>> * globalDataPool, std::string strVal)
+void Resolver::setData(std::vector<std::pair<std::string, int>> & parsedParam, const std::map<std::string, std::pair<std::string, int>> & globalDataPool, std::string strVal)
 {
     std::pair<std::string, int> varData;
     varData = getData(strVal, globalDataPool);
@@ -76,7 +76,7 @@ void Resolver::addChar(std::string & currentParam, char paramChar)
 /**
     REFACTOR !!
 */
-std::vector<std::pair<std::string, int>> Resolver::parseParam(std::string param, const std::map<std::string, std::pair<std::string, int>> * globalDataPool)
+std::vector<std::pair<std::string, int>> Resolver::parseParam(std::string param, const std::map<std::string, std::pair<std::string, int>> & globalDataPool)
 {
     std::vector<std::pair<std::string, int>> parsedParam;
     std::string currentStrVal;

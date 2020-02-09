@@ -3,7 +3,7 @@
 #include <iostream>
 
 #include "../../include/commands/assign.h"
-
+#include "../../include/runtime/environment.h"
 
 Assign::Assign(std::vector<std::string> params):
     Command(params)
@@ -11,13 +11,17 @@ Assign::Assign(std::vector<std::string> params):
 
 }
 
-void Assign::execute(Resolver & resolver, Searcher & searcher, std::map<std::string, std::pair<std::string, int>> * globalDataPool, std::stack<int> &, std::vector<std::unique_ptr<Command>> &, int *)
+void Assign::execute(Environment & environment, std::vector<std::unique_ptr<Command>> &, int *)
 {
+    std::stack<int> & callStack = environment.getCallStack();
+    std::map<std::string, std::pair<std::string, int>> & globalDataPool = environment.getGlobalDataPool();
+    Resolver & resolver = environment.getResolver();
+    Searcher & searcher = environment.getSearcher();
     std::string identifier = params[0];
     std::string value = resolver.resolve(params[1], globalDataPool);
     std::map<std::string, std::pair<std::string, int>>::iterator it;
-    it = globalDataPool->find(identifier);
-    if(it == globalDataPool->end()){
+    it = globalDataPool.find(identifier);
+    if(it == globalDataPool.end()){
         //TODO WILL NEED TO CHECK FOR PARAM CORRECTNESS HERE IN THE FUTURE
         // for now just insert
         /** will have to update to add support for floats/decimals
@@ -28,7 +32,7 @@ void Assign::execute(Resolver & resolver, Searcher & searcher, std::map<std::str
             type = Type::STRING;
         }
         std::pair<std::string, int> val(value, type);
-        globalDataPool->insert(std::pair<std::string, std::pair<std::string, int>>(identifier, val));
+        globalDataPool.insert(std::pair<std::string, std::pair<std::string, int>>(identifier, val));
     }else{
         it->second.first = value;
     }

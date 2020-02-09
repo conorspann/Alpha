@@ -4,7 +4,7 @@
 #include <iostream>
 
 #include "../../include/commands/console_out.h"
-
+#include "../../include/runtime/environment.h"
 
 ConsoleOut::ConsoleOut(std::vector<std::string> params):
     Command(params)
@@ -12,8 +12,12 @@ ConsoleOut::ConsoleOut(std::vector<std::string> params):
 
 }
 
-void ConsoleOut::execute(Resolver & resolver, Searcher & searcher, std::map<std::string, std::pair<std::string, int>> * globalDataPool, std::stack<int> &,  std::vector<std::unique_ptr<Command>> &, int *)
+void ConsoleOut::execute(Environment & environment, std::vector<std::unique_ptr<Command>> &, int *)
 {
+    std::stack<int> & callStack = environment.getCallStack();
+    std::map<std::string, std::pair<std::string, int>> & globalDataPool = environment.getGlobalDataPool();
+    Resolver & resolver = environment.getResolver();
+    Searcher & searcher = environment.getSearcher();
     std::string output = resolver.resolve(params[0], globalDataPool);
     /** remove " s ? */
     std::cout << output << std::endl; /** ????? int val? */

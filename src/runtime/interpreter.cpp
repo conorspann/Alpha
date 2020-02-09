@@ -7,7 +7,7 @@
 #include <map>
 
 #include "../../include/runtime/interpreter.h"
-
+#include "../../include/runtime/environment.h"
 
 Interpreter::Interpreter(std::vector<std::unique_ptr<Command>> cmds):
     commands(std::move(cmds))
@@ -17,12 +17,8 @@ Interpreter::Interpreter(std::vector<std::unique_ptr<Command>> cmds):
 
 void Interpreter::execute()
 {
-    /** Could group these objects together in an Environment class, as well as the global data pool*/
-    std::stack<int> callStack;
-    Resolver resolver;
-    Searcher searcher;
-
+    Environment environment;
     for(int cmdPtr = 0; cmdPtr < commands.size(); cmdPtr++){
-        commands[cmdPtr]->execute(resolver, searcher, &globalDataPool, callStack, commands, &cmdPtr);
+        commands[cmdPtr]->execute(environment, commands, &cmdPtr);
     }
 }

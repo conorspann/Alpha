@@ -5,7 +5,6 @@
 
 #include "../../include/commands/command.h"
 
-
 Command::Command(std::vector<std::string> p):
     params(p)
 {

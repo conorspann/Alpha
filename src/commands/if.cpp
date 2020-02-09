@@ -3,7 +3,7 @@
 #include <iostream>
 
 #include "../../include/commands/if.h"
-
+#include "../../include/runtime/environment.h"
 
 If::If(std::vector<std::string> p):
     Command(p)
@@ -11,8 +11,12 @@ If::If(std::vector<std::string> p):
 
 }
 
-void If::execute(Resolver & resolver, Searcher & searcher, std::map<std::string, std::pair<std::string, int>> * globalDataPool, std::stack<int> &, std::vector<std::unique_ptr<Command>> & cmds, int * cmdPtr)
+void If::execute(Environment & environment, std::vector<std::unique_ptr<Command>> & cmds, int * cmdPtr)
 {
+    std::stack<int> & callStack = environment.getCallStack();
+    std::map<std::string, std::pair<std::string, int>> & globalDataPool = environment.getGlobalDataPool();
+    Resolver & resolver = environment.getResolver();
+    Searcher & searcher = environment.getSearcher();
     std::string val = resolver.resolve(params[0], globalDataPool);
     if(val.find_first_not_of("0123456789-") != std::string::npos){
         std::string errMsg = "Cannot resolve string: ";

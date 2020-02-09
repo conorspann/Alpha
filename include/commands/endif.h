@@ -7,7 +7,7 @@
 class EndIf: public Command{
 public:
     EndIf(std::vector<std::string> p);
-    void execute(Resolver &, Searcher &, std::map<std::string, std::pair<std::string, int>> * , std::stack<int> &, std::vector<std::unique_ptr<Command>> &, int *);
+    void execute(Environment &, std::vector<std::unique_ptr<Command>> &, int *);
     int getNumParams();
     std::string getName();
 };

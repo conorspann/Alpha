@@ -18,7 +18,6 @@ public:
     void execute();
 private:
     std::vector<std::unique_ptr<Command>> commands;
-    std::map<std::string, std::pair<std::string, int>> globalDataPool;
 };
 
 #endif // INTERPRETER_H

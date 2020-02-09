@@ -6,7 +6,7 @@
 #include <iostream>
 
 #include "../../include/commands/memory_dump.h"
-
+#include "../../include/runtime/environment.h"
 
 MemoryDump::MemoryDump(std::vector<std::string> params):
     Command(params)
@@ -14,11 +14,15 @@ MemoryDump::MemoryDump(std::vector<std::string> params):
 
 }
 
-void MemoryDump::execute(Resolver & resolver, Searcher & searcher, std::map<std::string, std::pair<std::string, int>> * globalDataPool, std::stack<int> &,  std::vector<std::unique_ptr<Command>> &, int *)
+void MemoryDump::execute(Environment & environment, std::vector<std::unique_ptr<Command>> &, int *)
 {
+    std::stack<int> & callStack = environment.getCallStack();
+    std::map<std::string, std::pair<std::string, int>> & globalDataPool = environment.getGlobalDataPool();
+    Resolver & resolver = environment.getResolver();
+    Searcher & searcher = environment.getSearcher();
     std::map<std::string, std::pair<std::string, int>>::iterator it;
     //std::map<std::string, std::string> vars = & globalDataPool;
-    for(it = globalDataPool->begin(); it != globalDataPool->end(); it++){
+    for(it = globalDataPool.begin(); it != globalDataPool.end(); it++){
         std::cout << it->first << " : " << it->second.first;
         switch(it->second.second){
         case Type::STRING:

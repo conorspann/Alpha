@@ -54,6 +54,7 @@
 		<Unit filename="include/init/preprocessor.h" />
 		<Unit filename="include/runtime/calculator.h" />
 		<Unit filename="include/runtime/command_data.h" />
+		<Unit filename="include/runtime/environment.h" />
 		<Unit filename="include/runtime/interpreter.h" />
 		<Unit filename="include/runtime/resolver.h" />
 		<Unit filename="include/runtime/searcher.h" />
@@ -87,6 +88,7 @@
 		</Unit>
 		<Unit filename="src/runtime/calculator.cpp" />
 		<Unit filename="src/runtime/command_data.cpp" />
+		<Unit filename="src/runtime/environment.cpp" />
 		<Unit filename="src/runtime/interpreter.cpp" />
 		<Unit filename="src/runtime/resolver.cpp" />
 		<Unit filename="src/runtime/searcher.cpp" />
