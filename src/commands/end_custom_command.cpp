@@ -9,7 +9,7 @@ EndCustomCommand::EndCustomCommand(std::vector<std::string> params):
 
 }
 
-void EndCustomCommand::execute(Environment & environment, std::vector<std::unique_ptr<Command>> &, int * cmdPtr)
+void EndCustomCommand::execute(Environment & environment, int * cmdPtr)
 {
     std::stack<int> & callStack = environment.getCallStack();
     *cmdPtr = callStack.top();

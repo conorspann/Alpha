@@ -4,12 +4,8 @@
 
 #include <string>
 #include <vector>
-#include <map>
-#include <memory>
 
-class Command;
-class Environment;
-#include <stack>
+#include "../runtime/environment.h"
 
 class Command{
 public:
@@ -20,7 +16,7 @@ public:
         UNKNOWN
     };
     Command(std::vector<std::string>);
-    virtual void execute(Environment &, std::vector<std::unique_ptr<Command>> &, int *) =0;
+    virtual void execute(Environment &, int *) =0;
     virtual int getNumParams() =0;
     virtual std::string getName() =0;
     bool hasCorrectNumParams();

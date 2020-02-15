@@ -9,7 +9,7 @@ EndIf::EndIf(std::vector<std::string> p):
 
 }
 
-void EndIf::execute(Environment & environment, std::vector<std::unique_ptr<Command>> &, int *)
+void EndIf::execute(Environment & environment, int *)
 {
     // do nothing ??
 }

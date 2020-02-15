@@ -8,12 +8,13 @@
 #include "../../include/runtime/searcher.h"
 
 
-Searcher::Searcher()
+Searcher::Searcher(std::vector<std::string> labels):
+    labels(labels)
 {
 
 }
 
-int Searcher::findLabel(std::string startLabel, std::string endLabel, int direction, bool jumpPast, std::vector<std::unique_ptr<Command>> & cmds, int * cmdPtr)
+int Searcher::findLabel(std::string startLabel, std::string endLabel, int direction, int * cmdPtr)
 {
     int nestedLevel = 0;
     if(direction > 0 ){
@@ -21,11 +22,11 @@ int Searcher::findLabel(std::string startLabel, std::string endLabel, int direct
     }else{
         direction = -1;
     }
-    for(int i = (*cmdPtr) + direction; i < cmds.size(); i += direction){
-        if(cmds[i]->getName() == startLabel){
+    for(int i = (*cmdPtr) + direction; i < labels.size(); i += direction){
+        if(labels[i] == startLabel){
             nestedLevel++;
         }
-        if(cmds[i]->getName() == endLabel){
+        if(labels[i] == endLabel){
             if(nestedLevel == 0){
                 if(direction == -1){
                     return i - 1;

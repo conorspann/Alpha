@@ -9,7 +9,7 @@
 class While: public Command{
 public:
     While(std::vector<std::string> p);
-    void execute(Environment &, std::vector<std::unique_ptr<Command>> &, int *);
+    void execute(Environment &, int *);
     int getNumParams();
     std::string getName();
 };

@@ -11,7 +11,7 @@ CallCommand::CallCommand(std::vector<std::string> params):
 
 }
 
-void CallCommand::execute(Environment & environment, std::vector<std::unique_ptr<Command>> &, int * cmdPtr)
+void CallCommand::execute(Environment & environment, int * cmdPtr)
 {
     std::stack<int> & callStack = environment.getCallStack();
     callStack.push(*cmdPtr);

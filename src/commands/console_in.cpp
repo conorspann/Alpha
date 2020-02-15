@@ -13,7 +13,7 @@ ConsoleIn::ConsoleIn(std::vector<std::string> p):
 }
 
 
-void ConsoleIn::execute(Environment & environment, std::vector<std::unique_ptr<Command>> &, int *)
+void ConsoleIn::execute(Environment & environment, int *)
 {
     std::map<std::string, std::pair<std::string, int>> & globalDataPool = environment.getGlobalDataPool();
     std::map<std::string, std::pair<std::string, int>>::iterator it;

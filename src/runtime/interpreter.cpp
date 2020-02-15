@@ -17,8 +17,13 @@ Interpreter::Interpreter(std::vector<std::unique_ptr<Command>> cmds):
 
 void Interpreter::execute()
 {
-    Environment environment;
+    std::vector<std::string> labels;
+    for(int lineNumber = 0; lineNumber < commands.size(); lineNumber++){
+        std::string label = commands[lineNumber]->getName();
+        labels.push_back(label);
+    }
+    Environment environment(labels);
     for(int cmdPtr = 0; cmdPtr < commands.size(); cmdPtr++){
-        commands[cmdPtr]->execute(environment, commands, &cmdPtr);
+        commands[cmdPtr]->execute(environment, &cmdPtr);
     }
 }

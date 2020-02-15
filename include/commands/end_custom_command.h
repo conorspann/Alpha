@@ -10,7 +10,7 @@
 class EndCustomCommand: public Command{
 public:
     EndCustomCommand(std::vector<std::string>);
-    void execute(Environment &, std::vector<std::unique_ptr<Command>> &, int *);
+    void execute(Environment &, int *);
     int getNumParams();
     std::string getName();
 };

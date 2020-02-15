@@ -15,7 +15,7 @@
 
 class Environment{
 public:
-    Environment();
+    Environment(std::vector<std::string> labels);
 
     /** may make this as an interface for the commands to interact
         with the members

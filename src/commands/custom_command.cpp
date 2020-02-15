@@ -9,10 +9,10 @@ CustomCommand::CustomCommand(std::vector<std::string> params):
 
 }
 
-void CustomCommand::execute(Environment & environment, std::vector<std::unique_ptr<Command>> & cmds, int * cmdPtr)
+void CustomCommand::execute(Environment & environment, int * cmdPtr)
 {
     Searcher & searcher = environment.getSearcher();
-    *cmdPtr = searcher.findLabel("CustomCommand", "EndCustomCommand", 1, true, cmds, cmdPtr);
+    *cmdPtr = searcher.findLabel("CustomCommand", "EndCustomCommand", 1, cmdPtr);
 }
 
 int CustomCommand::getNumParams()

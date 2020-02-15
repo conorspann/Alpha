@@ -6,8 +6,6 @@
 #include <map>
 #include <vector>
 
-class Resolver;
-#include "../commands/command.h"
 #include "calculator.h"
 
 class Resolver{

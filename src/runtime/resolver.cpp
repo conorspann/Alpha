@@ -4,7 +4,7 @@
 #include <iostream>
 
 #include "../../include/runtime/resolver.h"
-
+#include "../../include/commands/command.h"
 
 /** Maybe could use some sort of rule table? Similar rules e.g. for strings in Formatter
     Could then pass between classes, maybe in main or smth

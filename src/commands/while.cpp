@@ -11,7 +11,7 @@ While::While(std::vector<std::string> p):
 
 }
 
-void While::execute(Environment & environment, std::vector<std::unique_ptr<Command>> & cmds, int * cmdPtr)
+void While::execute(Environment & environment, int * cmdPtr)
 {
     std::map<std::string, std::pair<std::string, int>> & globalDataPool = environment.getGlobalDataPool();
     Resolver & resolver = environment.getResolver();
@@ -25,7 +25,7 @@ void While::execute(Environment & environment, std::vector<std::unique_ptr<Comma
     }
     int intVal = std::stoi(val);
     if(intVal < 1){
-        *cmdPtr = searcher.findLabel("While", "EndWhile", 1, false, cmds, cmdPtr);
+        *cmdPtr = searcher.findLabel("While", "EndWhile", 1, cmdPtr);
     }
 }
 

@@ -5,14 +5,13 @@
 #include "command.h"
 #include <string>
 #include <vector>
-#include <memory>
 
 //maybe make the formatter parse assign command params differently
 
 class Assign: public Command{
 public:
     Assign(std::vector<std::string>);
-    void execute(Environment &, std::vector<std::unique_ptr<Command>> &, int *);
+    void execute(Environment &, int *);
     int getNumParams();
     std::string getName();
 };

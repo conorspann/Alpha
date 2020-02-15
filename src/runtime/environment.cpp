@@ -3,7 +3,8 @@
 #include "../../include/runtime/searcher.h"
 #include "../../include/runtime/resolver.h"
 
-Environment::Environment()
+Environment::Environment(std::vector<std::string> labels):
+    searcher(labels)
 {
 
 }

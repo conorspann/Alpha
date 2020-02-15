@@ -14,7 +14,7 @@ MemoryDump::MemoryDump(std::vector<std::string> params):
 
 }
 
-void MemoryDump::execute(Environment & environment, std::vector<std::unique_ptr<Command>> &, int *)
+void MemoryDump::execute(Environment & environment, int *)
 {
     std::map<std::string, std::pair<std::string, int>> & globalDataPool = environment.getGlobalDataPool();
     std::map<std::string, std::pair<std::string, int>>::iterator it;

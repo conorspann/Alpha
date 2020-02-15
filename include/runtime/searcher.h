@@ -2,16 +2,15 @@
 #ifndef SEARCHER_H
 #define SEARCHER_H
 
-
-class Searcher;
-#include "../commands/command.h"
+#include <string>
+#include <vector>
 
 class Searcher{
 public:
-    Searcher();
-    int findLabel(std::string startLabel, std::string endLabel, int, bool,std::vector<std::unique_ptr<Command>> &, int * cmdPtr);
+    Searcher(std::vector<std::string>);
+    int findLabel(std::string startLabel, std::string endLabel, int, int *);
 private:
-    std::vector<std::unique_ptr<Command>> * cmds;
+    std::vector<std::string> labels;
 };
 
 #endif // SEARCHER_H

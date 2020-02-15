@@ -11,7 +11,7 @@ If::If(std::vector<std::string> p):
 
 }
 
-void If::execute(Environment & environment, std::vector<std::unique_ptr<Command>> & cmds, int * cmdPtr)
+void If::execute(Environment & environment, int * cmdPtr)
 {
     std::map<std::string, std::pair<std::string, int>> & globalDataPool = environment.getGlobalDataPool();
     Resolver & resolver = environment.getResolver();
@@ -25,7 +25,7 @@ void If::execute(Environment & environment, std::vector<std::unique_ptr<Command>
     }
     int intVal = std::stoi(val);
     if(intVal < 1){
-        *cmdPtr = searcher.findLabel("If", "EndIf", 1, false, cmds, cmdPtr);
+        *cmdPtr = searcher.findLabel("If", "EndIf", 1, cmdPtr);
     }
 }
 
