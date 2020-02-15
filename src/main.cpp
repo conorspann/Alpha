@@ -5,7 +5,7 @@
 #include <memory>
 #include <utility>
 
-#include "../include/init/loader.h"
+#include "../include/init/file_loader.h"
 #include "../include/formatter/formatter.h"
 #include "../include/init/parser.h"
 #include "../include/init/preprocessor.h"
@@ -27,7 +27,7 @@ int main(int argc, char ** argv)
         */
         PreProcessor preProcessor; /** TODO: implement include files */
 
-        Loader loader;
+        FileLoader loader;
         std::vector<std::string> rawData = loader.load(argv[1]);
 
         Formatter formatter;

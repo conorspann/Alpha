@@ -8,7 +8,7 @@
 
 #include "../../include/catch.h"
 
-#include "../../include/init/loader.h"
+#include "../../include/init/file_loader.h"
 
 std::string testFileName = "testFile.txt";
 std::string lineOne = "first test line";
@@ -27,7 +27,7 @@ void initTestFile()
 TEST_CASE("test loader getLine")
 {
     initTestFile();
-    Loader testLoader(testFileName);
+    FileLoader testLoader(testFileName);
     REQUIRE(testLoader.getLine(0) == lineOne);
     REQUIRE(testLoader.getLine(1) == lineTwo);
     remove(testFileName.c_str());
@@ -36,7 +36,7 @@ TEST_CASE("test loader getLine")
 TEST_CASE("test loader getData")
 {
     initTestFile();
-    Loader testLoader(testFileName);
+    FileLoader testLoader(testFileName);
     std::vector<std::string> testData = {lineOne, lineTwo};
     REQUIRE(testData == testLoader.getData());
     remove(testFileName.c_str());
@@ -45,7 +45,7 @@ TEST_CASE("test loader getData")
 TEST_CASE("test loader getLine incorrectIndex")
 {
     initTestFile();
-    Loader testLoader(testFileName);
+    FileLoader testLoader(testFileName);
     REQUIRE(testLoader.getLine(BAD_INDEX) == "");
     remove(testFileName.c_str());
 }

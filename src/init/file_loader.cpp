@@ -2,16 +2,10 @@
 #include <fstream>
 #include <stdexcept>
 
-#include "../../include/init/loader.h"
+#include "../../include/init/file_loader.h"
 
 
-Loader::Loader()
-{
-
-}
-
-
-std::vector<std::string> Loader::load(std::string filename)
+std::vector<std::string> FileLoader::load(std::string filename)
 {
     std::vector<std::string> data;
     std::ifstream input(filename, std::ios::in);

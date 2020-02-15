@@ -666,13 +666,13 @@
 	"../../include/runtime/calculator.h"
 	"../../include/commands/command.h"
 
-1580574157 source:c:\users\conor\documents\dev\alpha\src\main.cpp
+1581795788 source:c:\users\conor\documents\dev\alpha\src\main.cpp
 	<stdexcept>
 	<iostream>
 	<vector>
 	<memory>
 	<utility>
-	"../include/init/loader.h"
+	"../include/init/file_loader.h"
 	"../include/formatter/formatter.h"
 	"../include/init/parser.h"
 	"../include/init/preprocessor.h"
@@ -1116,4 +1116,13 @@
 	"../../include/runtime/environment.h"
 	"../../include/runtime/searcher.h"
 	"../../include/runtime/resolver.h"
+
+1581795788 source:c:\users\conor\documents\dev\alpha\src\init\file_loader.cpp
+	<fstream>
+	<stdexcept>
+	"../../include/init/file_loader.h"
+
+1581795861 c:\users\conor\documents\dev\alpha\include\init\file_loader.h
+	<string>
+	<vector>
 

@@ -48,7 +48,7 @@
 		<Unit filename="include/formatter/formatter.h" />
 		<Unit filename="include/init/command_extractor.h" />
 		<Unit filename="include/init/extracted_line.h" />
-		<Unit filename="include/init/loader.h" />
+		<Unit filename="include/init/file_loader.h" />
 		<Unit filename="include/init/mapper.h" />
 		<Unit filename="include/init/parser.h" />
 		<Unit filename="include/init/preprocessor.h" />
@@ -73,8 +73,8 @@
 		<Unit filename="src/formatter/formatter.cpp" />
 		<Unit filename="src/init/command_extractor.cpp" />
 		<Unit filename="src/init/extracted_line.cpp" />
-		<Unit filename="src/init/loader.cpp" />
-		<Unit filename="src/init/loader_test.cpp">
+		<Unit filename="src/init/file_loader.cpp" />
+		<Unit filename="src/init/file_loader_test.cpp">
 			<Option target="Debug" />
 		</Unit>
 		<Unit filename="src/init/mapper.cpp" />

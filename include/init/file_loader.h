@@ -1,13 +1,12 @@
 
-#ifndef LOADER_H
-#define LOADER_H
+#ifndef FILE_LOADER_H
+#define FILE_LOADER_H
 
 #include <string>
 #include <vector>
 
-class Loader{
+class FileLoader{
 public:
-    Loader();
     std::vector<std::string> load(std::string);
 };
 
