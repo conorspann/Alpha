@@ -13,10 +13,8 @@ Assign::Assign(std::vector<std::string> params):
 
 void Assign::execute(Environment & environment, std::vector<std::unique_ptr<Command>> &, int *)
 {
-    std::stack<int> & callStack = environment.getCallStack();
     std::map<std::string, std::pair<std::string, int>> & globalDataPool = environment.getGlobalDataPool();
     Resolver & resolver = environment.getResolver();
-    Searcher & searcher = environment.getSearcher();
     std::string identifier = params[0];
     std::string value = resolver.resolve(params[1], globalDataPool);
     std::map<std::string, std::pair<std::string, int>>::iterator it;

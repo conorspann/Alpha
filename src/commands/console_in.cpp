@@ -15,10 +15,7 @@ ConsoleIn::ConsoleIn(std::vector<std::string> p):
 
 void ConsoleIn::execute(Environment & environment, std::vector<std::unique_ptr<Command>> &, int *)
 {
-    std::stack<int> & callStack = environment.getCallStack();
     std::map<std::string, std::pair<std::string, int>> & globalDataPool = environment.getGlobalDataPool();
-    Resolver & resolver = environment.getResolver();
-    Searcher & searcher = environment.getSearcher();
     std::map<std::string, std::pair<std::string, int>>::iterator it;
     it = globalDataPool.find(params[0]);
     if(it == globalDataPool.end()){

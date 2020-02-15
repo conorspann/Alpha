@@ -11,10 +11,6 @@ EndIf::EndIf(std::vector<std::string> p):
 
 void EndIf::execute(Environment & environment, std::vector<std::unique_ptr<Command>> &, int *)
 {
-    std::stack<int> & callStack = environment.getCallStack();
-    std::map<std::string, std::pair<std::string, int>> & globalDataPool = environment.getGlobalDataPool();
-    Resolver & resolver = environment.getResolver();
-    Searcher & searcher = environment.getSearcher();
     // do nothing ??
 }
 
