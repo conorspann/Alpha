@@ -4,16 +4,21 @@ A BASIC-style interpreter written in C++. Currently runs scripts as console appl
 
 ## Usage
 
+```
 alpha <filename>
+```
 
 ## Current Commands
 
 ### Variable assignment
 
+```
 @<varname> = X
+```
 
 ### General
 
+```
 ConsoleOut
 ConsoleIn
 MemoryDump
@@ -23,11 +28,13 @@ While
 EndWhile
 Cmd
 EndCmd
+```
 
 ## Example
 
 ### Script
 
+```
 Cmd loopMe()
 	@foo = 1
 	While(@foo < 10)
@@ -37,9 +44,11 @@ Cmd loopMe()
 EndCmd
 
 loopMe()
+```
 
 ### Output
 
+```
 Alpha Interpreter v 0.1
 1
 2
@@ -50,3 +59,5 @@ Alpha Interpreter v 0.1
 7
 8
 9
+
+```
