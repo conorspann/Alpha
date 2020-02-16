@@ -88,7 +88,9 @@ std::vector<std::pair<std::string, int>> Resolver::parseParam(std::string param,
             isString = !isString;
         }
         if(calculator.isSymbol(paramChar) && !isString){
-            setData(parsedParam, globalDataPool, currentStrVal);
+            if(!currentStrVal.empty()){
+                setData(parsedParam, globalDataPool, currentStrVal);
+            }
             std::string symbolStr(std::string(1, paramChar));
             setData(parsedParam, globalDataPool, symbolStr);
             currentStrVal = "";

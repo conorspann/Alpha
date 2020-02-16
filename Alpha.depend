@@ -508,7 +508,7 @@
 	"console_out.h"
 	<iostream>
 
-1581789277 source:c:\users\conor\documents\dev\alpha\src\commands\assign.cpp
+1581857521 source:c:\users\conor\documents\dev\alpha\src\commands\assign.cpp
 	<iostream>
 	"../../include/commands/assign.h"
 	"../../include/runtime/environment.h"
@@ -706,7 +706,7 @@
 	"../../include/runtime/interpreter.h"
 	"../../include/runtime/environment.h"
 
-1581789703 source:c:\users\conor\documents\dev\alpha\src\runtime\resolver.cpp
+1581857603 source:c:\users\conor\documents\dev\alpha\src\runtime\resolver.cpp
 	<utility>
 	<iostream>
 	"../../include/runtime/resolver.h"
