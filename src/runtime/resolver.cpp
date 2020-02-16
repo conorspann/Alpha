@@ -15,10 +15,13 @@ Resolver::Resolver()
 
 }
 
- /** Update, refactor etc */
+/** TODO: Add more types + refactor */
 int Resolver::determineType(std::string param)
 {
-    if(param.find_first_not_of("0123456789") != std::string::npos){
+    if(param.length() == 1 && calculator.isSymbol(param[0])){
+        return Command::Type::SYMBOL;
+    }
+    if(param.find_first_not_of("0123456789-") != std::string::npos){
         return Command::Type::STRING;
     }
 
@@ -62,6 +65,14 @@ void Resolver::setData(std::vector<std::pair<std::string, int>> & parsedParam, c
     varData = getData(strVal, globalDataPool);
     if(varData.first == "Null" || varData.second == Command::Type::UNKNOWN){
         throw std::runtime_error("Error: Null variable in command.");
+    }
+    if(varData.second != Command::Type::STRING && varData.first.length() > 1){
+        if(varData.first[0] == '-'){
+            varData.first = varData.first.substr(1);
+            std::string minusSymbol = "-";
+            std::pair<std::string, int> symbol(minusSymbol, Command::Type::SYMBOL);
+            parsedParam.push_back(symbol);
+        }
     }
     parsedParam.push_back(varData);
 }

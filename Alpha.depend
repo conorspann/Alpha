@@ -1,514 +1,5 @@
 # depslib dependency file v1.0
-1577794492 source:c:\users\conor\documents\dev\alpha\assign.cpp
-	"assign.h"
-	<iostream>
-
-1577794308 c:\users\conor\documents\dev\alpha\assign.h
-	"command.h"
-	<string>
-	<vector>
-	<memory>
-
-1577803158 c:\users\conor\documents\dev\alpha\command.h
-	<string>
-	<vector>
-	<map>
-	<memory>
-	"resolver.h"
-
-1577794007 source:c:\users\conor\documents\dev\alpha\command.cpp
-	"command.h"
-	<string>
-	<vector>
-
-1577794515 source:c:\users\conor\documents\dev\alpha\console_out.cpp
-	"console_out.h"
-	<string>
-	<vector>
-	<iostream>
-
-1577795071 c:\users\conor\documents\dev\alpha\console_out.h
-	"command.h"
-	<string>
-	<memory>
-
-1574716798 source:c:\users\conor\documents\dev\alpha\formatted_line.cpp
-	"formatted_line.h"
-	<string>
-	<vector>
-
-1573947977 c:\users\conor\documents\dev\alpha\formatted_line.h
-	<string>
-	<vector>
-
-1577800957 source:c:\users\conor\documents\dev\alpha\formatter.cpp
-	"formatter.h"
-	"formatted_line.h"
-	<iostream>
-	<vector>
-	<string>
-
-1574805494 c:\users\conor\documents\dev\alpha\formatter.h
-	<string>
-	<vector>
-	"formatted_line.h"
-
-1577997484 source:c:\users\conor\documents\dev\alpha\loader.cpp
-	<fstream>
-	<stdexcept>
-	"loader.h"
-
-1573725467 c:\users\conor\documents\dev\alpha\loader.h
-	<string>
-	<vector>
-
-1577997871 source:c:\users\conor\documents\dev\alpha\main.cpp
-	"loader.h"
-	"parser.h"
-	"command.h"
-	"interpreter.h"
-	<stdexcept>
-	<iostream>
-	<vector>
-	<memory>
-	<utility>
-
-1577281742 c:\users\conor\documents\dev\alpha\parser.h
-	"formatter.h"
-	<vector>
-	<string>
-	<map>
-	"command.h"
-	"mapper.h"
-	<memory>
-
-1577798229 c:\users\conor\documents\dev\alpha\mapper.h
-	"command.h"
-	<map>
-	<string>
-	<memory>
-
-1577794279 c:\users\conor\documents\dev\alpha\interpreter.h
-	"command.h"
-	"poly_var.h"
-	"resolver.h"
-	<memory>
-	<vector>
-	<utility>
-	<map>
-
-1575922073 c:\users\conor\documents\dev\alpha\poly_var.h
-	<string>
-	<vector>
-
-1577798209 source:c:\users\conor\documents\dev\alpha\mapper.cpp
-	"mapper.h"
-	"command.h"
-	"console_out.h"
-	"console_in.h"
-	"assign.h"
-	"memory_dump.h"
-	"if.h"
-	"endif.h"
-	"while.h"
-	"end_while.h"
-	<exception>
-	<stdexcept>
-	<iostream>
-	<string>
-
-1577794308 c:\users\conor\documents\dev\alpha\memory_dump.h
-	"command.h"
-	<memory>
-
-1577794465 source:c:\users\conor\documents\dev\alpha\memory_dump.cpp
-	"memory_dump.h"
-	<map>
-	<vector>
-	<string>
-	<iostream>
-
-1574004885 source:c:\users\conor\documents\dev\alpha\parser.cpp
-	"parser.h"
-	<iostream>
-	<stdexcept>
-	"console_out.h"
-	<memory>
-	<utility>
-
-1577794673 source:c:\users\conor\documents\dev\alpha\interpreter.cpp
-	"interpreter.h"
-	<vector>
-	<memory>
-	<utility>
-	<iostream>
-	<map>
-
-1577794543 source:c:\users\conor\documents\dev\alpha\if.cpp
-	"if.h"
-	<iostream>
-
-1577794308 c:\users\conor\documents\dev\alpha\if.h
-	"command.h"
-	<memory>
-
-1577794467 source:c:\users\conor\documents\dev\alpha\endif.cpp
-	"endif.h"
-
-1577794308 c:\users\conor\documents\dev\alpha\endif.h
-	"command.h"
-
-1577794467 source:c:\users\conor\documents\dev\alpha\console_in.cpp
-	"console_in.h"
-	<string>
-	<iostream>
-
-1577794308 c:\users\conor\documents\dev\alpha\console_in.h
-	"command.h"
-
-1577794647 source:c:\users\conor\documents\dev\alpha\while.cpp
-	"while.h"
-	<iostream>
-
-1577794299 c:\users\conor\documents\dev\alpha\while.h
-	"command.h"
-	<memory>
-
-1577794528 source:c:\users\conor\documents\dev\alpha\end_while.cpp
-	"end_while.h"
-	<iostream>
-
-1577794308 c:\users\conor\documents\dev\alpha\end_while.h
-	"command.h"
-	<memory>
-
-1577803859 c:\users\conor\documents\dev\alpha\resolver.h
-	<string>
-	<map>
-	<vector>
-	"command.h"
-	"calculator.h"
-
-1577803947 source:c:\users\conor\documents\dev\alpha\resolver.cpp
-	"resolver.h"
-	<utility>
-
-1578834472 c:\users\conor\documents\dev\alpha\calculator.h
-	<string>
-	<vector>
-	<map>
-
-1578744637 source:c:\users\conor\documents\dev\alpha\calculator.cpp
-	<algorithm>
-	<iterator>
-	"calculator.h"
-	"command.h"
-
-1577997861 source:c:\users\conor\documents\dev\alpha\testmain.cpp
-	"catch.h"
-
-1577996531 c:\users\conor\documents\dev\alpha\catch.h
-	<TargetConditionals.h>
-	<ciso646>
-	<iosfwd>
-	<string>
-	<cstdint>
-	<vector>
-	<cstddef>
-	<string>
-	<iosfwd>
-	<cassert>
-	<type_traits>
-	<vector>
-	<cstddef>
-	<type_traits>
-	<string>
-	<iosfwd>
-	<cstddef>
-	<ostream>
-	<vector>
-	<string_view>
-	<utility>
-	<optional>
-	<tuple>
-	<variant>
-	<ctime>
-	<ratio>
-	<chrono>
-	<iosfwd>
-	<string>
-	<chrono>
-	<string>
-	<vector>
-	<cstddef>
-	<string>
-	<cstdint>
-	<string>
-	<string>
-	<memory>
-	<exception>
-	<string>
-	<vector>
-	<type_traits>
-	<string>
-	<iosfwd>
-	<vector>
-	<string>
-	<vector>
-	<functional>
-	<string>
-	<string>
-	<algorithm>
-	<memory>
-	<exception>
-	<memory>
-	<vector>
-	<cassert>
-	<utility>
-	<exception>
-	<memory>
-	<iosfwd>
-	<string>
-	<vector>
-	<memory>
-	<cstdint>
-	<random>
-	<string>
-	<vector>
-	<memory>
-	<string>
-	<string>
-	<vector>
-	<memory>
-	<string>
-	<memory>
-	<vector>
-	<string>
-	<string>
-	<string>
-	<iosfwd>
-	<map>
-	<set>
-	<memory>
-	<algorithm>
-	<algorithm>
-	<cstring>
-	<cfloat>
-	<cstdio>
-	<cassert>
-	<memory>
-	<ostream>
-	<vector>
-	<chrono>
-	<ratio>
-	<atomic>
-	<type_traits>
-	<utility>
-	<cassert>
-	<type_traits>
-	<utility>
-	<memory>
-	<type_traits>
-	<utility>
-	<tuple>
-	<type_traits>
-	<utility>
-	<utility>
-	<type_traits>
-	<algorithm>
-	<algorithm>
-	<functional>
-	<vector>
-	<numeric>
-	<tuple>
-	<cmath>
-	<utility>
-	<cstddef>
-	<algorithm>
-	<iterator>
-	<tuple>
-	<vector>
-	<cmath>
-	<algorithm>
-	<vector>
-	<string>
-	<iterator>
-	<algorithm>
-	<iterator>
-	<vector>
-	<algorithm>
-	<functional>
-	<string>
-	<vector>
-	<cmath>
-	<type_traits>
-	<string>
-	<vector>
-	<memory>
-	<cassert>
-	<random>
-	<future>
-	<cmath>
-	<limits>
-	<signal.h>
-	<AfxWin.h>
-	<windows.h>
-	<signal.h>
-	<string>
-	<optional>
-	<cassert>
-	<ostream>
-	<sstream>
-	<vector>
-	<cctype>
-	<string>
-	<memory>
-	<set>
-	<algorithm>
-	<fstream>
-	<ctime>
-	<cstring>
-	<ostream>
-	<sstream>
-	<unistd.h>
-	<string>
-	<android/log.h>
-	<assert.h>
-	<stdbool.h>
-	<sys/types.h>
-	<unistd.h>
-	<cstddef>
-	<ostream>
-	<sys/sysctl.h>
-	<fstream>
-	<string>
-	<stdexcept>
-	<vector>
-	<memory>
-	<map>
-	<cassert>
-	<cerrno>
-	<vector>
-	<string>
-	<memory>
-	<limits>
-	<set>
-	<crtdbg.h>
-	<set>
-	<limits>
-	<algorithm>
-	<iomanip>
-	<string>
-	<algorithm>
-	<cmath>
-	<cstdlib>
-	<cstdint>
-	<cstring>
-	<sstream>
-	<type_traits>
-	<iomanip>
-	<limits>
-	<regex>
-	<cassert>
-	<stack>
-	<cstdio>
-	<iosfwd>
-	<string>
-	<cstdio>
-	<cstring>
-	<fstream>
-	<sstream>
-	<stdexcept>
-	<io.h>
-	<unistd.h>
-	<cmath>
-	<vector>
-	<set>
-	<algorithm>
-	<ios>
-	<map>
-	<string>
-	<map>
-	<vector>
-	<exception>
-	<cassert>
-	<algorithm>
-	<sstream>
-	<memory>
-	<iosfwd>
-	<cstdlib>
-	<iomanip>
-	<set>
-	<iterator>
-	<vector>
-	<cstdio>
-	<iostream>
-	<fstream>
-	<sstream>
-	<vector>
-	<memory>
-	<algorithm>
-	<ostream>
-	<cstring>
-	<cctype>
-	<vector>
-	<algorithm>
-	<ostream>
-	<cstring>
-	<cstdint>
-	<sstream>
-	<cctype>
-	<exception>
-	<algorithm>
-	<sstream>
-	<sstream>
-	<algorithm>
-	<cassert>
-	<stdexcept>
-	<memory>
-	<sstream>
-	<algorithm>
-	<string>
-	<vector>
-	<memory>
-	<chrono>
-	<cmath>
-	<iomanip>
-	<cstddef>
-	<exception>
-	<ostream>
-	<iomanip>
-	<type_traits>
-	<cstring>
-	<cfloat>
-	<cstdio>
-	<cassert>
-	<memory>
-	<cfloat>
-	<cstdio>
-	<cassert>
-	<sstream>
-	<ctime>
-	<algorithm>
-	<cassert>
-
-1578000298 source:c:\users\conor\documents\dev\alpha\loader_test.cpp
-	"catch.h"
-	"loader.h"
-	<iostream>
-	<fstream>
-	<string>
-	<vector>
-	<cstdio>
-
-1578746010 source:c:\users\conor\documents\dev\alpha\parser_test.cpp
-	"catch.h"
-	"parser.h"
-	"command.h"
-	"console_out.h"
-	<iostream>
-
-1581857521 source:c:\users\conor\documents\dev\alpha\src\commands\assign.cpp
+1581861175 source:c:\users\conor\documents\dev\alpha\src\commands\assign.cpp
 	<iostream>
 	"../../include/commands/assign.h"
 	"../../include/runtime/environment.h"
@@ -523,7 +14,12 @@
 	<vector>
 	"../runtime/environment.h"
 
-1581789646 c:\users\conor\documents\dev\alpha\include\runtime\resolver.h
+1581789277 c:\users\conor\documents\dev\alpha\include\runtime\environment.h
+	<stack>
+	"resolver.h"
+	"searcher.h"
+
+1581861005 c:\users\conor\documents\dev\alpha\include\runtime\resolver.h
 	<string>
 	<map>
 	<vector>
@@ -533,6 +29,20 @@
 	<string>
 	<vector>
 	<map>
+
+1581789737 c:\users\conor\documents\dev\alpha\include\runtime\searcher.h
+	<string>
+	<vector>
+
+1581789277 source:c:\users\conor\documents\dev\alpha\src\commands\call_command.cpp
+	<iostream>
+	"../../include/commands/call_command.h"
+	"../../include/runtime/environment.h"
+
+1581789478 c:\users\conor\documents\dev\alpha\include\commands\call_command.h
+	"command.h"
+	<string>
+	<vector>
 
 1581271139 source:c:\users\conor\documents\dev\alpha\src\commands\command.cpp
 	<string>
@@ -560,20 +70,29 @@
 	<string>
 	<memory>
 
+1581789277 source:c:\users\conor\documents\dev\alpha\src\commands\custom_command.cpp
+	"../../include/commands/custom_command.h"
+	"../../include/runtime/environment.h"
+
+1581789277 c:\users\conor\documents\dev\alpha\include\commands\custom_command.h
+	<string>
+	<vector>
+	"command.h"
+
+1581789277 source:c:\users\conor\documents\dev\alpha\src\commands\end_custom_command.cpp
+	"../../include/commands/end_custom_command.h"
+	"../../include/runtime/environment.h"
+
+1581789277 c:\users\conor\documents\dev\alpha\include\commands\end_custom_command.h
+	<string>
+	<vector>
+	"command.h"
+
 1581789803 source:c:\users\conor\documents\dev\alpha\src\commands\end_while.cpp
 	"../../include/commands/end_while.h"
 	"../../include/runtime/environment.h"
 
 1581789277 c:\users\conor\documents\dev\alpha\include\commands\end_while.h
-	"command.h"
-	<memory>
-
-1581789277 source:c:\users\conor\documents\dev\alpha\src\commands\if.cpp
-	<iostream>
-	"../../include/commands/if.h"
-	"../../include/runtime/environment.h"
-
-1581789277 c:\users\conor\documents\dev\alpha\include\commands\if.h
 	"command.h"
 	<memory>
 
@@ -584,12 +103,12 @@
 1581789277 c:\users\conor\documents\dev\alpha\include\commands\endif.h
 	"command.h"
 
-1581789277 source:c:\users\conor\documents\dev\alpha\src\commands\while.cpp
+1581789277 source:c:\users\conor\documents\dev\alpha\src\commands\if.cpp
 	<iostream>
-	"../../include/commands/while.h"
+	"../../include/commands/if.h"
 	"../../include/runtime/environment.h"
 
-1581789277 c:\users\conor\documents\dev\alpha\include\commands\while.h
+1581789277 c:\users\conor\documents\dev\alpha\include\commands\if.h
 	"command.h"
 	<memory>
 
@@ -605,14 +124,14 @@
 	"command.h"
 	<memory>
 
-1578939738 source:c:\users\conor\documents\dev\alpha\src\formatter\formatted_line.cpp
-	"../../include/formatter/formatted_line.h"
-	<string>
-	<vector>
+1581789277 source:c:\users\conor\documents\dev\alpha\src\commands\while.cpp
+	<iostream>
+	"../../include/commands/while.h"
+	"../../include/runtime/environment.h"
 
-1573947977 c:\users\conor\documents\dev\alpha\include\formatter\formatted_line.h
-	<string>
-	<vector>
+1581789277 c:\users\conor\documents\dev\alpha\include\commands\while.h
+	"command.h"
+	<memory>
 
 1580574314 source:c:\users\conor\documents\dev\alpha\src\formatter\formatter.cpp
 	<iostream>
@@ -622,6 +141,44 @@
 	"../../include/formatter/formatted_data.h"
 
 1579974091 c:\users\conor\documents\dev\alpha\include\formatter\formatter.h
+	<string>
+	<vector>
+
+1579806410 c:\users\conor\documents\dev\alpha\include\formatter\formatted_data.h
+
+1580574176 source:c:\users\conor\documents\dev\alpha\src\init\command_extractor.cpp
+	<iostream>
+	<vector>
+	<string>
+	"../../include/init/command_extractor.h"
+	"../../include/init/extracted_line.h"
+	"../../include/formatter/formatter.h"
+
+1580565056 c:\users\conor\documents\dev\alpha\include\init\command_extractor.h
+	<string>
+	<vector>
+	"../init/extracted_line.h"
+	"../runtime/command_data.h"
+
+1579371462 c:\users\conor\documents\dev\alpha\include\init\extracted_line.h
+	<string>
+	<vector>
+
+1579635561 c:\users\conor\documents\dev\alpha\include\runtime\command_data.h
+	<string>
+	<vector>
+
+1580574186 source:c:\users\conor\documents\dev\alpha\src\init\extracted_line.cpp
+	<string>
+	<vector>
+	"../../include/init/extracted_line.h"
+
+1581795788 source:c:\users\conor\documents\dev\alpha\src\init\file_loader.cpp
+	<fstream>
+	<stdexcept>
+	"../../include/init/file_loader.h"
+
+1581795861 c:\users\conor\documents\dev\alpha\include\init\file_loader.h
 	<string>
 	<vector>
 
@@ -651,20 +208,33 @@
 	<string>
 	<memory>
 
-1580574199 source:c:\users\conor\documents\dev\alpha\src\init\loader.cpp
-	<fstream>
+1580565092 source:c:\users\conor\documents\dev\alpha\src\init\parser.cpp
+	<iostream>
 	<stdexcept>
-	"../../include/init/loader.h"
+	<memory>
+	<utility>
+	"../../include/init/parser.h"
+	"../../include/commands/console_out.h"
 
-1580554709 c:\users\conor\documents\dev\alpha\include\init\loader.h
-	<string>
+1580565081 c:\users\conor\documents\dev\alpha\include\init\parser.h
+	"extracted_line.h"
+	"command_extractor.h"
+	"../commands/command.h"
 	<vector>
+	<string>
+	<map>
+	"mapper.h"
+	<memory>
 
-1579030381 source:c:\users\conor\documents\dev\alpha\src\runtime\calculator.cpp
-	<algorithm>
-	<iterator>
-	"../../include/runtime/calculator.h"
-	"../../include/commands/command.h"
+1580574300 source:c:\users\conor\documents\dev\alpha\src\init\preprocessor.cpp
+	<stdexcept>
+	"../../include/init/preprocessor.h"
+	"../../include/formatter/formatter.h"
+
+1580565047 c:\users\conor\documents\dev\alpha\include\init\preprocessor.h
+	<vector>
+	<string>
+	"../runtime/command_data.h"
 
 1581795788 source:c:\users\conor\documents\dev\alpha\src\main.cpp
 	<stdexcept>
@@ -678,16 +248,6 @@
 	"../include/init/preprocessor.h"
 	"../include/runtime/interpreter.h"
 
-1580565081 c:\users\conor\documents\dev\alpha\include\init\parser.h
-	"extracted_line.h"
-	"command_extractor.h"
-	"../commands/command.h"
-	<vector>
-	<string>
-	<map>
-	"mapper.h"
-	<memory>
-
 1581181010 c:\users\conor\documents\dev\alpha\include\runtime\interpreter.h
 	"../commands/command.h"
 	"resolver.h"
@@ -696,6 +256,22 @@
 	<vector>
 	<utility>
 	<map>
+
+1579030381 source:c:\users\conor\documents\dev\alpha\src\runtime\calculator.cpp
+	<algorithm>
+	<iterator>
+	"../../include/runtime/calculator.h"
+	"../../include/commands/command.h"
+
+1580574333 source:c:\users\conor\documents\dev\alpha\src\runtime\command_data.cpp
+	<string>
+	<vector>
+	"../../include/runtime/command_data.h"
+
+1581789277 source:c:\users\conor\documents\dev\alpha\src\runtime\environment.cpp
+	"../../include/runtime/environment.h"
+	"../../include/runtime/searcher.h"
+	"../../include/runtime/resolver.h"
 
 1581789334 source:c:\users\conor\documents\dev\alpha\src\runtime\interpreter.cpp
 	<vector>
@@ -706,327 +282,11 @@
 	"../../include/runtime/interpreter.h"
 	"../../include/runtime/environment.h"
 
-1581857603 source:c:\users\conor\documents\dev\alpha\src\runtime\resolver.cpp
+1581861365 source:c:\users\conor\documents\dev\alpha\src\runtime\resolver.cpp
 	<utility>
 	<iostream>
 	"../../include/runtime/resolver.h"
 	"../../include/commands/command.h"
-
-1580565092 source:c:\users\conor\documents\dev\alpha\src\init\parser.cpp
-	<iostream>
-	<stdexcept>
-	<memory>
-	<utility>
-	"../../include/init/parser.h"
-	"../../include/commands/console_out.h"
-
-1578940300 source:c:\users\conor\documents\dev\alpha\src\init\loader_test.cpp
-	"../../include/catch.h"
-	"../../include/init/loader.h"
-	<iostream>
-	<fstream>
-	<string>
-	<vector>
-	<cstdio>
-
-1577996531 c:\users\conor\documents\dev\alpha\include\catch.h
-	<TargetConditionals.h>
-	<ciso646>
-	<iosfwd>
-	<string>
-	<cstdint>
-	<vector>
-	<cstddef>
-	<string>
-	<iosfwd>
-	<cassert>
-	<type_traits>
-	<vector>
-	<cstddef>
-	<type_traits>
-	<string>
-	<iosfwd>
-	<cstddef>
-	<ostream>
-	<vector>
-	<string_view>
-	<utility>
-	<optional>
-	<tuple>
-	<variant>
-	<ctime>
-	<ratio>
-	<chrono>
-	<iosfwd>
-	<string>
-	<chrono>
-	<string>
-	<vector>
-	<cstddef>
-	<string>
-	<cstdint>
-	<string>
-	<string>
-	<memory>
-	<exception>
-	<string>
-	<vector>
-	<type_traits>
-	<string>
-	<iosfwd>
-	<vector>
-	<string>
-	<vector>
-	<functional>
-	<string>
-	<string>
-	<algorithm>
-	<memory>
-	<exception>
-	<memory>
-	<vector>
-	<cassert>
-	<utility>
-	<exception>
-	<memory>
-	<iosfwd>
-	<string>
-	<vector>
-	<memory>
-	<cstdint>
-	<random>
-	<string>
-	<vector>
-	<memory>
-	<string>
-	<string>
-	<vector>
-	<memory>
-	<string>
-	<memory>
-	<vector>
-	<string>
-	<string>
-	<string>
-	<iosfwd>
-	<map>
-	<set>
-	<memory>
-	<algorithm>
-	<algorithm>
-	<cstring>
-	<cfloat>
-	<cstdio>
-	<cassert>
-	<memory>
-	<ostream>
-	<vector>
-	<chrono>
-	<ratio>
-	<atomic>
-	<type_traits>
-	<utility>
-	<cassert>
-	<type_traits>
-	<utility>
-	<memory>
-	<type_traits>
-	<utility>
-	<tuple>
-	<type_traits>
-	<utility>
-	<utility>
-	<type_traits>
-	<algorithm>
-	<algorithm>
-	<functional>
-	<vector>
-	<numeric>
-	<tuple>
-	<cmath>
-	<utility>
-	<cstddef>
-	<algorithm>
-	<iterator>
-	<tuple>
-	<vector>
-	<cmath>
-	<algorithm>
-	<vector>
-	<string>
-	<iterator>
-	<algorithm>
-	<iterator>
-	<vector>
-	<algorithm>
-	<functional>
-	<string>
-	<vector>
-	<cmath>
-	<type_traits>
-	<string>
-	<vector>
-	<memory>
-	<cassert>
-	<random>
-	<future>
-	<cmath>
-	<limits>
-	<signal.h>
-	<AfxWin.h>
-	<windows.h>
-	<signal.h>
-	<string>
-	<optional>
-	<cassert>
-	<ostream>
-	<sstream>
-	<vector>
-	<cctype>
-	<string>
-	<memory>
-	<set>
-	<algorithm>
-	<fstream>
-	<ctime>
-	<cstring>
-	<ostream>
-	<sstream>
-	<unistd.h>
-	<string>
-	<android/log.h>
-	<assert.h>
-	<stdbool.h>
-	<sys/types.h>
-	<unistd.h>
-	<cstddef>
-	<ostream>
-	<sys/sysctl.h>
-	<fstream>
-	<string>
-	<stdexcept>
-	<vector>
-	<memory>
-	<map>
-	<cassert>
-	<cerrno>
-	<vector>
-	<string>
-	<memory>
-	<limits>
-	<set>
-	<crtdbg.h>
-	<set>
-	<limits>
-	<algorithm>
-	<iomanip>
-	<string>
-	<algorithm>
-	<cmath>
-	<cstdlib>
-	<cstdint>
-	<cstring>
-	<sstream>
-	<type_traits>
-	<iomanip>
-	<limits>
-	<regex>
-	<cassert>
-	<stack>
-	<cstdio>
-	<iosfwd>
-	<string>
-	<cstdio>
-	<cstring>
-	<fstream>
-	<sstream>
-	<stdexcept>
-	<io.h>
-	<unistd.h>
-	<cmath>
-	<vector>
-	<set>
-	<algorithm>
-	<ios>
-	<map>
-	<string>
-	<map>
-	<vector>
-	<exception>
-	<cassert>
-	<algorithm>
-	<sstream>
-	<memory>
-	<iosfwd>
-	<cstdlib>
-	<iomanip>
-	<set>
-	<iterator>
-	<vector>
-	<cstdio>
-	<iostream>
-	<fstream>
-	<sstream>
-	<vector>
-	<memory>
-	<algorithm>
-	<ostream>
-	<cstring>
-	<cctype>
-	<vector>
-	<algorithm>
-	<ostream>
-	<cstring>
-	<cstdint>
-	<sstream>
-	<cctype>
-	<exception>
-	<algorithm>
-	<sstream>
-	<sstream>
-	<algorithm>
-	<cassert>
-	<stdexcept>
-	<memory>
-	<sstream>
-	<algorithm>
-	<string>
-	<vector>
-	<memory>
-	<chrono>
-	<cmath>
-	<iomanip>
-	<cstddef>
-	<exception>
-	<ostream>
-	<iomanip>
-	<type_traits>
-	<cstring>
-	<cfloat>
-	<cstdio>
-	<cassert>
-	<memory>
-	<cfloat>
-	<cstdio>
-	<cassert>
-	<sstream>
-	<ctime>
-	<algorithm>
-	<cassert>
-
-1578940308 source:c:\users\conor\documents\dev\alpha\src\testmain.cpp
-	"../include/catch.h"
-
-1578940353 source:c:\users\conor\documents\dev\alpha\src\init\parser_test.cpp
-	"../../include/catch.h"
-	"../../include/init/parser.h"
-	"../../include/commands/command.h"
-	"../../include/commands/console_out.h"
-	<iostream>
-
-1581789737 c:\users\conor\documents\dev\alpha\include\runtime\searcher.h
-	<string>
-	<vector>
 
 1581789277 source:c:\users\conor\documents\dev\alpha\src\runtime\searcher.cpp
 	<string>
@@ -1034,95 +294,4 @@
 	<memory>
 	<stdexcept>
 	"../../include/runtime/searcher.h"
-
-1579371462 c:\users\conor\documents\dev\alpha\include\init\extracted_line.h
-	<string>
-	<vector>
-
-1580565056 c:\users\conor\documents\dev\alpha\include\init\command_extractor.h
-	<string>
-	<vector>
-	"../init/extracted_line.h"
-	"../runtime/command_data.h"
-
-1580574176 source:c:\users\conor\documents\dev\alpha\src\init\command_extractor.cpp
-	<iostream>
-	<vector>
-	<string>
-	"../../include/init/command_extractor.h"
-	"../../include/init/extracted_line.h"
-	"../../include/formatter/formatter.h"
-
-1580574186 source:c:\users\conor\documents\dev\alpha\src\init\extracted_line.cpp
-	<string>
-	<vector>
-	"../../include/init/extracted_line.h"
-
-1581789277 source:c:\users\conor\documents\dev\alpha\src\commands\custom_command.cpp
-	"../../include/commands/custom_command.h"
-	"../../include/runtime/environment.h"
-
-1581789277 c:\users\conor\documents\dev\alpha\include\commands\custom_command.h
-	<string>
-	<vector>
-	"command.h"
-
-1580574300 source:c:\users\conor\documents\dev\alpha\src\init\preprocessor.cpp
-	<stdexcept>
-	"../../include/init/preprocessor.h"
-	"../../include/formatter/formatter.h"
-
-1580565047 c:\users\conor\documents\dev\alpha\include\init\preprocessor.h
-	<vector>
-	<string>
-	"../runtime/command_data.h"
-
-1580574333 source:c:\users\conor\documents\dev\alpha\src\runtime\command_data.cpp
-	<string>
-	<vector>
-	"../../include/runtime/command_data.h"
-
-1579635561 c:\users\conor\documents\dev\alpha\include\runtime\command_data.h
-	<string>
-	<vector>
-
-1579806410 c:\users\conor\documents\dev\alpha\include\formatter\formatted_data.h
-
-1581789277 source:c:\users\conor\documents\dev\alpha\src\commands\call_command.cpp
-	<iostream>
-	"../../include/commands/call_command.h"
-	"../../include/runtime/environment.h"
-
-1581789478 c:\users\conor\documents\dev\alpha\include\commands\call_command.h
-	"command.h"
-	<string>
-	<vector>
-
-1581789277 source:c:\users\conor\documents\dev\alpha\src\commands\end_custom_command.cpp
-	"../../include/commands/end_custom_command.h"
-	"../../include/runtime/environment.h"
-
-1581789277 c:\users\conor\documents\dev\alpha\include\commands\end_custom_command.h
-	<string>
-	<vector>
-	"command.h"
-
-1581789277 c:\users\conor\documents\dev\alpha\include\runtime\environment.h
-	<stack>
-	"resolver.h"
-	"searcher.h"
-
-1581789277 source:c:\users\conor\documents\dev\alpha\src\runtime\environment.cpp
-	"../../include/runtime/environment.h"
-	"../../include/runtime/searcher.h"
-	"../../include/runtime/resolver.h"
-
-1581795788 source:c:\users\conor\documents\dev\alpha\src\init\file_loader.cpp
-	<fstream>
-	<stdexcept>
-	"../../include/init/file_loader.h"
-
-1581795861 c:\users\conor\documents\dev\alpha\include\init\file_loader.h
-	<string>
-	<vector>
 

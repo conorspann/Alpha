@@ -24,11 +24,7 @@ void Assign::execute(Environment & environment, int *)
         // for now just insert
         /** will have to update to add support for floats/decimals
          */
-        int type = Type::INT;
-        if(value.find_first_not_of("0123456789") != std::string::npos){
-            //string ?
-            type = Type::STRING;
-        }
+        int type = resolver.determineType(value);
         std::pair<std::string, int> val(value, type);
         globalDataPool.insert(std::pair<std::string, std::pair<std::string, int>>(identifier, val));
     }else{
