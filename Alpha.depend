@@ -19,7 +19,7 @@
 	"resolver.h"
 	"searcher.h"
 
-1581861005 c:\users\conor\documents\dev\alpha\include\runtime\resolver.h
+1581881555 c:\users\conor\documents\dev\alpha\include\runtime\resolver.h
 	<string>
 	<map>
 	<vector>
@@ -282,7 +282,7 @@
 	"../../include/runtime/interpreter.h"
 	"../../include/runtime/environment.h"
 
-1581861365 source:c:\users\conor\documents\dev\alpha\src\runtime\resolver.cpp
+1581881548 source:c:\users\conor\documents\dev\alpha\src\runtime\resolver.cpp
 	<utility>
 	<iostream>
 	"../../include/runtime/resolver.h"
