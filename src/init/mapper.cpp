@@ -6,6 +6,7 @@
 #include "../../include/init/mapper.h"
 #include "../../include/commands/command.h"
 #include "../../include/commands/console_out.h"
+#include "../../include/commands/console_out_ln.h"
 #include "../../include/commands/console_in.h"
 #include "../../include/commands/assign.h"
 #include "../../include/commands/memory_dump.h"
@@ -33,6 +34,8 @@ std::unique_ptr<Command> Mapper::getNewCommand(std::string line, std::vector<std
         c = std::make_unique<Assign>(params);
     }else if(line == "ConsoleOut"){
         c = std::make_unique<ConsoleOut>(params);
+    }else if(line == "ConsoleOutLn"){
+        c = std::make_unique<ConsoleOutLn>(params);
     }else if(line == "ConsoleIn"){
         c = std::make_unique<ConsoleIn>(params);
     }else if(line == "MemoryDump"){

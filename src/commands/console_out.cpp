@@ -17,8 +17,7 @@ void ConsoleOut::execute(Environment & environment, int *)
     std::map<std::string, std::pair<std::string, int>> & globalDataPool = environment.getGlobalDataPool();
     Resolver & resolver = environment.getResolver();
     std::string output = resolver.resolve(params[0], globalDataPool);
-    /** remove " s ? */
-    std::cout << output << std::endl; /** ????? int val? */
+    std::cout << output;
 }
 
 int ConsoleOut::getNumParams()
