@@ -1,7 +1,11 @@
 
-@foo = -10
 
-While(@foo < 0)
-	ConsoleOut(@foo)
-	@foo = @foo + 1
-EndWhile
+@foo = "hello"
+
+ConsoleOut(@foo + " there ")
+
+ConsoleOutLn("from the same line.")
+
+ConsoleOut("i am on a different line.")
+
+CreateWindow("hi there!", 640, 480)

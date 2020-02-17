@@ -4,6 +4,7 @@
 
 #include <stack>
 
+#include "../gui/window.h"
 #include "resolver.h"
 #include "searcher.h"
 
@@ -17,15 +18,18 @@ class Environment{
 public:
     Environment(std::vector<std::string> labels);
 
-    /** may make this as an interface for the commands to interact
+    /**
+        may make this as an interface for the commands to interact
         with the members
     */
 
+    std::vector<Window> & getWindows();
     Resolver & getResolver();
     Searcher & getSearcher();
     std::stack<int> & getCallStack();
     std::map<std::string, std::pair<std::string, int>> & getGlobalDataPool();
 private:
+    std::vector<Window> windows;
     Resolver resolver;
     Searcher searcher;
     std::stack<int> callStack;

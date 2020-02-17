@@ -14,6 +14,9 @@
 				<Compiler>
 					<Add option="-g" />
 				</Compiler>
+				<Linker>
+					<Add option="feafad" />
+				</Linker>
 			</Target>
 			<Target title="Release">
 				<Option output="bin/Release/Alpha" prefix_auto="1" extension_auto="1" />
@@ -22,22 +25,32 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add directory="C:/Users/Conor/Documents/dev/SDL2-2.0.10/x86_64-w64-mingw32/include/SDL2" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
+					<Add option="-lmingw32 -lSDL2main -lSDL2" />
+					<Add directory="C:/Users/Conor/Documents/dev/SDL2-2.0.10/x86_64-w64-mingw32/lib" />
 				</Linker>
 			</Target>
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
+			<Add directory="C:/Users/Conor/Documents/dev/SDL2-2.0.10/x32bit_mingw/include/SDL2" />
 		</Compiler>
+		<Linker>
+			<Add option="-lmingw32 -lSDL2main -lSDL2" />
+			<Add directory="C:/Users/Conor/Documents/dev/SDL2-2.0.10/x32bit_mingw/lib" />
+		</Linker>
 		<Unit filename="include/catch.h" />
 		<Unit filename="include/commands/assign.h" />
 		<Unit filename="include/commands/call_command.h" />
 		<Unit filename="include/commands/command.h" />
 		<Unit filename="include/commands/console_in.h" />
 		<Unit filename="include/commands/console_out.h" />
+		<Unit filename="include/commands/console_out_ln.h" />
+		<Unit filename="include/commands/create_window.h" />
 		<Unit filename="include/commands/custom_command.h" />
 		<Unit filename="include/commands/end_custom_command.h" />
 		<Unit filename="include/commands/end_while.h" />
@@ -46,6 +59,7 @@
 		<Unit filename="include/commands/memory_dump.h" />
 		<Unit filename="include/commands/while.h" />
 		<Unit filename="include/formatter/formatter.h" />
+		<Unit filename="include/gui/window.h" />
 		<Unit filename="include/init/command_extractor.h" />
 		<Unit filename="include/init/extracted_line.h" />
 		<Unit filename="include/init/file_loader.h" />
@@ -63,6 +77,8 @@
 		<Unit filename="src/commands/command.cpp" />
 		<Unit filename="src/commands/console_in.cpp" />
 		<Unit filename="src/commands/console_out.cpp" />
+		<Unit filename="src/commands/console_out_ln.cpp" />
+		<Unit filename="src/commands/create_window.cpp" />
 		<Unit filename="src/commands/custom_command.cpp" />
 		<Unit filename="src/commands/end_custom_command.cpp" />
 		<Unit filename="src/commands/end_while.cpp" />
@@ -71,6 +87,7 @@
 		<Unit filename="src/commands/memory_dump.cpp" />
 		<Unit filename="src/commands/while.cpp" />
 		<Unit filename="src/formatter/formatter.cpp" />
+		<Unit filename="src/gui/window.cpp" />
 		<Unit filename="src/init/command_extractor.cpp" />
 		<Unit filename="src/init/extracted_line.cpp" />
 		<Unit filename="src/init/file_loader.cpp" />

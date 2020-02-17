@@ -9,6 +9,11 @@ Environment::Environment(std::vector<std::string> labels):
 
 }
 
+std::vector<Window> & Environment::getWindows()
+{
+    return windows;
+}
+
 Resolver & Environment::getResolver()
 {
     return resolver;

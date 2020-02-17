@@ -10,16 +10,31 @@
 #include "../include/init/parser.h"
 #include "../include/init/preprocessor.h"
 #include "../include/runtime/interpreter.h"
+#include "../include/gui/window.h"
 
 /** RELEASE ONLY */
 
-int main(int argc, char ** argv)
+int main(int argc, char * argv[])
 {
     std::cout << "Alpha Interpreter v 0.1" << std::endl;
     if(argc != 2){
         std::cout << "Usage: alpha <filename>" << std::endl;
         return -1;
     }
+
+    if(SDL_Init(SDL_INIT_VIDEO) < 0){
+        std::cout << "Error: SDL could not be initialised" << std::endl;
+        return -3;
+    }
+    /*
+    std::vector<Window> windows = {Window("vector window", 200, 200)};
+    bool closeWindow = false;
+    do{
+        windows[0].render();
+        closeWindow = windows[0].checkClose();
+    }while(!closeWindow);
+    */
+
     try
     {
         /**
@@ -46,7 +61,11 @@ int main(int argc, char ** argv)
     catch(const std::runtime_error & e)
     {
         std::cout << "Exception: " << e.what() << std::endl << "Exiting" << std::endl;
+        SDL_Quit();
+
         return -2;
     }
+    SDL_Quit();
+
     return 0;
 }
