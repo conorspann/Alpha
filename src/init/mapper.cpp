@@ -2,6 +2,7 @@
 #include <stdexcept>
 #include <iostream>
 #include <string>
+#include <memory>
 
 #include "../../include/init/mapper.h"
 #include "../../include/commands/command.h"
@@ -20,6 +21,8 @@
 #include "../../include/runtime/command_data.h"
 #include "../../include/commands/wait.h"
 #include "../../include/commands/create_window.h"
+#include "../../include/commands/show_window.h"
+#include "../../include/commands/hide_window.h"
 
 
 std::unique_ptr<Command> Mapper::getNewCommand(std::string line, std::vector<std::string> params, std::vector<CommandData> & customCommands)
@@ -58,6 +61,10 @@ std::unique_ptr<Command> Mapper::getNewCommand(std::string line, std::vector<std
         c = std::make_unique<Wait>(params);
     }else if(line == "CreateWindow"){
         c = std::make_unique<CreateWindow>(params);
+    }else if(line == "ShowWindow"){
+        c = std::make_unique<ShowWindow>(params);
+    }else if(line == "HideWindow"){
+        c = std::make_unique<HideWindow>(params);
     }else{
         for(auto customCommand: customCommands){
             if(customCommand.getName() == line){

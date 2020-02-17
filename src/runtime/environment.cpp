@@ -9,6 +9,11 @@ Environment::Environment(std::vector<std::string> labels):
 
 }
 
+std::string Environment::getNewWindowHandle()
+{
+    return std::to_string(windows.size());
+}
+
 std::vector<Window> & Environment::getWindows()
 {
     return windows;

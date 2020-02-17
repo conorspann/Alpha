@@ -14,7 +14,7 @@
 	<vector>
 	"../runtime/environment.h"
 
-1581963527 c:\users\conor\documents\dev\alpha\include\runtime\environment.h
+1581966786 c:\users\conor\documents\dev\alpha\include\runtime\environment.h
 	<stack>
 	"../gui/window.h"
 	"resolver.h"
@@ -183,10 +183,11 @@
 	<string>
 	<vector>
 
-1581963456 source:c:\users\conor\documents\dev\alpha\src\init\mapper.cpp
+1581968019 source:c:\users\conor\documents\dev\alpha\src\init\mapper.cpp
 	<stdexcept>
 	<iostream>
 	<string>
+	<memory>
 	"../../include/init/mapper.h"
 	"../../include/commands/command.h"
 	"../../include/commands/console_out.h"
@@ -202,7 +203,10 @@
 	"../../include/commands/custom_command.h"
 	"../../include/commands/end_custom_command.h"
 	"../../include/runtime/command_data.h"
+	"../../include/commands/wait.h"
 	"../../include/commands/create_window.h"
+	"../../include/commands/show_window.h"
+	"../../include/commands/hide_window.h"
 
 1580055568 c:\users\conor\documents\dev\alpha\include\init\mapper.h
 	"../commands/command.h"
@@ -272,7 +276,7 @@
 	<vector>
 	"../../include/runtime/command_data.h"
 
-1581963583 source:c:\users\conor\documents\dev\alpha\src\runtime\environment.cpp
+1581966786 source:c:\users\conor\documents\dev\alpha\src\runtime\environment.cpp
 	"../../include/runtime/environment.h"
 	"../../include/runtime/searcher.h"
 	"../../include/runtime/resolver.h"
@@ -646,7 +650,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1581964229 c:\users\conor\documents\dev\alpha\include\gui\window.h
+1581965654 c:\users\conor\documents\dev\alpha\include\gui\window.h
 	<string>
 	"SDL.h"
 
@@ -997,7 +1001,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1581953127 source:c:\users\conor\documents\dev\alpha\src\gui\window.cpp
+1581965699 source:c:\users\conor\documents\dev\alpha\src\gui\window.cpp
 	"../../include/gui/window.h"
 	<stdexcept>
 
@@ -1010,17 +1014,15 @@
 	<string>
 	<memory>
 
-1581962841 source:c:\users\conor\documents\dev\alpha\src\commands\show_window.cpp
+1581967774 source:c:\users\conor\documents\dev\alpha\src\commands\show_window.cpp
 	"../../include/commands/show_window.h"
-	<vector>
-	<string>
 
-1581962420 c:\users\conor\documents\dev\alpha\include\commands\show_window.h
+1581966982 c:\users\conor\documents\dev\alpha\include\commands\show_window.h
 	"command.h"
 	<string>
 	<vector>
 
-1581964006 source:c:\users\conor\documents\dev\alpha\src\commands\create_window.cpp
+1581966744 source:c:\users\conor\documents\dev\alpha\src\commands\create_window.cpp
 	"../../include/commands/create_window.h"
 	"../../include/commands/command.h"
 	"../../include/runtime/resolver.h"
@@ -1028,6 +1030,24 @@
 	<string>
 
 1581963417 c:\users\conor\documents\dev\alpha\include\commands\create_window.h
+	"command.h"
+	<string>
+	<vector>
+
+1581967551 source:c:\users\conor\documents\dev\alpha\src\commands\wait.cpp
+	"../../include/commands/wait.h"
+	<vector>
+	<string>
+
+1581964622 c:\users\conor\documents\dev\alpha\include\commands\wait.h
+	"command.h"
+	<string>
+	<vector>
+
+1581967786 source:c:\users\conor\documents\dev\alpha\src\commands\hide_window.cpp
+	"../../include/commands/hide_window.h"
+
+1581967970 c:\users\conor\documents\dev\alpha\include\commands\hide_window.h
 	"command.h"
 	<string>
 	<vector>

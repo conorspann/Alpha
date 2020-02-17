@@ -28,12 +28,22 @@ Window & Window::operator=(const Window & w)
     return *this;
 }
 
+void Window::show()
+{
+    SDL_ShowWindow(window);
+}
+
+void Window::hide()
+{
+    SDL_HideWindow(window);
+}
+
 void Window::createWindow(std::string title, int width, int height)
 {
     this->title = title;
     this->width = width;
     this->height = height;
-    window = SDL_CreateWindow(title.c_str(), SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, width, height, SDL_WINDOW_SHOWN);
+    window = SDL_CreateWindow(title.c_str(), SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, width, height, SDL_WINDOW_HIDDEN);
     if(window == NULL){
         throw std::runtime_error("Error: Could not create window.");
     }

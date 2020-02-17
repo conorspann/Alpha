@@ -1,11 +1,13 @@
 
 
-@foo = "hello"
+@handle = -1
 
-ConsoleOut(@foo + " there ")
+CreateWindow("mr window", 250, 250, handle)
 
-ConsoleOutLn("from the same line.")
+ConsoleOutLn("created window")
 
-ConsoleOut("i am on a different line.")
+ShowWindow(@handle)
 
-CreateWindow("hi there!", 640, 480)
+
+Wait(3000)
+

@@ -23,6 +23,7 @@ public:
         with the members
     */
 
+    std::string getNewWindowHandle();
     std::vector<Window> & getWindows();
     Resolver & getResolver();
     Searcher & getSearcher();

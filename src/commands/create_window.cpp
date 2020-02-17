@@ -25,13 +25,25 @@ void CreateWindow::execute(Environment & environment, int * cmdPtr)
     }
     int width = std::stoi(widthStr);
     int height = std::stoi(heightStr);
+
+    std::map<std::string, std::pair<std::string, int>>::iterator it;
+    std::string handleVarName = params[3];
+    it = globalDataPool.find(handleVarName);
+    if(it == globalDataPool.end()){
+        std::string errMsg = "Error: parameter variable: ";
+        errMsg += handleVarName;
+        errMsg += " does not exist";
+        throw std::runtime_error(errMsg);
+    }
+    it->second.first = environment.getNewWindowHandle();
+
     Window window(windowName, width, height);
     windows.push_back(window);
 }
 
 int CreateWindow::getNumParams()
 {
-    return 3;
+    return 4;
 }
 
 std::string CreateWindow::getName()

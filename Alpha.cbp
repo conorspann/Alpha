@@ -12,6 +12,7 @@
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
+					<Add option="-std=c++1z" />
 					<Add option="-g" />
 				</Compiler>
 				<Linker>
@@ -25,6 +26,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add option="-std=c++1z" />
 					<Add directory="C:/Users/Conor/Documents/dev/SDL2-2.0.10/x86_64-w64-mingw32/include/SDL2" />
 				</Compiler>
 				<Linker>
@@ -36,6 +38,7 @@
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
+			<Add option="-std=c++11" />
 			<Add option="-fexceptions" />
 			<Add directory="C:/Users/Conor/Documents/dev/SDL2-2.0.10/x32bit_mingw/include/SDL2" />
 		</Compiler>
@@ -55,8 +58,11 @@
 		<Unit filename="include/commands/end_custom_command.h" />
 		<Unit filename="include/commands/end_while.h" />
 		<Unit filename="include/commands/endif.h" />
+		<Unit filename="include/commands/hide_window.h" />
 		<Unit filename="include/commands/if.h" />
 		<Unit filename="include/commands/memory_dump.h" />
+		<Unit filename="include/commands/show_window.h" />
+		<Unit filename="include/commands/wait.h" />
 		<Unit filename="include/commands/while.h" />
 		<Unit filename="include/formatter/formatter.h" />
 		<Unit filename="include/gui/window.h" />
@@ -83,8 +89,11 @@
 		<Unit filename="src/commands/end_custom_command.cpp" />
 		<Unit filename="src/commands/end_while.cpp" />
 		<Unit filename="src/commands/endif.cpp" />
+		<Unit filename="src/commands/hide_window.cpp" />
 		<Unit filename="src/commands/if.cpp" />
 		<Unit filename="src/commands/memory_dump.cpp" />
+		<Unit filename="src/commands/show_window.cpp" />
+		<Unit filename="src/commands/wait.cpp" />
 		<Unit filename="src/commands/while.cpp" />
 		<Unit filename="src/formatter/formatter.cpp" />
 		<Unit filename="src/gui/window.cpp" />

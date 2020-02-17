@@ -12,6 +12,8 @@ public:
     Window(const Window &);
     ~Window();
     Window & operator=(const Window &);
+    void show();
+    void hide();
     bool checkClose();
     void render();
     std::string getTitle() const;

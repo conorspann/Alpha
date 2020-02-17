@@ -16,10 +16,10 @@ void Wait::execute(Environment & environment, int * cmdPtr)
     Resolver & resolver = environment.getResolver();
     std::string timeStr = resolver.resolve(params[0], globalDataPool);
     if(resolver.determineType(timeStr) != Command::Type::INT){
-        throw std::runtime_error("Error: Wait time must be a whole integer (seconds).");
+        throw std::runtime_error("Error: Wait time must be a whole integer (milliseconds).");
     }
-    int timeSeconds = std::stoi(timeStr);
-    SDL_Delay(timeSeconds);
+    int timeMilliSeconds = std::stoi(timeStr);
+    SDL_Delay(timeMilliSeconds);
 }
 
 int Wait::getNumParams()
