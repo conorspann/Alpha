@@ -18,6 +18,7 @@
 #include "../../include/commands/custom_command.h"
 #include "../../include/commands/end_custom_command.h"
 #include "../../include/runtime/command_data.h"
+#include "../../include/commands/wait.h"
 #include "../../include/commands/create_window.h"
 
 
@@ -53,6 +54,8 @@ std::unique_ptr<Command> Mapper::getNewCommand(std::string line, std::vector<std
         c = std::make_unique<CustomCommand>(params);
     }else if(line == "EndCmd"){
         c = std::make_unique<EndCustomCommand>(params);
+    }else if(line == "Wait"){
+        c = std::make_unique<Wait>(params);
     }else if(line == "CreateWindow"){
         c = std::make_unique<CreateWindow>(params);
     }else{
