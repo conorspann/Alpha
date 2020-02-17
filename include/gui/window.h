@@ -14,15 +14,12 @@ public:
     Window & operator=(const Window &);
     bool checkClose();
     void render();
-    void show();
-    void hide();
     std::string getTitle() const;
     int getWidth() const;
     int getHeight() const;
 private:
     SDL_Window * window = NULL;
     SDL_Renderer * renderer = NULL;
-    bool showWindow;
     std::string title;
     int width, height;
     void createWindow(std::string, int, int);

@@ -30,7 +30,6 @@ Window & Window::operator=(const Window & w)
 
 void Window::createWindow(std::string title, int width, int height)
 {
-    showWindow = false;
     this->title = title;
     this->width = width;
     this->height = height;
@@ -66,25 +65,13 @@ bool Window::checkClose()
 
 void Window::render()
 {
-    if(showWindow){
-        SDL_SetRenderDrawColor(renderer, 0xFF, 0xFF, 0xFF, 0xFF);
-        SDL_RenderClear(renderer);
+    SDL_SetRenderDrawColor(renderer, 0xFF, 0xFF, 0xFF, 0xFF);
+    SDL_RenderClear(renderer);
     /*
-        SDL_SetRenderDrawColor(renderer, 0x00, 0x00, 0x00, 0xFF);
-        SDL_RenderDrawPoint(renderer, 10, 10);
+    SDL_SetRenderDrawColor(renderer, 0x00, 0x00, 0x00, 0xFF);
+    SDL_RenderDrawPoint(renderer, 10, 10);
     */
-        SDL_RenderPresent(renderer);
-    }
-}
-
-void Window::show()
-{
-    showWindow = true;
-}
-
-void Window::hide()
-{
-    showWindow = false;
+    SDL_RenderPresent(renderer);
 }
 
 std::string Window::getTitle() const
