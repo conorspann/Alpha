@@ -1,13 +1,15 @@
 
+@name = " "
 
-@handle = -1
+ConsoleIn(@name)
 
-CreateWindow("mr window", 250, 250, handle)
+ConsoleOutLn(@name)
 
-ConsoleOutLn("created window")
 
-ShowWindow(@handle)
+@winHandle = -1
 
+CreateWindow("Window cleaner", 640, 480, @winHandle)
+
+ShowWindow(@winHandle)
 
 Wait(3000)
-

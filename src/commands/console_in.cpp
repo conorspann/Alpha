@@ -17,10 +17,15 @@ void ConsoleIn::execute(Environment & environment, int *)
 {
     std::map<std::string, std::pair<std::string, int>> & globalDataPool = environment.getGlobalDataPool();
     std::map<std::string, std::pair<std::string, int>>::iterator it;
-    it = globalDataPool.find(params[0]);
+    std::string varName = params[0];
+    if(varName.length() < 2 || varName[0] != '@'){
+        throw std::runtime_error("Error: parameter must be a variable.");
+    }
+    varName = varName.substr(1);
+    it = globalDataPool.find(varName);
     if(it == globalDataPool.end()){
         std::string errMsg = "Error: parameter variable: ";
-        errMsg += params[0];
+        errMsg += varName;
         errMsg += " does not exist";
         throw std::runtime_error(errMsg);
     }
