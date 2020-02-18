@@ -26,22 +26,10 @@ void CreateWindow::execute(Environment & environment, int * cmdPtr)
     int width = std::stoi(widthStr);
     int height = std::stoi(heightStr);
 
-    std::map<std::string, std::pair<std::string, int>>::iterator it;
     std::string handleVarName = params[3];
+    std::pair<std::string, int> & variable = resolver.resolveVariable(handleVarName, globalDataPool);
 
-    if(handleVarName.length() < 2 || handleVarName[0] != '@'){
-        throw std::runtime_error("Error: parameter must be a variable.");
-    }
-    handleVarName = handleVarName.substr(1);
-
-    it = globalDataPool.find(handleVarName);
-    if(it == globalDataPool.end()){
-        std::string errMsg = "Error: parameter variable: ";
-        errMsg += handleVarName;
-        errMsg += " does not exist";
-        throw std::runtime_error(errMsg);
-    }
-    it->second.first = environment.getNewWindowHandle();
+    variable.first = environment.getNewWindowHandle();
 
     Window window(windowName, width, height);
     windows.push_back(window);

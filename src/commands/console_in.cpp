@@ -16,24 +16,13 @@ ConsoleIn::ConsoleIn(std::vector<std::string> p):
 void ConsoleIn::execute(Environment & environment, int *)
 {
     std::map<std::string, std::pair<std::string, int>> & globalDataPool = environment.getGlobalDataPool();
-    std::map<std::string, std::pair<std::string, int>>::iterator it;
+    Resolver & resolver = environment.getResolver();
     std::string varName = params[0];
-    if(varName.length() < 2 || varName[0] != '@'){
-        throw std::runtime_error("Error: parameter must be a variable.");
-    }
-    varName = varName.substr(1);
-    it = globalDataPool.find(varName);
-    if(it == globalDataPool.end()){
-        std::string errMsg = "Error: parameter variable: ";
-        errMsg += varName;
-        errMsg += " does not exist";
-        throw std::runtime_error(errMsg);
-    }
+    std::pair<std::string, int> & variable = resolver.resolveVariable(varName, globalDataPool);
     std::string userInput;
     std::getline(std::cin, userInput);
-    it->second.first = userInput;
-
-    /** check type?  set second.second ?? */
+    variable.first = userInput;
+    /** check type?  set variable.second ?? */
 }
 
 int ConsoleIn::getNumParams()

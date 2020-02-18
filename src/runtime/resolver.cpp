@@ -28,20 +28,22 @@ int Resolver::determineType(std::string param)
     return Command::Type::INT;
 }
 
-std::pair<std::string, int> Resolver::resolveVariable(std::string variable, const std::map<std::string, std::pair<std::string, int>> & globalDataPool)
+std::pair<std::string, int> & Resolver::resolveVariable(std::string variableName, std::map<std::string, std::pair<std::string, int>> & globalDataPool)
 {
-    std::string identifier = variable.substr(1, std::string::npos);
-    std::map<std::string, std::pair<std::string, int>>::const_iterator it;
-    it = globalDataPool.find(identifier);
-    std::pair<std::string, int> data("Null", Command::Type::UNKNOWN);
-    if(it != globalDataPool.end()){
-        data.first = it->second.first; //value
-        data.second = it->second.second; //type
+    if(variableName.length() < 2 || variableName[0] != '@'){
+        throw std::runtime_error("Error: variable name not valid");
     }
-    return data;
+    std::string identifier = variableName.substr(1);
+    std::map<std::string, std::pair<std::string, int>>::iterator it;
+    it = globalDataPool.find(identifier);
+    if(it == globalDataPool.end()){
+        throw std::runtime_error("Error: Null variable in command.");
+    }
+
+    return it->second;
 }
 
-std::pair<std::string, int> Resolver::resolveParam(std::string param, const std::map<std::string, std::pair<std::string, int>> & globalDataPool)
+std::pair<std::string, int> Resolver::resolveParam(std::string param, std::map<std::string, std::pair<std::string, int>> & globalDataPool)
 {
     std::pair<std::string, int> p;
     if(param[0] == '@'){
@@ -54,18 +56,15 @@ std::pair<std::string, int> Resolver::resolveParam(std::string param, const std:
     return p;
 }
 
-std::string Resolver::resolve(std::string paramStr,  const std::map<std::string, std::pair<std::string, int>> & globalDataPool)
+std::string Resolver::resolve(std::string paramStr, std::map<std::string, std::pair<std::string, int>> & globalDataPool)
 {
     return calculator.calculate(parseParam(paramStr, globalDataPool));
 }
 
-void Resolver::addParam(std::vector<std::pair<std::string, int>> & parsedParam, const std::map<std::string, std::pair<std::string, int>> & globalDataPool, std::string strVal)
+void Resolver::addParam(std::vector<std::pair<std::string, int>> & parsedParam, std::map<std::string, std::pair<std::string, int>> & globalDataPool, std::string strVal)
 {
     std::pair<std::string, int> varData;
     varData = resolveParam(strVal, globalDataPool);
-    if(varData.first == "Null" || varData.second == Command::Type::UNKNOWN){
-        throw std::runtime_error("Error: Null variable in command.");
-    }
     if(varData.second != Command::Type::STRING && varData.first.length() > 1){
         if(varData.first[0] == '-'){
             varData.first = varData.first.substr(1);
@@ -87,7 +86,7 @@ void Resolver::addChar(std::string & currentParam, char paramChar)
 /**
     REFACTOR !!
 */
-std::vector<std::pair<std::string, int>> Resolver::parseParam(std::string param, const std::map<std::string, std::pair<std::string, int>> & globalDataPool)
+std::vector<std::pair<std::string, int>> Resolver::parseParam(std::string param, std::map<std::string, std::pair<std::string, int>> & globalDataPool)
 {
     std::vector<std::pair<std::string, int>> parsedParam;
     std::string currentStrVal;
