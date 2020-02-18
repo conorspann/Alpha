@@ -1,6 +1,6 @@
 # Alpha Interpreter
 
-A BASIC-style interpreter written in C++. Currently runs scripts as console applications.
+A BASIC-style interpreter written in C++. Currently runs scripts as console applications. GUI scripts currently in development.
 
 ## Usage
 
@@ -19,16 +19,32 @@ alpha <filename>
 ### General
 
 ```
-ConsoleOut
-ConsoleIn
-MemoryDump
 If
 EndIf
 While
 EndWhile
 Cmd
 EndCmd
+Wait
 ```
+
+### Console
+
+```
+ConsoleOut
+ConsoleOutLn
+ConsoleIn
+MemoryDump
+```
+
+### GUI
+
+```
+CreateWindow
+ShowWindow
+HideWindow
+```
+
 
 ## Example
 
@@ -38,7 +54,7 @@ EndCmd
 Cmd loopMe()
 	@foo = 1
 	While(@foo < 10)
-		ConsoleOut(@foo)
+		ConsoleOutLn(@foo)
 		@foo = @foo + 1
 	EndWhile
 EndCmd
