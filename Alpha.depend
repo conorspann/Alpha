@@ -215,7 +215,7 @@
 	<string>
 	<memory>
 
-1580565092 source:c:\users\conor\documents\dev\alpha\src\init\parser.cpp
+1582200319 source:c:\users\conor\documents\dev\alpha\src\init\parser.cpp
 	<iostream>
 	<stdexcept>
 	<memory>
@@ -223,8 +223,7 @@
 	"../../include/init/parser.h"
 	"../../include/commands/console_out.h"
 
-1580565081 c:\users\conor\documents\dev\alpha\include\init\parser.h
-	"extracted_line.h"
+1582200305 c:\users\conor\documents\dev\alpha\include\init\parser.h
 	"command_extractor.h"
 	"../commands/command.h"
 	<vector>
@@ -243,7 +242,7 @@
 	<string>
 	"../runtime/command_data.h"
 
-1581962331 source:c:\users\conor\documents\dev\alpha\src\main.cpp
+1582200188 source:c:\users\conor\documents\dev\alpha\src\main.cpp
 	<stdexcept>
 	<iostream>
 	<vector>

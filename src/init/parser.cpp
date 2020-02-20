@@ -12,8 +12,10 @@ Parser::Parser()
 
 }
 
-std::vector<std::unique_ptr<Command>> Parser::parse(CommandExtractor & commandExtractor, std::vector<std::vector<std::string>> & segmentedData, std::vector<CommandData> & customCommands)
+std::vector<std::unique_ptr<Command>> Parser::parse(std::vector<std::vector<std::string>> & segmentedData)
 {
+    CommandExtractor commandExtractor;
+    std::vector<CommandData> customCommands = commandExtractor.getCustomCommands(segmentedData);
     std::vector<std::unique_ptr<Command>> commands;
     for(auto segmentedLine : segmentedData){
         std::unique_ptr<Command> cmd = std::move(getCommand(commandExtractor, segmentedLine, customCommands));

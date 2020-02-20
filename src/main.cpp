@@ -26,20 +26,14 @@ int main(int argc, char * argv[])
         std::cout << "Error: SDL could not be initialised" << std::endl;
         return -3;
     }
-    /*
-    std::vector<Window> windows = {Window("vector window", 200, 200)};
-    bool closeWindow = false;
-    do{
-        windows[0].render();
-        closeWindow = windows[0].checkClose();
-    }while(!closeWindow);
-    */
 
     try
     {
         /**
             These calls could be grouped together in a different class
         */
+
+
         PreProcessor preProcessor; /** TODO: implement include files */
 
         FileLoader loader;
@@ -47,15 +41,10 @@ int main(int argc, char * argv[])
 
         Formatter formatter;
         std::vector<std::string> statements = formatter.removeBlankLines(rawData);
-        std::vector<std::vector<std::string>> formattedLines = formatter.formatLines(statements); // rename to tokenize
-
-        CommandExtractor commandExtractor;
-
-        std::vector<CommandData> customCommands = commandExtractor.getCustomCommands(formattedLines);
-        // re name cextract to tokenExtractor
+        std::vector<std::vector<std::string>> formattedLines = formatter.formatLines(statements);
 
         Parser parser;
-        Interpreter interpreter(std::move(parser.parse(commandExtractor, formattedLines, customCommands)));
+        Interpreter interpreter(std::move(parser.parse(formattedLines)));
         interpreter.execute();
     }
     catch(const std::runtime_error & e)
