@@ -1,8 +1,0 @@
-ConsoleOut("top")
-
-
-ConsoleOut("middle")
-	
-  
-
-ConsoleOut("end")
