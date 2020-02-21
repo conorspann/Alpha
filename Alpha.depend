@@ -134,12 +134,11 @@
 	"command.h"
 	<memory>
 
-1580574314 source:c:\users\conor\documents\dev\alpha\src\formatter\formatter.cpp
+1582216348 source:c:\users\conor\documents\dev\alpha\src\formatter\formatter.cpp
 	<iostream>
 	<vector>
 	<string>
 	"../../include/formatter/formatter.h"
-	"../../include/formatter/formatted_data.h"
 
 1582216364 c:\users\conor\documents\dev\alpha\include\formatter\formatter.h
 	<string>
@@ -183,7 +182,7 @@
 	<string>
 	<vector>
 
-1581968019 source:c:\users\conor\documents\dev\alpha\src\init\mapper.cpp
+1582297722 source:c:\users\conor\documents\dev\alpha\src\init\mapper.cpp
 	<stdexcept>
 	<iostream>
 	<string>
@@ -207,6 +206,9 @@
 	"../../include/commands/create_window.h"
 	"../../include/commands/show_window.h"
 	"../../include/commands/hide_window.h"
+	"../../include/commands/render_window.h"
+	"../../include/commands/clear_window.h"
+	"../../include/commands/draw_rect.h"
 
 1580055568 c:\users\conor\documents\dev\alpha\include\init\mapper.h
 	"../commands/command.h"
@@ -649,7 +651,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1581965654 c:\users\conor\documents\dev\alpha\include\gui\window.h
+1582297169 c:\users\conor\documents\dev\alpha\include\gui\window.h
 	<string>
 	"SDL.h"
 
@@ -1000,7 +1002,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1581965699 source:c:\users\conor\documents\dev\alpha\src\gui\window.cpp
+1582298230 source:c:\users\conor\documents\dev\alpha\src\gui\window.cpp
 	"../../include/gui/window.h"
 	<stdexcept>
 
@@ -1047,6 +1049,33 @@
 	"../../include/commands/hide_window.h"
 
 1581967970 c:\users\conor\documents\dev\alpha\include\commands\hide_window.h
+	"command.h"
+	<string>
+	<vector>
+
+1582298173 source:c:\users\conor\documents\dev\alpha\src\commands\draw_rect.cpp
+	"../../include/commands/draw_rect.h"
+	"../../include/runtime/environment.h"
+
+1582295914 c:\users\conor\documents\dev\alpha\include\commands\draw_rect.h
+	"command.h"
+	<string>
+	<vector>
+
+1582297368 source:c:\users\conor\documents\dev\alpha\src\commands\render_window.cpp
+	"../../include/commands/render_window.h"
+	"../../include/runtime/environment.h"
+
+1582297259 c:\users\conor\documents\dev\alpha\include\commands\render_window.h
+	"command.h"
+	<string>
+	<vector>
+
+1582297599 source:c:\users\conor\documents\dev\alpha\src\commands\clear_window.cpp
+	"../../include/commands/clear_window.h"
+	"../../include/runtime/environment.h"
+
+1582297544 c:\users\conor\documents\dev\alpha\include\commands\clear_window.h
 	"command.h"
 	<string>
 	<vector>

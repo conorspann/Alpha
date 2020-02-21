@@ -15,6 +15,8 @@ public:
     void show();
     void hide();
     bool checkClose();
+    void clearWindow();
+    void drawRect(int x, int y, int w, int h);
     void render();
     std::string getTitle() const;
     int getWidth() const;

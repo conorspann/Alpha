@@ -73,14 +73,21 @@ bool Window::checkClose()
     return false;
 }
 
-void Window::render()
+void Window::clearWindow()
 {
     SDL_SetRenderDrawColor(renderer, 0xFF, 0xFF, 0xFF, 0xFF);
     SDL_RenderClear(renderer);
-    /*
+}
+
+void Window::drawRect(int x, int y, int w, int h)
+{
+    SDL_Rect rect = {x, y, w, h};
     SDL_SetRenderDrawColor(renderer, 0x00, 0x00, 0x00, 0xFF);
-    SDL_RenderDrawPoint(renderer, 10, 10);
-    */
+    SDL_RenderFillRect(renderer, &rect);
+}
+
+void Window::render()
+{
     SDL_RenderPresent(renderer);
 }
 

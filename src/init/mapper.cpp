@@ -23,6 +23,9 @@
 #include "../../include/commands/create_window.h"
 #include "../../include/commands/show_window.h"
 #include "../../include/commands/hide_window.h"
+#include "../../include/commands/render_window.h"
+#include "../../include/commands/clear_window.h"
+#include "../../include/commands/draw_rect.h"
 
 
 std::unique_ptr<Command> Mapper::getNewCommand(std::string line, std::vector<std::string> params, std::vector<CommandData> & customCommands)
@@ -65,6 +68,12 @@ std::unique_ptr<Command> Mapper::getNewCommand(std::string line, std::vector<std
         c = std::make_unique<ShowWindow>(params);
     }else if(line == "HideWindow"){
         c = std::make_unique<HideWindow>(params);
+    }else if(line == "ClearWindow"){
+        c = std::make_unique<ClearWindow>(params);
+    }else if(line == "RenderWindow"){
+        c = std::make_unique<RenderWindow>(params);
+    }else if(line == "DrawRect"){
+        c = std::make_unique<DrawRect>(params);
     }else{
         for(auto customCommand: customCommands){
             if(customCommand.getName() == line){
