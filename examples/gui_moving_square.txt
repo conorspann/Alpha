@@ -1,0 +1,24 @@
+
+ConsoleOutLn("Moving square!")
+
+ConsoleOut("Opening a window...")
+
+@handle = 0
+
+CreateWindow("Moving Square", 250, 250, @handle)
+ShowWindow(@handle)
+
+@xPos = 0
+@yPos = 0
+While(@xPos < 250)
+	ClearWindow(@handle)
+	DrawRect(@xPos, @yPos, 10, 10, @handle)
+	@xPos = @xPos + 15
+	@yPos = @yPos + 15
+	RenderWindow(@handle)
+	Wait(500)
+EndWhile
+
+
+ConsoleOutLn(" finished!")
+
