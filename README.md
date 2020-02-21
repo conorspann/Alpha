@@ -43,6 +43,9 @@ MemoryDump
 CreateWindow
 ShowWindow
 HideWindow
+ClearWindow
+RenderWindow
+DrawRect
 ```
 
 
