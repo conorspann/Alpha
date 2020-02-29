@@ -15,10 +15,10 @@ ConsoleIn::ConsoleIn(std::vector<std::string> p):
 
 void ConsoleIn::execute(Environment & environment, int *)
 {
-    std::map<std::string, std::pair<std::string, int>> & globalDataPool = environment.getGlobalDataPool();
+    DataPool & dataPool = environment.getDataPool();
     Resolver & resolver = environment.getResolver();
     std::string varName = params[0];
-    std::pair<std::string, int> & variable = resolver.resolveVariable(varName, globalDataPool);
+    std::pair<std::string, int> & variable = resolver.resolveVariable(varName, dataPool);
     std::string userInput;
     std::getline(std::cin, userInput);
     variable.first = userInput;

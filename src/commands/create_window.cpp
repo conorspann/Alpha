@@ -14,10 +14,10 @@ CreateWindow::CreateWindow(std::vector<std::string> params):
 
 void CreateWindow::execute(Environment & environment, int * cmdPtr)
 {
-    std::map<std::string, std::pair<std::string, int>> & globalDataPool = environment.getGlobalDataPool();
+    DataPool & dataPool = environment.getDataPool();
     Resolver & resolver = environment.getResolver();
     std::vector<Window> & windows = environment.getWindows();
-    std::string windowName = resolver.resolve(params[0], globalDataPool);
+    std::string windowName = resolver.resolve(params[0], dataPool);
     std::string widthStr = params[1];
     std::string heightStr = params[2];
     if(resolver.determineType(widthStr) != Command::Type::INT || resolver.determineType(heightStr) != Command::Type::INT){
@@ -27,7 +27,7 @@ void CreateWindow::execute(Environment & environment, int * cmdPtr)
     int height = std::stoi(heightStr);
 
     std::string handleVarName = params[3];
-    std::pair<std::string, int> & variable = resolver.resolveVariable(handleVarName, globalDataPool);
+    std::pair<std::string, int> & variable = resolver.resolveVariable(handleVarName, dataPool);
 
     variable.first = environment.getNewWindowHandle();
 

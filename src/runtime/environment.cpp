@@ -29,13 +29,13 @@ Searcher & Environment::getSearcher()
     return searcher;
 }
 
+DataPool & Environment::getDataPool()
+{
+    return dataPool;
+}
+
 std::stack<int> & Environment::getCallStack()
 {
     return callStack;
-}
-
-std::map<std::string, std::pair<std::string, int>> & Environment::getGlobalDataPool()
-{
-    return globalDataPool;
 }
 

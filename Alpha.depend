@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1581861175 source:c:\users\conor\documents\dev\alpha\src\commands\assign.cpp
+1583000521 source:c:\users\conor\documents\dev\alpha\src\commands\assign.cpp
 	<iostream>
 	"../../include/commands/assign.h"
 	"../../include/runtime/environment.h"
@@ -14,17 +14,19 @@
 	<vector>
 	"../runtime/environment.h"
 
-1581966786 c:\users\conor\documents\dev\alpha\include\runtime\environment.h
+1582995334 c:\users\conor\documents\dev\alpha\include\runtime\environment.h
 	<stack>
 	"../gui/window.h"
 	"resolver.h"
 	"searcher.h"
+	"data_pool.h"
 
-1582031606 c:\users\conor\documents\dev\alpha\include\runtime\resolver.h
+1583000130 c:\users\conor\documents\dev\alpha\include\runtime\resolver.h
 	<string>
 	<map>
 	<vector>
 	"calculator.h"
+	"data_pool.h"
 
 1579032494 c:\users\conor\documents\dev\alpha\include\runtime\calculator.h
 	<string>
@@ -50,7 +52,7 @@
 	<vector>
 	"../../include/commands/command.h"
 
-1582031665 source:c:\users\conor\documents\dev\alpha\src\commands\console_in.cpp
+1582998735 source:c:\users\conor\documents\dev\alpha\src\commands\console_in.cpp
 	<string>
 	<iostream>
 	"../../include/commands/console_in.h"
@@ -59,7 +61,7 @@
 1581789277 c:\users\conor\documents\dev\alpha\include\commands\console_in.h
 	"command.h"
 
-1581960824 source:c:\users\conor\documents\dev\alpha\src\commands\console_out.cpp
+1582998747 source:c:\users\conor\documents\dev\alpha\src\commands\console_out.cpp
 	<string>
 	<vector>
 	<iostream>
@@ -104,7 +106,7 @@
 1581789277 c:\users\conor\documents\dev\alpha\include\commands\endif.h
 	"command.h"
 
-1581789277 source:c:\users\conor\documents\dev\alpha\src\commands\if.cpp
+1582999931 source:c:\users\conor\documents\dev\alpha\src\commands\if.cpp
 	<iostream>
 	"../../include/commands/if.h"
 	"../../include/runtime/environment.h"
@@ -113,7 +115,7 @@
 	"command.h"
 	<memory>
 
-1581789277 source:c:\users\conor\documents\dev\alpha\src\commands\memory_dump.cpp
+1583003124 source:c:\users\conor\documents\dev\alpha\src\commands\memory_dump.cpp
 	<map>
 	<vector>
 	<string>
@@ -125,7 +127,7 @@
 	"command.h"
 	<memory>
 
-1581789277 source:c:\users\conor\documents\dev\alpha\src\commands\while.cpp
+1583000024 source:c:\users\conor\documents\dev\alpha\src\commands\while.cpp
 	<iostream>
 	"../../include/commands/while.h"
 	"../../include/runtime/environment.h"
@@ -277,7 +279,7 @@
 	<vector>
 	"../../include/runtime/command_data.h"
 
-1581966786 source:c:\users\conor\documents\dev\alpha\src\runtime\environment.cpp
+1582995391 source:c:\users\conor\documents\dev\alpha\src\runtime\environment.cpp
 	"../../include/runtime/environment.h"
 	"../../include/runtime/searcher.h"
 	"../../include/runtime/resolver.h"
@@ -291,7 +293,7 @@
 	"../../include/runtime/interpreter.h"
 	"../../include/runtime/environment.h"
 
-1582031627 source:c:\users\conor\documents\dev\alpha\src\runtime\resolver.cpp
+1582996895 source:c:\users\conor\documents\dev\alpha\src\runtime\resolver.cpp
 	<utility>
 	<iostream>
 	"../../include/runtime/resolver.h"
@@ -1015,7 +1017,7 @@
 	<string>
 	<memory>
 
-1581967774 source:c:\users\conor\documents\dev\alpha\src\commands\show_window.cpp
+1582999997 source:c:\users\conor\documents\dev\alpha\src\commands\show_window.cpp
 	"../../include/commands/show_window.h"
 
 1581966982 c:\users\conor\documents\dev\alpha\include\commands\show_window.h
@@ -1023,7 +1025,7 @@
 	<string>
 	<vector>
 
-1582031918 source:c:\users\conor\documents\dev\alpha\src\commands\create_window.cpp
+1582998790 source:c:\users\conor\documents\dev\alpha\src\commands\create_window.cpp
 	"../../include/commands/create_window.h"
 	"../../include/commands/command.h"
 	"../../include/runtime/resolver.h"
@@ -1035,7 +1037,7 @@
 	<string>
 	<vector>
 
-1581967551 source:c:\users\conor\documents\dev\alpha\src\commands\wait.cpp
+1583000012 source:c:\users\conor\documents\dev\alpha\src\commands\wait.cpp
 	"../../include/commands/wait.h"
 	<vector>
 	<string>
@@ -1045,7 +1047,7 @@
 	<string>
 	<vector>
 
-1581967786 source:c:\users\conor\documents\dev\alpha\src\commands\hide_window.cpp
+1582998855 source:c:\users\conor\documents\dev\alpha\src\commands\hide_window.cpp
 	"../../include/commands/hide_window.h"
 
 1581967970 c:\users\conor\documents\dev\alpha\include\commands\hide_window.h
@@ -1053,7 +1055,7 @@
 	<string>
 	<vector>
 
-1582298173 source:c:\users\conor\documents\dev\alpha\src\commands\draw_rect.cpp
+1582998824 source:c:\users\conor\documents\dev\alpha\src\commands\draw_rect.cpp
 	"../../include/commands/draw_rect.h"
 	"../../include/runtime/environment.h"
 
@@ -1062,7 +1064,7 @@
 	<string>
 	<vector>
 
-1582297368 source:c:\users\conor\documents\dev\alpha\src\commands\render_window.cpp
+1583000026 source:c:\users\conor\documents\dev\alpha\src\commands\render_window.cpp
 	"../../include/commands/render_window.h"
 	"../../include/runtime/environment.h"
 
@@ -1071,12 +1073,17 @@
 	<string>
 	<vector>
 
-1582297599 source:c:\users\conor\documents\dev\alpha\src\commands\clear_window.cpp
+1582998682 source:c:\users\conor\documents\dev\alpha\src\commands\clear_window.cpp
 	"../../include/commands/clear_window.h"
 	"../../include/runtime/environment.h"
 
 1582297544 c:\users\conor\documents\dev\alpha\include\commands\clear_window.h
 	"command.h"
 	<string>
+	<vector>
+
+1583003161 c:\users\conor\documents\dev\alpha\include\runtime\data_pool.h
+	<string>
+	<map>
 	<vector>
 

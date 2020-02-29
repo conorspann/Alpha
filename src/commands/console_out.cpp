@@ -14,9 +14,9 @@ ConsoleOut::ConsoleOut(std::vector<std::string> params):
 
 void ConsoleOut::execute(Environment & environment, int *)
 {
-    std::map<std::string, std::pair<std::string, int>> & globalDataPool = environment.getGlobalDataPool();
+    DataPool & dataPool = environment.getDataPool();
     Resolver & resolver = environment.getResolver();
-    std::string output = resolver.resolve(params[0], globalDataPool);
+    std::string output = resolver.resolve(params[0], dataPool);
     std::cout << output;
 }
 

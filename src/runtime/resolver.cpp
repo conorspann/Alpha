@@ -28,26 +28,21 @@ int Resolver::determineType(std::string param)
     return Command::Type::INT;
 }
 
-std::pair<std::string, int> & Resolver::resolveVariable(std::string variableName, std::map<std::string, std::pair<std::string, int>> & globalDataPool)
+std::pair<std::string, int> & Resolver::resolveVariable(std::string variableName, DataPool & dataPool)
 {
     if(variableName.length() < 2 || variableName[0] != '@'){
         throw std::runtime_error("Error: variable name not valid");
     }
     std::string identifier = variableName.substr(1);
-    std::map<std::string, std::pair<std::string, int>>::iterator it;
-    it = globalDataPool.find(identifier);
-    if(it == globalDataPool.end()){
-        throw std::runtime_error("Error: Null variable in command.");
-    }
 
-    return it->second;
+    return dataPool.findVariable(identifier);
 }
 
-std::pair<std::string, int> Resolver::resolveParam(std::string param, std::map<std::string, std::pair<std::string, int>> & globalDataPool)
+std::pair<std::string, int> Resolver::resolveParam(std::string param, DataPool & dataPool)
 {
     std::pair<std::string, int> p;
     if(param[0] == '@'){
-        p = resolveVariable(param, globalDataPool);
+        p = resolveVariable(param, dataPool);
     }else{
         p.first = param;
         p.second = determineType(param);
@@ -56,15 +51,15 @@ std::pair<std::string, int> Resolver::resolveParam(std::string param, std::map<s
     return p;
 }
 
-std::string Resolver::resolve(std::string paramStr, std::map<std::string, std::pair<std::string, int>> & globalDataPool)
+std::string Resolver::resolve(std::string paramStr, DataPool & dataPool)
 {
-    return calculator.calculate(parseParam(paramStr, globalDataPool));
+    return calculator.calculate(parseParam(paramStr, dataPool));
 }
 
-void Resolver::addParam(std::vector<std::pair<std::string, int>> & parsedParam, std::map<std::string, std::pair<std::string, int>> & globalDataPool, std::string strVal)
+void Resolver::addParam(std::vector<std::pair<std::string, int>> & parsedParam, DataPool & dataPool, std::string strVal)
 {
     std::pair<std::string, int> varData;
-    varData = resolveParam(strVal, globalDataPool);
+    varData = resolveParam(strVal, dataPool);
     if(varData.second != Command::Type::STRING && varData.first.length() > 1){
         if(varData.first[0] == '-'){
             varData.first = varData.first.substr(1);
@@ -86,7 +81,7 @@ void Resolver::addChar(std::string & currentParam, char paramChar)
 /**
     REFACTOR !!
 */
-std::vector<std::pair<std::string, int>> Resolver::parseParam(std::string param, std::map<std::string, std::pair<std::string, int>> & globalDataPool)
+std::vector<std::pair<std::string, int>> Resolver::parseParam(std::string param, DataPool & dataPool)
 {
     std::vector<std::pair<std::string, int>> parsedParam;
     std::string currentStrVal;
@@ -99,15 +94,15 @@ std::vector<std::pair<std::string, int>> Resolver::parseParam(std::string param,
         }
         if(calculator.isSymbol(paramChar) && !isString){
             if(!currentStrVal.empty()){
-                addParam(parsedParam, globalDataPool, currentStrVal);
+                addParam(parsedParam, dataPool, currentStrVal);
             }
             std::string symbolStr(std::string(1, paramChar));
-            addParam(parsedParam, globalDataPool, symbolStr);
+            addParam(parsedParam, dataPool, symbolStr);
             currentStrVal = "";
             continue;
         }else if(charIndex == lastCharIndex){
             addChar(currentStrVal, paramChar);
-            addParam(parsedParam, globalDataPool, currentStrVal);
+            addParam(parsedParam, dataPool, currentStrVal);
             break;
         }
         addChar(currentStrVal, paramChar);

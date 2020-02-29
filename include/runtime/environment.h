@@ -7,6 +7,7 @@
 #include "../gui/window.h"
 #include "resolver.h"
 #include "searcher.h"
+#include "data_pool.h"
 
 /**
     Maybe could make this an abstract class and have one global
@@ -27,14 +28,14 @@ public:
     std::vector<Window> & getWindows();
     Resolver & getResolver();
     Searcher & getSearcher();
+    DataPool & getDataPool();
     std::stack<int> & getCallStack();
-    std::map<std::string, std::pair<std::string, int>> & getGlobalDataPool();
 private:
     std::vector<Window> windows;
     Resolver resolver;
     Searcher searcher;
+    DataPool dataPool;
     std::stack<int> callStack;
-    std::map<std::string, std::pair<std::string, int>> globalDataPool;
 };
 
 #endif // ENVIRONMENT_H

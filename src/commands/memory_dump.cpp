@@ -16,21 +16,18 @@ MemoryDump::MemoryDump(std::vector<std::string> params):
 
 void MemoryDump::execute(Environment & environment, int *)
 {
-    std::map<std::string, std::pair<std::string, int>> & globalDataPool = environment.getGlobalDataPool();
-    std::map<std::string, std::pair<std::string, int>>::iterator it;
-    //std::map<std::string, std::string> vars = & globalDataPool;
-    for(it = globalDataPool.begin(); it != globalDataPool.end(); it++){
-        std::cout << it->first << " : " << it->second.first;
-        switch(it->second.second){
-        case Type::STRING:
-            std::cout << " : string" << std::endl;
-            break;
-        case Type::INT:
-            std::cout << " : int" << std::endl;
-            break;
-        default:
-            std::cout << " (unknown)" << std::endl;
-        }
+    DataPool & dataPool = environment.getDataPool();
+    std::vector<std::pair<std::string, int>> & globalDataPool = dataPool.getGlobalDataPool();
+    std::map<std::string, std::pair<int, int>> & nameTable = dataPool.getNameTable();
+
+    std::map<std::string, std::pair<int, int>>::iterator tableIt;
+    for(tableIt = nameTable.begin(); tableIt != nameTable.end(); tableIt++){
+        std::string identifier = tableIt->first;
+        int varAddr = tableIt->second.first;
+        int varSize = tableIt->second.second;
+        std::string varValue = globalDataPool[varAddr].first;
+        int varType = globalDataPool[varAddr].second;
+        std::cout << "[" << std::to_string(varAddr) << "]+" << std::to_string(varSize) << " " << identifier << " " << varValue << " " << varType << std::endl;
     }
 }
 

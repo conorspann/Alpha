@@ -12,9 +12,9 @@ Wait::Wait(std::vector<std::string> params):
 
 void Wait::execute(Environment & environment, int * cmdPtr)
 {
-    std::map<std::string, std::pair<std::string, int>> & globalDataPool = environment.getGlobalDataPool();
+    DataPool & dataPool = environment.getDataPool();
     Resolver & resolver = environment.getResolver();
-    std::string timeStr = resolver.resolve(params[0], globalDataPool);
+    std::string timeStr = resolver.resolve(params[0], dataPool);
     if(resolver.determineType(timeStr) != Command::Type::INT){
         throw std::runtime_error("Error: Wait time must be a whole integer (milliseconds).");
     }

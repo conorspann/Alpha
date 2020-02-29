@@ -12,9 +12,9 @@ ClearWindow::ClearWindow(std::vector<std::string> params):
 
 void ClearWindow::execute(Environment & environment, int *)
 {
-    std::map<std::string, std::pair<std::string, int>> & globalDataPool = environment.getGlobalDataPool();
+    DataPool & dataPool = environment.getDataPool();
     Resolver & resolver = environment.getResolver();
-    std::pair<std::string, int> handleVar = resolver.resolveVariable(params[0], globalDataPool);
+    std::pair<std::string, int> handleVar = resolver.resolveVariable(params[0], dataPool);
     std::string handleStr = handleVar.first;
     if(resolver.determineType(handleStr) != Command::Type::INT){
         throw std::runtime_error("Error: window handle must be integer.");

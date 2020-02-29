@@ -7,20 +7,21 @@
 #include <vector>
 
 #include "calculator.h"
+#include "data_pool.h"
 
 class Resolver{
 public:
     Resolver();
-    std::string resolve(std::string, std::map<std::string, std::pair<std::string, int>> &);
-    std::pair<std::string, int> & resolveVariable(std::string, std::map<std::string, std::pair<std::string, int>> &);
+    std::string resolve(std::string, DataPool &);
+    std::pair<std::string, int> & resolveVariable(std::string, DataPool &);
     int determineType(std::string param);
 private:
     Calculator calculator;
     void addChar(std::string & currentParam, char paramChar);
-    std::pair<std::string, int> resolveParam(std::string, std::map<std::string, std::pair<std::string, int>> &);
-    void addParam(std::vector<std::pair<std::string, int>> & parsedParam, std::map<std::string, std::pair<std::string, int>> & globalDataPool, std::string strVal);
-    void setSymbol(std::vector<std::pair<std::string, int>> & parsedParam, std::map<std::string, std::pair<std::string, int>> & globalDataPool, char symbolChar);
-    std::vector<std::pair<std::string, int>> parseParam(std::string, std::map<std::string, std::pair<std::string, int>> &);
+    std::pair<std::string, int> resolveParam(std::string, DataPool &);
+    void addParam(std::vector<std::pair<std::string, int>> & parsedParam, DataPool &, std::string strVal);
+    void setSymbol(std::vector<std::pair<std::string, int>> & parsedParam, DataPool &, char symbolChar);
+    std::vector<std::pair<std::string, int>> parseParam(std::string, DataPool &);
 };
 
 #endif // RESOLVER_H

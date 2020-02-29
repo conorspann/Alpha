@@ -11,13 +11,13 @@ DrawRect::DrawRect(std::vector<std::string> params):
 
 void DrawRect::execute(Environment & environment, int *)
 {
-    std::map<std::string, std::pair<std::string, int>> & globalDataPool = environment.getGlobalDataPool();
+    DataPool & dataPool = environment.getDataPool();
     Resolver & resolver = environment.getResolver();
-    std::string xStr = resolver.resolve(params[0], globalDataPool);
-    std::string yStr = resolver.resolve(params[1], globalDataPool);
-    std::string wStr = resolver.resolve(params[2], globalDataPool);
-    std::string hStr = resolver.resolve(params[3], globalDataPool);
-    std::pair<std::string, int> handleVar = resolver.resolveVariable(params[4], globalDataPool);
+    std::string xStr = resolver.resolve(params[0], dataPool);
+    std::string yStr = resolver.resolve(params[1], dataPool);
+    std::string wStr = resolver.resolve(params[2], dataPool);
+    std::string hStr = resolver.resolve(params[3], dataPool);
+    std::pair<std::string, int> handleVar = resolver.resolveVariable(params[4], dataPool);
     std::string handleStr = handleVar.first;
     if(
        resolver.determineType(xStr) != Command::Type::INT ||

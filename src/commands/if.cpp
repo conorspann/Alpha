@@ -13,10 +13,10 @@ If::If(std::vector<std::string> p):
 
 void If::execute(Environment & environment, int * cmdPtr)
 {
-    std::map<std::string, std::pair<std::string, int>> & globalDataPool = environment.getGlobalDataPool();
+    DataPool & dataPool = environment.getDataPool();
     Resolver & resolver = environment.getResolver();
     Searcher & searcher = environment.getSearcher();
-    std::string val = resolver.resolve(params[0], globalDataPool);
+    std::string val = resolver.resolve(params[0], dataPool);
     if(val.find_first_not_of("0123456789-") != std::string::npos){
         std::string errMsg = "Cannot resolve string: ";
         errMsg += val;
