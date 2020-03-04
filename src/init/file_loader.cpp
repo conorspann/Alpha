@@ -5,16 +5,19 @@
 #include "../../include/init/file_loader.h"
 
 
-std::vector<std::string> FileLoader::load(std::string filename)
+std::vector<std::pair<int, std::string>> FileLoader::load(std::string filename)
 {
-    std::vector<std::string> data;
+    std::vector<std::pair<int, std::string>> data;
     std::ifstream input(filename, std::ios::in);
     if(!input.is_open()){
         throw std::runtime_error("Error opening file: " + filename);
     }
     std::string line;
+    int lineNumber = 1;
     while(std::getline(input, line)){
-        data.push_back(line);
+        std::pair<int, std::string> numberedLine(lineNumber, line);
+        data.push_back(numberedLine);
+        lineNumber++;
     }
     input.close();
 

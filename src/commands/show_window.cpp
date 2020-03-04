@@ -1,8 +1,8 @@
 
 #include "../../include/commands/show_window.h"
 
-ShowWindow::ShowWindow(std::vector<std::string> params):
-    Command(params)
+ShowWindow::ShowWindow(std::vector<std::string> params, int lineNumber):
+    Command(params, lineNumber)
 {
 
 }

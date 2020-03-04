@@ -9,7 +9,7 @@
 
 class CreateWindow: public Command{
 public:
-    CreateWindow(std::vector<std::string>);
+    CreateWindow(std::vector<std::string>, int);
     void execute(Environment &, int *);
     int getNumParams();
     std::string getName();

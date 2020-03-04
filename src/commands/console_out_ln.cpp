@@ -3,8 +3,8 @@
 
 #include <iostream>
 
-ConsoleOutLn::ConsoleOutLn(std::vector<std::string> params):
-    ConsoleOut(params)
+ConsoleOutLn::ConsoleOutLn(std::vector<std::string> params, int lineNumber):
+    ConsoleOut(params, lineNumber)
 {
 
 }

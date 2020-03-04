@@ -7,7 +7,7 @@
 
 class FileLoader{
 public:
-    std::vector<std::string> load(std::string);
+    std::vector<std::pair<int, std::string>> load(std::string);
 };
 
 #endif // LOADER_H

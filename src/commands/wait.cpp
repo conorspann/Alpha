@@ -4,8 +4,8 @@
 #include <vector>
 #include <string>
 
-Wait::Wait(std::vector<std::string> params):
-    Command(params)
+Wait::Wait(std::vector<std::string> params, int lineNumber):
+    Command(params, lineNumber)
 {
 
 }

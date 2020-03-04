@@ -9,7 +9,7 @@
 
 class Wait: public Command{
 public:
-    Wait(std::vector<std::string>);
+    Wait(std::vector<std::string>, int);
     void execute(Environment &, int *);
     int getNumParams();
     std::string getName();

@@ -2,8 +2,8 @@
 
 #include "../../include/commands/hide_window.h"
 
-HideWindow::HideWindow(std::vector<std::string> params):
-    Command(params)
+HideWindow::HideWindow(std::vector<std::string> params, int lineNumber):
+    Command(params, lineNumber)
 {
 
 }

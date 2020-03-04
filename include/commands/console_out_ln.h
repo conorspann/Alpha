@@ -9,7 +9,7 @@
 
 class ConsoleOutLn: public ConsoleOut{
 public:
-    ConsoleOutLn(std::vector<std::string>);
+    ConsoleOutLn(std::vector<std::string>, int);
     void execute(Environment &, int *);
     std::string getName();
 };

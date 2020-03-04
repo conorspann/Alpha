@@ -11,7 +11,7 @@
 
 class Mapper{
 public:
-    std::unique_ptr<Command> getNewCommand(std::string, std::vector<std::string>, std::vector<CommandData> &);
+    std::unique_ptr<Command> getNewCommand(std::string, std::vector<std::string>, std::vector<CommandData> &, int);
 };
 
 #endif // MAPPER_H

@@ -12,7 +12,7 @@ class CommandExtractor{
 public:
     CommandExtractor();
     ExtractedLine extract(std::vector<std::string>);
-    std::vector<CommandData> getCustomCommands(std::vector<std::vector<std::string>> & formattedLines);
+    std::vector<CommandData> getCustomCommands(std::vector<std::pair<int, std::vector<std::string>>> &);
 private:
     const int MIN_CMD_SEGMENTS = 4;
     const int CMD_SEG_POS = 0;

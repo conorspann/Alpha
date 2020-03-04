@@ -6,8 +6,8 @@
 #include "../../include/commands/console_in.h"
 #include "../../include/runtime/environment.h"
 
-ConsoleIn::ConsoleIn(std::vector<std::string> p):
-    Command(p)
+ConsoleIn::ConsoleIn(std::vector<std::string> p, int lineNumber):
+    Command(p, lineNumber)
 {
 
 }

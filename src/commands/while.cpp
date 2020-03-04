@@ -5,8 +5,8 @@
 #include "../../include/commands/while.h"
 #include "../../include/runtime/environment.h"
 
-While::While(std::vector<std::string> p):
-    Command(p)
+While::While(std::vector<std::string> p, int lineNumber):
+    Command(p, lineNumber)
 {
 
 }

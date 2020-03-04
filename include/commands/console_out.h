@@ -9,7 +9,7 @@
 
 class ConsoleOut: public Command{
 public:
-    ConsoleOut(std::vector<std::string>);
+    ConsoleOut(std::vector<std::string>, int);
     void execute(Environment &, int *);
     int getNumParams();
     std::string getName();

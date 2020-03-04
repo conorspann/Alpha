@@ -6,7 +6,7 @@
 
 class EndIf: public Command{
 public:
-    EndIf(std::vector<std::string> p);
+    EndIf(std::vector<std::string> p, int);
     void execute(Environment &, int *);
     int getNumParams();
     std::string getName();

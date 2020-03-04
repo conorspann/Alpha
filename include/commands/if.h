@@ -8,7 +8,7 @@
 
 class If: public Command{
 public:
-    If(std::vector<std::string> p);
+    If(std::vector<std::string> p, int);
     void execute(Environment &, int *);
     int getNumParams();
     std::string getName();

@@ -5,8 +5,8 @@
 #include "../../include/commands/call_command.h"
 #include "../../include/runtime/environment.h"
 
-CallCommand::CallCommand(std::vector<std::string> params):
-    Command(params)
+CallCommand::CallCommand(std::vector<std::string> params, int lineNumber):
+    Command(params, lineNumber)
 {
 
 }

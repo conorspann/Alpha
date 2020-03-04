@@ -4,8 +4,8 @@
 #include "../../include/commands/render_window.h"
 #include "../../include/runtime/environment.h"
 
-RenderWindow::RenderWindow(std::vector<std::string> params):
-    Command(params)
+RenderWindow::RenderWindow(std::vector<std::string> params, int lineNumber):
+    Command(params, lineNumber)
 {
 
 }

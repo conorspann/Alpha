@@ -8,7 +8,7 @@
 
 class DrawRect: public Command{
 public:
-    DrawRect(std::vector<std::string>);
+    DrawRect(std::vector<std::string>, int);
     void execute(Environment &, int *);
     int getNumParams();
     std::string getName();

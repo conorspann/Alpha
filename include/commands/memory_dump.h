@@ -8,7 +8,7 @@
 
 class MemoryDump: public Command{
 public:
-    MemoryDump(std::vector<std::string> params);
+    MemoryDump(std::vector<std::string> params, int);
     void execute(Environment &, int *);
     int getNumParams();
     std::string getName();

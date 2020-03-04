@@ -6,8 +6,8 @@
 #include <vector>
 #include <string>
 
-CreateWindow::CreateWindow(std::vector<std::string> params):
-    Command(params)
+CreateWindow::CreateWindow(std::vector<std::string> params, int lineNumber):
+    Command(params, lineNumber)
 {
 
 }

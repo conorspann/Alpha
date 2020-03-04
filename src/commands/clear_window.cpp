@@ -4,8 +4,8 @@
 #include "../../include/commands/clear_window.h"
 #include "../../include/runtime/environment.h"
 
-ClearWindow::ClearWindow(std::vector<std::string> params):
-    Command(params)
+ClearWindow::ClearWindow(std::vector<std::string> params, int lineNumber):
+    Command(params, lineNumber)
 {
 
 }

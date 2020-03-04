@@ -6,8 +6,8 @@
 #include "../../include/commands/console_out.h"
 #include "../../include/runtime/environment.h"
 
-ConsoleOut::ConsoleOut(std::vector<std::string> params):
-    Command(params)
+ConsoleOut::ConsoleOut(std::vector<std::string> params, int lineNumber):
+    Command(params, lineNumber)
 {
 
 }

@@ -10,20 +10,16 @@ static const std::string symbols = "+-*/?%@=<>,()";
 static const std::string whiteSpaceChars = " \t";
 
 
-Formatter::Formatter()
+std::vector<std::pair<int, std::string>> Formatter::removeBlankLines(std::vector<std::pair<int, std::string>> lines)
 {
-
-}
-
-std::vector<std::string> Formatter::removeBlankLines(std::vector<std::string> lines)
-{
-    std::vector<std::string> formattedLines;
+    std::vector<std::pair<int, std::string>> formattedLines;
     for(int lineNumber = 0; lineNumber < lines.size(); lineNumber++){
-        std::string line = lines[lineNumber];
+        int preservedLineNumber = lines[lineNumber].first;
+        std::string line = lines[lineNumber].second;
         if(
             line.find_first_not_of(whiteSpaceChars) != std::string::npos
         ){
-            formattedLines.push_back(line);
+            formattedLines.push_back(std::pair<int, std::string>(preservedLineNumber, line));
         }
     }
 
@@ -76,12 +72,13 @@ std::vector<std::string> Formatter::formatLine(std::string line)
     return formattedLine;
 }
 
-std::vector<std::vector<std::string>> Formatter::formatLines(std::vector<std::string> rawLines)
+std::vector<std::pair<int, std::vector<std::string>>> Formatter::formatLines(std::vector<std::pair<int, std::string>> rawLines)
 {
-    std::vector<std::vector<std::string>> formattedLines;
+    std::vector<std::pair<int, std::vector<std::string>>> formattedLines;
     for(auto line : rawLines){
-        std::vector<std::string> formattedLine = formatLine(line);
-        formattedLines.push_back(formattedLine);
+        int preservedLineNumber = line.first;
+        std::vector<std::string> formattedLine = formatLine(line.second);
+        formattedLines.push_back(std::pair<int, std::vector<std::string>>(preservedLineNumber, formattedLine));
     }
 
     return formattedLines;

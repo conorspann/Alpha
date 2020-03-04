@@ -37,11 +37,11 @@ int main(int argc, char * argv[])
         PreProcessor preProcessor; /** TODO: implement include files */
 
         FileLoader loader;
-        std::vector<std::string> rawData = loader.load(argv[1]);
+        std::vector<std::pair<int, std::string>> rawData = loader.load(argv[1]);
 
         Formatter formatter;
-        std::vector<std::string> statements = formatter.removeBlankLines(rawData);
-        std::vector<std::vector<std::string>> formattedLines = formatter.formatLines(statements);
+        std::vector<std::pair<int, std::string>> statements = formatter.removeBlankLines(rawData);
+        std::vector<std::pair<int, std::vector<std::string>>> formattedLines = formatter.formatLines(statements);
 
         Parser parser;
         Interpreter interpreter(std::move(parser.parse(formattedLines)));

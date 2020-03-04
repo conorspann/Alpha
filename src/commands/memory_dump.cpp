@@ -8,8 +8,8 @@
 #include "../../include/commands/memory_dump.h"
 #include "../../include/runtime/environment.h"
 
-MemoryDump::MemoryDump(std::vector<std::string> params):
-    Command(params)
+MemoryDump::MemoryDump(std::vector<std::string> params, int lineNumber):
+    Command(params, lineNumber)
 {
 
 }

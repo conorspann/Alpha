@@ -8,7 +8,7 @@
 
 class While: public Command{
 public:
-    While(std::vector<std::string> p);
+    While(std::vector<std::string> p, int);
     void execute(Environment &, int *);
     int getNumParams();
     std::string getName();

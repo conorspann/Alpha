@@ -8,7 +8,7 @@
 
 class RenderWindow: public Command{
 public:
-    RenderWindow(std::vector<std::string>);
+    RenderWindow(std::vector<std::string>, int);
     void execute(Environment &, int *);
     int getNumParams();
     std::string getName();

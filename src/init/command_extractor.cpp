@@ -80,11 +80,11 @@ std::vector<std::string> CommandExtractor::getDefineParamList(std::vector<std::s
     return defineParamList;
 }
 
-std::vector<CommandData> CommandExtractor::getCustomCommands(std::vector<std::vector<std::string>> & formattedLines)
+std::vector<CommandData> CommandExtractor::getCustomCommands(std::vector<std::pair<int, std::vector<std::string>>> & formattedLines)
 {
     std::vector<CommandData> customCommands;
     for(int lineNumber = 0; lineNumber < formattedLines.size(); lineNumber++){
-        std::vector<std::string> line = formattedLines[lineNumber];
+        std::vector<std::string> line = formattedLines[lineNumber].second;
         if(line.size() < MIN_CMD_SEGMENTS){
             continue;
         }

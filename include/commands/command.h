@@ -15,13 +15,15 @@ public:
         SYMBOL,
         UNKNOWN
     };
-    Command(std::vector<std::string>);
+    Command(std::vector<std::string>, int);
     virtual void execute(Environment &, int *) =0;
     virtual int getNumParams() =0;
     virtual std::string getName() =0;
     bool hasCorrectNumParams();
+    int getPreservedLineNumber();
 protected:
     std::vector<std::string> params;
+    int preservedLineNumber;
 };
 
 #endif // COMMAND_H

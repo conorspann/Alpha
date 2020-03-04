@@ -5,8 +5,8 @@
 #include "../../include/commands/if.h"
 #include "../../include/runtime/environment.h"
 
-If::If(std::vector<std::string> p):
-    Command(p)
+If::If(std::vector<std::string> p, int lineNumber):
+    Command(p, lineNumber)
 {
 
 }

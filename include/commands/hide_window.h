@@ -9,7 +9,7 @@
 
 class HideWindow: public Command{
 public:
-    HideWindow(std::vector<std::string>);
+    HideWindow(std::vector<std::string>, int);
     void execute(Environment &, int *);
     int getNumParams();
     std::string getName();

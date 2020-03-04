@@ -3,8 +3,8 @@
 #include "../../include/commands/draw_rect.h"
 #include "../../include/runtime/environment.h"
 
-DrawRect::DrawRect(std::vector<std::string> params):
-    Command(params)
+DrawRect::DrawRect(std::vector<std::string> params, int lineNumber):
+    Command(params, lineNumber)
 {
 
 }

@@ -3,8 +3,8 @@
 #include "../../include/commands/end_custom_command.h"
 #include "../../include/runtime/environment.h"
 
-EndCustomCommand::EndCustomCommand(std::vector<std::string> params):
-    Command(params)
+EndCustomCommand::EndCustomCommand(std::vector<std::string> params, int lineNumber):
+    Command(params, lineNumber)
 {
 
 }

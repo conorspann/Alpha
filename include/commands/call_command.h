@@ -10,7 +10,7 @@
 
 class CallCommand: public Command{
 public:
-    CallCommand(std::vector<std::string>);
+    CallCommand(std::vector<std::string>, int);
     void execute(Environment &, int *);
     int getNumParams();
     std::string getName();

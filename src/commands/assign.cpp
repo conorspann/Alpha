@@ -5,8 +5,8 @@
 #include "../../include/commands/assign.h"
 #include "../../include/runtime/environment.h"
 
-Assign::Assign(std::vector<std::string> params):
-    Command(params)
+Assign::Assign(std::vector<std::string> params, int lineNumber):
+    Command(params, lineNumber)
 {
 
 }

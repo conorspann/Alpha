@@ -8,7 +8,7 @@
 
 class ClearWindow: public Command{
 public:
-    ClearWindow(std::vector<std::string>);
+    ClearWindow(std::vector<std::string>, int);
     void execute(Environment &, int *);
     int getNumParams();
     std::string getName();

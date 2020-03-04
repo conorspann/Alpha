@@ -9,7 +9,7 @@
 
 class EndWhile: public Command{
 public:
-    EndWhile(std::vector<std::string> p);
+    EndWhile(std::vector<std::string> p, int);
     void execute(Environment &, int *);
     int getNumParams();
     std::string getName();

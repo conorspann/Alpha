@@ -9,7 +9,7 @@
 
 class CustomCommand: public Command{
 public:
-    CustomCommand(std::vector<std::string>);
+    CustomCommand(std::vector<std::string>, int);
     void execute(Environment &, int *);
     int getNumParams();
     std::string getName();

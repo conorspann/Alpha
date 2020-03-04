@@ -3,8 +3,8 @@
 #include "../../include/commands/end_while.h"
 #include "../../include/runtime/environment.h"
 
-EndWhile::EndWhile(std::vector<std::string> p):
-    Command(p)
+EndWhile::EndWhile(std::vector<std::string> p, int lineNumber):
+    Command(p, lineNumber)
 {
 
 }
