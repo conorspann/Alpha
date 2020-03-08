@@ -8,7 +8,7 @@
 class Formatter{
 public:
     std::vector<std::pair<int, std::string>> removeBlankLines(std::vector<std::pair<int, std::string>>);
-    std::vector<std::string> formatLine(std::string line);
+    std::vector<std::string> formatLine(std::string line, int);
     std::vector<std::pair<int, std::vector<std::string>>> formatLines(std::vector<std::pair<int, std::string>> );
     static bool isWhiteSpace(char c);
     static bool isSymbol(char c);

@@ -67,6 +67,7 @@
 		<Unit filename="include/commands/show_window.h" />
 		<Unit filename="include/commands/wait.h" />
 		<Unit filename="include/commands/while.h" />
+		<Unit filename="include/exception/syntax_error.h" />
 		<Unit filename="include/formatter/formatter.h" />
 		<Unit filename="include/gui/window.h" />
 		<Unit filename="include/init/command_extractor.h" />
@@ -102,6 +103,7 @@
 		<Unit filename="src/commands/show_window.cpp" />
 		<Unit filename="src/commands/wait.cpp" />
 		<Unit filename="src/commands/while.cpp" />
+		<Unit filename="src/exception/syntax_error.cpp" />
 		<Unit filename="src/formatter/formatter.cpp" />
 		<Unit filename="src/gui/window.cpp" />
 		<Unit filename="src/init/command_extractor.cpp" />

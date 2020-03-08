@@ -16,7 +16,7 @@ While(@xPos < 250)
 	@xPos = @xPos + 15
 	@yPos = @yPos + 15
 	RenderWindow(@handle)
-	Wait(500)
+	Wait(10)
 EndWhile
 
 

@@ -5,6 +5,7 @@
 #include <string>
 
 #include "../../include/formatter/formatter.h"
+#include "../../include/exception/syntax_error.h"
 
 static const std::string symbols = "+-*/?%@=<>,()";
 static const std::string whiteSpaceChars = " \t";
@@ -26,7 +27,7 @@ std::vector<std::pair<int, std::string>> Formatter::removeBlankLines(std::vector
     return formattedLines;
 }
 
-std::vector<std::string> Formatter::formatLine(std::string line)
+std::vector<std::string> Formatter::formatLine(std::string line, int preservedLineNumber)
 {
     std::vector<std::string> formattedLine;
     std::string segment;
@@ -50,7 +51,7 @@ std::vector<std::string> Formatter::formatLine(std::string line)
                 }
             }
             if(quotePos == line.length()){
-                throw std::runtime_error("Error: String is missing end-quote.");
+                throw SyntaxError("Error: String is missing end-quote.", preservedLineNumber);
             }
             continue;
         }
@@ -77,7 +78,7 @@ std::vector<std::pair<int, std::vector<std::string>>> Formatter::formatLines(std
     std::vector<std::pair<int, std::vector<std::string>>> formattedLines;
     for(auto line : rawLines){
         int preservedLineNumber = line.first;
-        std::vector<std::string> formattedLine = formatLine(line.second);
+        std::vector<std::string> formattedLine = formatLine(line.second, preservedLineNumber);
         formattedLines.push_back(std::pair<int, std::vector<std::string>>(preservedLineNumber, formattedLine));
     }
 

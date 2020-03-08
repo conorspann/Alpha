@@ -136,13 +136,14 @@
 	"command.h"
 	<memory>
 
-1583084919 source:c:\users\conor\documents\dev\alpha\src\formatter\formatter.cpp
+1583675478 source:c:\users\conor\documents\dev\alpha\src\formatter\formatter.cpp
 	<iostream>
 	<vector>
 	<string>
 	"../../include/formatter/formatter.h"
+	"../../include/exception/syntax_error.h"
 
-1583084966 c:\users\conor\documents\dev\alpha\include\formatter\formatter.h
+1583675385 c:\users\conor\documents\dev\alpha\include\formatter\formatter.h
 	<string>
 	<vector>
 
@@ -1091,4 +1092,10 @@
 	"../../include/runtime/data_pool.h"
 
 1583353673 source:c:\users\conor\documents\dev\alpha\syntax_error.cpp
+
+1583674972 source:c:\users\conor\documents\dev\alpha\src\exception\syntax_error.cpp
+	"../../include/exception/syntax_error.h"
+
+1583675594 c:\users\conor\documents\dev\alpha\include\exception\syntax_error.h
+	<stdexcept>
 
