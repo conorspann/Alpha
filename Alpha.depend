@@ -136,7 +136,7 @@
 	"command.h"
 	<memory>
 
-1583675478 source:c:\users\conor\documents\dev\alpha\src\formatter\formatter.cpp
+1583675635 source:c:\users\conor\documents\dev\alpha\src\formatter\formatter.cpp
 	<iostream>
 	<vector>
 	<string>
@@ -185,12 +185,13 @@
 	<string>
 	<vector>
 
-1583354387 source:c:\users\conor\documents\dev\alpha\src\init\mapper.cpp
+1583685219 source:c:\users\conor\documents\dev\alpha\src\init\mapper.cpp
 	<stdexcept>
 	<iostream>
 	<string>
 	<memory>
 	"../../include/init/mapper.h"
+	"../../include/exception/syntax_error.h"
 	"../../include/commands/command.h"
 	"../../include/commands/console_out.h"
 	"../../include/commands/console_out_ln.h"
@@ -213,7 +214,7 @@
 	"../../include/commands/clear_window.h"
 	"../../include/commands/draw_rect.h"
 
-1583353765 c:\users\conor\documents\dev\alpha\include\init\mapper.h
+1583684640 c:\users\conor\documents\dev\alpha\include\init\mapper.h
 	"../commands/command.h"
 	"../runtime/command_data.h"
 	<map>
