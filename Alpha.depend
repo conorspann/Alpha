@@ -106,10 +106,11 @@
 1583354368 c:\users\conor\documents\dev\alpha\include\commands\endif.h
 	"command.h"
 
-1583354268 source:c:\users\conor\documents\dev\alpha\src\commands\if.cpp
+1583749904 source:c:\users\conor\documents\dev\alpha\src\commands\if.cpp
 	<iostream>
 	"../../include/commands/if.h"
 	"../../include/runtime/environment.h"
+	"../../include/exception/syntax_error.h"
 
 1583354368 c:\users\conor\documents\dev\alpha\include\commands\if.h
 	"command.h"
@@ -185,7 +186,7 @@
 	<string>
 	<vector>
 
-1583685219 source:c:\users\conor\documents\dev\alpha\src\init\mapper.cpp
+1583748639 source:c:\users\conor\documents\dev\alpha\src\init\mapper.cpp
 	<stdexcept>
 	<iostream>
 	<string>
@@ -1019,18 +1020,20 @@
 	<string>
 	<memory>
 
-1583354268 source:c:\users\conor\documents\dev\alpha\src\commands\show_window.cpp
+1583749888 source:c:\users\conor\documents\dev\alpha\src\commands\show_window.cpp
 	"../../include/commands/show_window.h"
+	"../../include/exception/syntax_error.h"
 
 1583354368 c:\users\conor\documents\dev\alpha\include\commands\show_window.h
 	"command.h"
 	<string>
 	<vector>
 
-1583354161 source:c:\users\conor\documents\dev\alpha\src\commands\create_window.cpp
+1583749824 source:c:\users\conor\documents\dev\alpha\src\commands\create_window.cpp
 	"../../include/commands/create_window.h"
 	"../../include/commands/command.h"
 	"../../include/runtime/resolver.h"
+	"../../include/exception/syntax_error.h"
 	<vector>
 	<string>
 
@@ -1039,8 +1042,9 @@
 	<string>
 	<vector>
 
-1583354268 source:c:\users\conor\documents\dev\alpha\src\commands\wait.cpp
+1583749897 source:c:\users\conor\documents\dev\alpha\src\commands\wait.cpp
 	"../../include/commands/wait.h"
+	"../../include/exception/syntax_error.h"
 	<vector>
 	<string>
 
@@ -1049,35 +1053,39 @@
 	<string>
 	<vector>
 
-1583354268 source:c:\users\conor\documents\dev\alpha\src\commands\hide_window.cpp
+1583749872 source:c:\users\conor\documents\dev\alpha\src\commands\hide_window.cpp
 	"../../include/commands/hide_window.h"
+	"../../include/exception/syntax_error.h"
 
 1583354368 c:\users\conor\documents\dev\alpha\include\commands\hide_window.h
 	"command.h"
 	<string>
 	<vector>
 
-1583354268 source:c:\users\conor\documents\dev\alpha\src\commands\draw_rect.cpp
+1583749866 source:c:\users\conor\documents\dev\alpha\src\commands\draw_rect.cpp
 	"../../include/commands/draw_rect.h"
 	"../../include/runtime/environment.h"
+	"../../include/exception/syntax_error.h"
 
 1583354368 c:\users\conor\documents\dev\alpha\include\commands\draw_rect.h
 	"command.h"
 	<string>
 	<vector>
 
-1583354268 source:c:\users\conor\documents\dev\alpha\src\commands\render_window.cpp
+1583749880 source:c:\users\conor\documents\dev\alpha\src\commands\render_window.cpp
 	"../../include/commands/render_window.h"
 	"../../include/runtime/environment.h"
+	"../../include/exception/syntax_error.h"
 
 1583354368 c:\users\conor\documents\dev\alpha\include\commands\render_window.h
 	"command.h"
 	<string>
 	<vector>
 
-1583354109 source:c:\users\conor\documents\dev\alpha\src\commands\clear_window.cpp
+1583749374 source:c:\users\conor\documents\dev\alpha\src\commands\clear_window.cpp
 	"../../include/commands/clear_window.h"
 	"../../include/runtime/environment.h"
+	"../../include/exception/syntax_error.h"
 
 1583354368 c:\users\conor\documents\dev\alpha\include\commands\clear_window.h
 	"command.h"

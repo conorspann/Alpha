@@ -2,6 +2,7 @@
 #include "../../include/commands/create_window.h"
 #include "../../include/commands/command.h"
 #include "../../include/runtime/resolver.h"
+#include "../../include/exception/syntax_error.h"
 
 #include <vector>
 #include <string>
@@ -21,7 +22,7 @@ void CreateWindow::execute(Environment & environment, int * cmdPtr)
     std::string widthStr = params[1];
     std::string heightStr = params[2];
     if(resolver.determineType(widthStr) != Command::Type::INT || resolver.determineType(heightStr) != Command::Type::INT){
-        throw std::runtime_error("Error: window width and height need to be integers.");
+        throw SyntaxError("Error: window width and height need to be integers.", getPreservedLineNumber());
     }
     int width = std::stoi(widthStr);
     int height = std::stoi(heightStr);

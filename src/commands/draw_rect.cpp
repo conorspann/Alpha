@@ -2,6 +2,8 @@
 
 #include "../../include/commands/draw_rect.h"
 #include "../../include/runtime/environment.h"
+#include "../../include/exception/syntax_error.h"
+
 
 DrawRect::DrawRect(std::vector<std::string> params, int lineNumber):
     Command(params, lineNumber)
@@ -26,7 +28,7 @@ void DrawRect::execute(Environment & environment, int *)
        resolver.determineType(hStr) != Command::Type::INT ||
        resolver.determineType(handleStr) != Command::Type::INT
     ){
-        throw std::runtime_error("Error: draw rect parameters must be integers.");
+        throw SyntaxError("Error: draw rect parameters must be integers.", getPreservedLineNumber());
     }
     int xPos = std::stoi(xStr);
     int yPos = std::stoi(yStr);
@@ -35,7 +37,7 @@ void DrawRect::execute(Environment & environment, int *)
     int handle = std::stoi(handleStr);
     std::vector<Window> & windows = environment.getWindows();
     if(handle < 0 || handle >= windows.size()){
-        throw std::runtime_error("Error: window handle out of bounds");
+        throw SyntaxError("Error: window handle out of bounds", getPreservedLineNumber());
     }
     windows[handle].drawRect(xPos, yPos, wPos, hPos);
 

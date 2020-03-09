@@ -1,5 +1,8 @@
 
+
 #include "../../include/commands/show_window.h"
+#include "../../include/exception/syntax_error.h"
+
 
 ShowWindow::ShowWindow(std::vector<std::string> params, int lineNumber):
     Command(params, lineNumber)
@@ -15,7 +18,7 @@ void ShowWindow::execute(Environment & environment, int * cmdPtr)
     std::string windowHandleStr = resolver.resolve(params[0], dataPool);
     int windowHandle = std::stoi(windowHandleStr);
     if(windowHandle < 0 || windowHandle >= windows.size()){
-        throw std::runtime_error("Error: window handle invalid.");
+        throw SyntaxError("Error: window handle invalid.", getPreservedLineNumber());
     }
     windows[windowHandle].show();
 }

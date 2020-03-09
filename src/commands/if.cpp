@@ -4,6 +4,8 @@
 
 #include "../../include/commands/if.h"
 #include "../../include/runtime/environment.h"
+#include "../../include/exception/syntax_error.h"
+
 
 If::If(std::vector<std::string> p, int lineNumber):
     Command(p, lineNumber)
@@ -21,7 +23,7 @@ void If::execute(Environment & environment, int * cmdPtr)
         std::string errMsg = "Cannot resolve string: ";
         errMsg += val;
         errMsg += " to boolean in if-statement.";
-        throw std::runtime_error(errMsg);
+        throw SyntaxError(errMsg, getPreservedLineNumber());
     }
     int intVal = std::stoi(val);
     if(intVal < 1){

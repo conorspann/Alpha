@@ -1,8 +1,11 @@
 
+
 #include "../../include/commands/wait.h"
+#include "../../include/exception/syntax_error.h"
 
 #include <vector>
 #include <string>
+
 
 Wait::Wait(std::vector<std::string> params, int lineNumber):
     Command(params, lineNumber)
@@ -16,7 +19,7 @@ void Wait::execute(Environment & environment, int * cmdPtr)
     Resolver & resolver = environment.getResolver();
     std::string timeStr = resolver.resolve(params[0], dataPool);
     if(resolver.determineType(timeStr) != Command::Type::INT){
-        throw std::runtime_error("Error: Wait time must be a whole integer (milliseconds).");
+        throw SyntaxError("Error: Wait time must be a whole integer (milliseconds).", getPreservedLineNumber());
     }
     int timeMilliSeconds = std::stoi(timeStr);
     SDL_Delay(timeMilliSeconds);
