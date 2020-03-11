@@ -27,62 +27,63 @@ std::vector<std::pair<int, std::string>> Formatter::removeBlankLines(std::vector
     return formattedLines;
 }
 
-std::vector<std::string> Formatter::formatLine(std::string line, int preservedLineNumber)
+std::vector<std::pair<int, std::vector<std::string>>> Formatter::tokeniseLines(std::vector<std::pair<int, std::string>> rawLines)
 {
-    std::vector<std::string> formattedLine;
-    std::string segment;
-    bool isString = false;
-    for(int charNumber = 0; charNumber < line.length(); charNumber++){
-        char c = line[charNumber];
-        /**
-            need special case for strings " "
-         */
-
-        if(c == '\"'){
-            std::string strSeg(1, c);
-            int quotePos;
-            for(quotePos = charNumber + 1; quotePos < line.length(); quotePos++){
-                char strC = line[quotePos];
-                strSeg += strC;
-                if(strC == '\"'){
-                    formattedLine.push_back(strSeg);
-                    charNumber = quotePos;
-                    break;
-                }
-            }
-            if(quotePos == line.length()){
-                throw SyntaxError("Error: String is missing end-quote.", preservedLineNumber);
-            }
-            continue;
-        }
-
-        if(!isWhiteSpace(c)){
-            if(isSymbol(c)){
-                addSegment(formattedLine, segment);
-                std::string symbol(1, c);
-                formattedLine.push_back(symbol);
-            }else{
-                segment += c;
-            }
-        }
-        if(charNumber == line.length() - 1 || isWhiteSpace(c)){
-            addSegment(formattedLine, segment);
-        }
+    std::vector<std::pair<int, std::vector<std::string>>> tokenisedLines;
+    for(auto rawLine : rawLines){
+        int preservedLineNumber = rawLine.first;
+        std::vector<std::string> tokenisedLine = tokeniseLine(rawLine.second, preservedLineNumber);
+        tokenisedLines.push_back(std::pair<int, std::vector<std::string>>(preservedLineNumber, tokenisedLine));
     }
 
-    return formattedLine;
+    return tokenisedLines;
 }
 
-std::vector<std::pair<int, std::vector<std::string>>> Formatter::formatLines(std::vector<std::pair<int, std::string>> rawLines)
+std::vector<std::string> Formatter::tokeniseLine(std::string rawLine, int preservedLineNumber)
 {
-    std::vector<std::pair<int, std::vector<std::string>>> formattedLines;
-    for(auto line : rawLines){
-        int preservedLineNumber = line.first;
-        std::vector<std::string> formattedLine = formatLine(line.second, preservedLineNumber);
-        formattedLines.push_back(std::pair<int, std::vector<std::string>>(preservedLineNumber, formattedLine));
+    std::vector<std::string> tokenisedLine;
+    std::string token;
+    bool isString = false;
+    for(int charNumber = 0; charNumber < rawLine.length(); charNumber++){
+        char c = rawLine[charNumber];
+        if(c == '\"'){
+            std::string extractedString = extractString(rawLine, charNumber, preservedLineNumber);
+            tokenisedLine.push_back(extractedString);
+            charNumber += extractedString.length() - 1;
+        }
+        if(!isWhiteSpace(c)){
+            if(isSymbol(c)){
+                addSegment(tokenisedLine, token);
+                std::string symbol(1, c);
+                tokenisedLine.push_back(symbol);
+            }else{
+                token += c;
+            }
+        }
+        if(charNumber == rawLine.length() - 1 || isWhiteSpace(c)){
+            addSegment(tokenisedLine, token);
+        }
     }
 
-    return formattedLines;
+    return tokenisedLine;
+}
+
+std::string Formatter::extractString(std::string rawLine, int currentCharNumber, int preservedLineNumber)
+{
+    std::string extractedStr(1, '\"');
+    int quotePos;
+    for(quotePos = currentCharNumber + 1; quotePos < rawLine.length(); quotePos++){
+        char strC = rawLine[quotePos];
+        extractedStr += strC;
+        if(strC == '\"'){
+            break;
+        }
+    }
+    if(quotePos == rawLine.length()){
+        throw SyntaxError("Error: String is missing end-quote.", preservedLineNumber);
+    }
+
+    return extractedStr;
 }
 
 bool Formatter::isWhiteSpace(char c)

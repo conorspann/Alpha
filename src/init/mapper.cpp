@@ -67,7 +67,7 @@ std::unique_ptr<Command> Mapper::getNewCommand(std::string commandName, std::vec
     c = (this->*generator)(params, lineNumber);
 
     if(c->getNumParams() > 0 && !c->hasCorrectNumParams()){
-        throw SyntaxError("Command: " + c->getName() + " requires " + std::to_string(c->getNumParams()), lineNumber);
+        throw SyntaxError("Command: " + c->getName() + " requires " + std::to_string(c->getNumParams()) + " parameters.", lineNumber);
     }
 
     return std::move(c);

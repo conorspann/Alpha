@@ -128,23 +128,24 @@
 	"command.h"
 	<memory>
 
-1583354266 source:c:\users\conor\documents\dev\alpha\src\commands\while.cpp
+1583749910 source:c:\users\conor\documents\dev\alpha\src\commands\while.cpp
 	<iostream>
 	"../../include/commands/while.h"
 	"../../include/runtime/environment.h"
+	"../../include/exception/syntax_error.h"
 
 1583354366 c:\users\conor\documents\dev\alpha\include\commands\while.h
 	"command.h"
 	<memory>
 
-1583675635 source:c:\users\conor\documents\dev\alpha\src\formatter\formatter.cpp
+1583941387 source:c:\users\conor\documents\dev\alpha\src\formatter\formatter.cpp
 	<iostream>
 	<vector>
 	<string>
 	"../../include/formatter/formatter.h"
 	"../../include/exception/syntax_error.h"
 
-1583675385 c:\users\conor\documents\dev\alpha\include\formatter\formatter.h
+1583942792 c:\users\conor\documents\dev\alpha\include\formatter\formatter.h
 	<string>
 	<vector>
 
@@ -186,7 +187,7 @@
 	<string>
 	<vector>
 
-1583748639 source:c:\users\conor\documents\dev\alpha\src\init\mapper.cpp
+1583942575 source:c:\users\conor\documents\dev\alpha\src\init\mapper.cpp
 	<stdexcept>
 	<iostream>
 	<string>
@@ -249,7 +250,7 @@
 	<string>
 	"../runtime/command_data.h"
 
-1583090156 source:c:\users\conor\documents\dev\alpha\src\main.cpp
+1583941131 source:c:\users\conor\documents\dev\alpha\src\main.cpp
 	<stdexcept>
 	<iostream>
 	<vector>

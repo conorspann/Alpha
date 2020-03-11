@@ -41,7 +41,7 @@ int main(int argc, char * argv[])
 
         Formatter formatter;
         std::vector<std::pair<int, std::string>> statements = formatter.removeBlankLines(rawData);
-        std::vector<std::pair<int, std::vector<std::string>>> formattedLines = formatter.formatLines(statements);
+        std::vector<std::pair<int, std::vector<std::string>>> formattedLines = formatter.tokeniseLines(statements);
 
         Parser parser;
         Interpreter interpreter(std::move(parser.parse(formattedLines)));
