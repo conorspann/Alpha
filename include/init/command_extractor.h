@@ -20,6 +20,8 @@ private:
     const int BRACKET_SEG_POS = 2;
     std::vector<std::string> getParamList(std::vector<std::string>);
     std::vector<std::string> getDefineParamList(std::vector<std::string>);
+    bool tokensAreValid(std::vector<std::string>, int);
+    std::vector<std::string> extractParams(std::vector<std::string>);
 };
 
 #endif // COMMAND_EXTRACTOR_H

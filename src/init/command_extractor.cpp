@@ -6,6 +6,7 @@
 #include "../../include/init/command_extractor.h"
 #include "../../include/init/extracted_line.h"
 #include "../../include/formatter/formatter.h"
+#include "../../include/exception/syntax_error.h"
 
 
 CommandExtractor::CommandExtractor()
@@ -84,44 +85,63 @@ std::vector<CommandData> CommandExtractor::getCustomCommands(std::vector<std::pa
 {
     std::vector<CommandData> customCommands;
     for(int lineNumber = 0; lineNumber < formattedLines.size(); lineNumber++){
-        std::vector<std::string> line = formattedLines[lineNumber].second;
-        if(line.size() < MIN_CMD_SEGMENTS){
+        std::vector<std::string> tokenLine = formattedLines[lineNumber].second;
+        if(!tokensAreValid(tokenLine, formattedLines[lineNumber].first)){
             continue;
         }
-        std::string segment = line[CMD_SEG_POS];
-        if(segment != "Cmd"){
-            continue;
-        }
-        std::string cmdName = line[NAME_SEG_POS];
-        if(Formatter::isSymbol(cmdName[0])){
-            throw std::runtime_error("Error: Custom command name is not valid.");
-        }
-        segment = line[BRACKET_SEG_POS];
-        if(segment != "(" || line[line.size() - 1] != ")"){
-            throw std::runtime_error("Error: Custom command missing bracket.");
-        }
-        // loop through params if they exist
-        std::string param;
-        std::vector<std::string> params;
-        for(int segNumber = BRACKET_SEG_POS + 1; segNumber < line.size(); segNumber++){
-            std::string segment = line[segNumber];
-            if(segment == ")"){
-                break;
-            }
-            if(segment == ","){
-                params.push_back(param);
-                param = "";
-                continue;
-            }
-            param += segment;
-            if(segNumber == line.size() - 2){
-                params.push_back(param);
-                param = "";
-            }
-        }
+        std::vector<std::string> params = extractParams(tokenLine);
+        std::string cmdName = tokenLine[NAME_SEG_POS];
         CommandData customCommand(lineNumber, cmdName, params);
         customCommands.push_back(customCommand);
     }
 
     return customCommands;
+}
+
+
+bool CommandExtractor::tokensAreValid(std::vector<std::string> tokenLine, int preservedLineNumber)
+{
+    if(tokenLine.size() < MIN_CMD_SEGMENTS || tokenLine[CMD_SEG_POS] != "Cmd"){
+        return false;
+    }
+    std::string cmdName = tokenLine[NAME_SEG_POS];
+    if(cmdName.empty()){
+        throw SyntaxError("Error: Custom command name cannot be blank.", preservedLineNumber);
+    }
+    if(Formatter::isSymbol(cmdName[0])){
+        throw SyntaxError("Error: Custom command name cannot start with a symbol.", preservedLineNumber);
+    }
+    std::string bracketToken = tokenLine[BRACKET_SEG_POS];
+    if(bracketToken != "("){
+        throw SyntaxError("Error: Custom command missing start parameter bracket.", preservedLineNumber);
+    }
+    if(tokenLine[tokenLine.size() - 1] != ")"){
+        throw SyntaxError("Error: Custom command missing end parameter bracket.", preservedLineNumber);
+    }
+
+    return true;
+}
+
+std::vector<std::string> CommandExtractor::extractParams(std::vector<std::string> tokenLine)
+{
+    std::string param;
+    std::vector<std::string> params;
+    for(int tokenNumber = BRACKET_SEG_POS + 1; tokenNumber < tokenLine.size(); tokenNumber++){
+        std::string token = tokenLine[tokenNumber];
+        if(token == ")"){
+            break;
+        }
+        if(token == ","){
+            params.push_back(param);
+            param = "";
+            continue;
+        }
+        param += token;
+        if(tokenNumber == tokenLine.size() - 2){
+            params.push_back(param);
+            param = "";
+        }
+    }
+
+    return params;
 }

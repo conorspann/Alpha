@@ -138,7 +138,7 @@
 	"command.h"
 	<memory>
 
-1583941387 source:c:\users\conor\documents\dev\alpha\src\formatter\formatter.cpp
+1583942783 source:c:\users\conor\documents\dev\alpha\src\formatter\formatter.cpp
 	<iostream>
 	<vector>
 	<string>
@@ -151,15 +151,16 @@
 
 1579806410 c:\users\conor\documents\dev\alpha\include\formatter\formatted_data.h
 
-1583353303 source:c:\users\conor\documents\dev\alpha\src\init\command_extractor.cpp
+1584047183 source:c:\users\conor\documents\dev\alpha\src\init\command_extractor.cpp
 	<iostream>
 	<vector>
 	<string>
 	"../../include/init/command_extractor.h"
 	"../../include/init/extracted_line.h"
 	"../../include/formatter/formatter.h"
+	"../../include/exception/syntax_error.h"
 
-1583353317 c:\users\conor\documents\dev\alpha\include\init\command_extractor.h
+1584047164 c:\users\conor\documents\dev\alpha\include\init\command_extractor.h
 	<string>
 	<vector>
 	"../init/extracted_line.h"
