@@ -58,9 +58,9 @@ std::string Calculator::calculate(std::vector<std::pair<std::string, int>> param
         }
         if(isString){
             strResult += paramStr;
-        }else{
-            (this->*currentOp)(&intResult, std::stoi(paramStr));
+            continue;
         }
+        (this->*currentOp)(&intResult, std::stoi(paramStr));
     }
 
     if(isString){
