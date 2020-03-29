@@ -18,6 +18,7 @@ public:
     void execute();
 private:
     std::vector<std::unique_ptr<Command>> commands;
+    std::vector<std::string> createLabels();
 };
 
 #endif // INTERPRETER_H

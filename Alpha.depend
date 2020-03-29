@@ -1,122 +1,122 @@
 # depslib dependency file v1.0
-1583354094 source:c:\users\conor\documents\dev\alpha\src\commands\assign.cpp
+1583357694 source:c:\users\conor\documents\dev\alpha\src\commands\assign.cpp
 	<iostream>
 	"../../include/commands/assign.h"
 	"../../include/runtime/environment.h"
 
-1583354368 c:\users\conor\documents\dev\alpha\include\commands\assign.h
+1583357968 c:\users\conor\documents\dev\alpha\include\commands\assign.h
 	"command.h"
 	<string>
 	<vector>
 
-1583354057 c:\users\conor\documents\dev\alpha\include\commands\command.h
+1583357657 c:\users\conor\documents\dev\alpha\include\commands\command.h
 	<string>
 	<vector>
 	"../runtime/environment.h"
 
-1582995334 c:\users\conor\documents\dev\alpha\include\runtime\environment.h
+1582998934 c:\users\conor\documents\dev\alpha\include\runtime\environment.h
 	<stack>
 	"../gui/window.h"
 	"resolver.h"
 	"searcher.h"
 	"data_pool.h"
 
-1583000130 c:\users\conor\documents\dev\alpha\include\runtime\resolver.h
+1583003730 c:\users\conor\documents\dev\alpha\include\runtime\resolver.h
 	<string>
 	<map>
 	<vector>
 	"calculator.h"
 	"data_pool.h"
 
-1579032494 c:\users\conor\documents\dev\alpha\include\runtime\calculator.h
+1579036094 c:\users\conor\documents\dev\alpha\include\runtime\calculator.h
 	<string>
 	<vector>
 	<map>
 
-1581789737 c:\users\conor\documents\dev\alpha\include\runtime\searcher.h
+1581793337 c:\users\conor\documents\dev\alpha\include\runtime\searcher.h
 	<string>
 	<vector>
 
-1583354101 source:c:\users\conor\documents\dev\alpha\src\commands\call_command.cpp
+1583357701 source:c:\users\conor\documents\dev\alpha\src\commands\call_command.cpp
 	<iostream>
 	"../../include/commands/call_command.h"
 	"../../include/runtime/environment.h"
 
-1583354368 c:\users\conor\documents\dev\alpha\include\commands\call_command.h
+1583357968 c:\users\conor\documents\dev\alpha\include\commands\call_command.h
 	"command.h"
 	<string>
 	<vector>
 
-1583354040 source:c:\users\conor\documents\dev\alpha\src\commands\command.cpp
+1583357640 source:c:\users\conor\documents\dev\alpha\src\commands\command.cpp
 	<string>
 	<vector>
 	"../../include/commands/command.h"
 
-1583354129 source:c:\users\conor\documents\dev\alpha\src\commands\console_in.cpp
+1583357729 source:c:\users\conor\documents\dev\alpha\src\commands\console_in.cpp
 	<string>
 	<iostream>
 	"../../include/commands/console_in.h"
 	"../../include/runtime/environment.h"
 
-1583354368 c:\users\conor\documents\dev\alpha\include\commands\console_in.h
+1583357968 c:\users\conor\documents\dev\alpha\include\commands\console_in.h
 	"command.h"
 
-1583354163 source:c:\users\conor\documents\dev\alpha\src\commands\console_out.cpp
+1583357763 source:c:\users\conor\documents\dev\alpha\src\commands\console_out.cpp
 	<string>
 	<vector>
 	<iostream>
 	"../../include/commands/console_out.h"
 	"../../include/runtime/environment.h"
 
-1583354368 c:\users\conor\documents\dev\alpha\include\commands\console_out.h
+1583357968 c:\users\conor\documents\dev\alpha\include\commands\console_out.h
 	"command.h"
 	<string>
 	<memory>
 
-1583354170 source:c:\users\conor\documents\dev\alpha\src\commands\custom_command.cpp
+1583357770 source:c:\users\conor\documents\dev\alpha\src\commands\custom_command.cpp
 	"../../include/commands/custom_command.h"
 	"../../include/runtime/environment.h"
 
-1583354368 c:\users\conor\documents\dev\alpha\include\commands\custom_command.h
+1583357968 c:\users\conor\documents\dev\alpha\include\commands\custom_command.h
 	<string>
 	<vector>
 	"command.h"
 
-1583354268 source:c:\users\conor\documents\dev\alpha\src\commands\end_custom_command.cpp
+1583357868 source:c:\users\conor\documents\dev\alpha\src\commands\end_custom_command.cpp
 	"../../include/commands/end_custom_command.h"
 	"../../include/runtime/environment.h"
 
-1583354327 c:\users\conor\documents\dev\alpha\include\commands\end_custom_command.h
+1583357927 c:\users\conor\documents\dev\alpha\include\commands\end_custom_command.h
 	<string>
 	<vector>
 	"command.h"
 
-1583354190 source:c:\users\conor\documents\dev\alpha\src\commands\end_while.cpp
+1583357790 source:c:\users\conor\documents\dev\alpha\src\commands\end_while.cpp
 	"../../include/commands/end_while.h"
 	"../../include/runtime/environment.h"
 
-1583354368 c:\users\conor\documents\dev\alpha\include\commands\end_while.h
+1583357968 c:\users\conor\documents\dev\alpha\include\commands\end_while.h
 	"command.h"
 	<memory>
 
-1583354268 source:c:\users\conor\documents\dev\alpha\src\commands\endif.cpp
+1583357868 source:c:\users\conor\documents\dev\alpha\src\commands\endif.cpp
 	"../../include/commands/endif.h"
 	"../../include/runtime/environment.h"
 
-1583354368 c:\users\conor\documents\dev\alpha\include\commands\endif.h
+1583357968 c:\users\conor\documents\dev\alpha\include\commands\endif.h
 	"command.h"
 
-1583749904 source:c:\users\conor\documents\dev\alpha\src\commands\if.cpp
+1583753504 source:c:\users\conor\documents\dev\alpha\src\commands\if.cpp
 	<iostream>
 	"../../include/commands/if.h"
 	"../../include/runtime/environment.h"
 	"../../include/exception/syntax_error.h"
 
-1583354368 c:\users\conor\documents\dev\alpha\include\commands\if.h
+1583357968 c:\users\conor\documents\dev\alpha\include\commands\if.h
 	"command.h"
 	<memory>
 
-1583354235 source:c:\users\conor\documents\dev\alpha\src\commands\memory_dump.cpp
+1583357835 source:c:\users\conor\documents\dev\alpha\src\commands\memory_dump.cpp
 	<map>
 	<vector>
 	<string>
@@ -124,34 +124,34 @@
 	"../../include/commands/memory_dump.h"
 	"../../include/runtime/environment.h"
 
-1583354368 c:\users\conor\documents\dev\alpha\include\commands\memory_dump.h
+1583357968 c:\users\conor\documents\dev\alpha\include\commands\memory_dump.h
 	"command.h"
 	<memory>
 
-1583749910 source:c:\users\conor\documents\dev\alpha\src\commands\while.cpp
+1583753510 source:c:\users\conor\documents\dev\alpha\src\commands\while.cpp
 	<iostream>
 	"../../include/commands/while.h"
 	"../../include/runtime/environment.h"
 	"../../include/exception/syntax_error.h"
 
-1583354366 c:\users\conor\documents\dev\alpha\include\commands\while.h
+1583357966 c:\users\conor\documents\dev\alpha\include\commands\while.h
 	"command.h"
 	<memory>
 
-1583942783 source:c:\users\conor\documents\dev\alpha\src\formatter\formatter.cpp
+1583946383 source:c:\users\conor\documents\dev\alpha\src\formatter\formatter.cpp
 	<iostream>
 	<vector>
 	<string>
 	"../../include/formatter/formatter.h"
 	"../../include/exception/syntax_error.h"
 
-1583942792 c:\users\conor\documents\dev\alpha\include\formatter\formatter.h
+1583946392 c:\users\conor\documents\dev\alpha\include\formatter\formatter.h
 	<string>
 	<vector>
 
 1579806410 c:\users\conor\documents\dev\alpha\include\formatter\formatted_data.h
 
-1584047183 source:c:\users\conor\documents\dev\alpha\src\init\command_extractor.cpp
+1584050783 source:c:\users\conor\documents\dev\alpha\src\init\command_extractor.cpp
 	<iostream>
 	<vector>
 	<string>
@@ -160,35 +160,35 @@
 	"../../include/formatter/formatter.h"
 	"../../include/exception/syntax_error.h"
 
-1584047164 c:\users\conor\documents\dev\alpha\include\init\command_extractor.h
+1584050764 c:\users\conor\documents\dev\alpha\include\init\command_extractor.h
 	<string>
 	<vector>
 	"../init/extracted_line.h"
 	"../runtime/command_data.h"
 
-1579371462 c:\users\conor\documents\dev\alpha\include\init\extracted_line.h
+1579375062 c:\users\conor\documents\dev\alpha\include\init\extracted_line.h
 	<string>
 	<vector>
 
-1579635561 c:\users\conor\documents\dev\alpha\include\runtime\command_data.h
+1579639161 c:\users\conor\documents\dev\alpha\include\runtime\command_data.h
 	<string>
 	<vector>
 
-1580574186 source:c:\users\conor\documents\dev\alpha\src\init\extracted_line.cpp
+1580577786 source:c:\users\conor\documents\dev\alpha\src\init\extracted_line.cpp
 	<string>
 	<vector>
 	"../../include/init/extracted_line.h"
 
-1583088674 source:c:\users\conor\documents\dev\alpha\src\init\file_loader.cpp
+1583092274 source:c:\users\conor\documents\dev\alpha\src\init\file_loader.cpp
 	<fstream>
 	<stdexcept>
 	"../../include/init/file_loader.h"
 
-1583084022 c:\users\conor\documents\dev\alpha\include\init\file_loader.h
+1583087622 c:\users\conor\documents\dev\alpha\include\init\file_loader.h
 	<string>
 	<vector>
 
-1583942575 source:c:\users\conor\documents\dev\alpha\src\init\mapper.cpp
+1583946175 source:c:\users\conor\documents\dev\alpha\src\init\mapper.cpp
 	<stdexcept>
 	<iostream>
 	<string>
@@ -217,14 +217,14 @@
 	"../../include/commands/clear_window.h"
 	"../../include/commands/draw_rect.h"
 
-1583684640 c:\users\conor\documents\dev\alpha\include\init\mapper.h
+1583688240 c:\users\conor\documents\dev\alpha\include\init\mapper.h
 	"../commands/command.h"
 	"../runtime/command_data.h"
 	<map>
 	<string>
 	<memory>
 
-1583353981 source:c:\users\conor\documents\dev\alpha\src\init\parser.cpp
+1583357581 source:c:\users\conor\documents\dev\alpha\src\init\parser.cpp
 	<iostream>
 	<stdexcept>
 	<memory>
@@ -232,7 +232,7 @@
 	"../../include/init/parser.h"
 	"../../include/commands/console_out.h"
 
-1583093281 c:\users\conor\documents\dev\alpha\include\init\parser.h
+1583096881 c:\users\conor\documents\dev\alpha\include\init\parser.h
 	"command_extractor.h"
 	"../commands/command.h"
 	"mapper.h"
@@ -241,17 +241,17 @@
 	<map>
 	<memory>
 
-1580574300 source:c:\users\conor\documents\dev\alpha\src\init\preprocessor.cpp
+1580577900 source:c:\users\conor\documents\dev\alpha\src\init\preprocessor.cpp
 	<stdexcept>
 	"../../include/init/preprocessor.h"
 	"../../include/formatter/formatter.h"
 
-1580565047 c:\users\conor\documents\dev\alpha\include\init\preprocessor.h
+1580568647 c:\users\conor\documents\dev\alpha\include\init\preprocessor.h
 	<vector>
 	<string>
 	"../runtime/command_data.h"
 
-1583941131 source:c:\users\conor\documents\dev\alpha\src\main.cpp
+1583944731 source:c:\users\conor\documents\dev\alpha\src\main.cpp
 	<stdexcept>
 	<iostream>
 	<vector>
@@ -264,7 +264,7 @@
 	"../include/runtime/interpreter.h"
 	"../include/gui/window.h"
 
-1581181010 c:\users\conor\documents\dev\alpha\include\runtime\interpreter.h
+1585509642 c:\users\conor\documents\dev\alpha\include\runtime\interpreter.h
 	"../commands/command.h"
 	"resolver.h"
 	"searcher.h"
@@ -273,23 +273,23 @@
 	<utility>
 	<map>
 
-1579030381 source:c:\users\conor\documents\dev\alpha\src\runtime\calculator.cpp
+1585509323 source:c:\users\conor\documents\dev\alpha\src\runtime\calculator.cpp
 	<algorithm>
 	<iterator>
 	"../../include/runtime/calculator.h"
 	"../../include/commands/command.h"
 
-1580574333 source:c:\users\conor\documents\dev\alpha\src\runtime\command_data.cpp
+1580577933 source:c:\users\conor\documents\dev\alpha\src\runtime\command_data.cpp
 	<string>
 	<vector>
 	"../../include/runtime/command_data.h"
 
-1582995391 source:c:\users\conor\documents\dev\alpha\src\runtime\environment.cpp
+1582998991 source:c:\users\conor\documents\dev\alpha\src\runtime\environment.cpp
 	"../../include/runtime/environment.h"
 	"../../include/runtime/searcher.h"
 	"../../include/runtime/resolver.h"
 
-1581789334 source:c:\users\conor\documents\dev\alpha\src\runtime\interpreter.cpp
+1585509659 source:c:\users\conor\documents\dev\alpha\src\runtime\interpreter.cpp
 	<vector>
 	<memory>
 	<utility>
@@ -298,13 +298,13 @@
 	"../../include/runtime/interpreter.h"
 	"../../include/runtime/environment.h"
 
-1582996895 source:c:\users\conor\documents\dev\alpha\src\runtime\resolver.cpp
+1583000495 source:c:\users\conor\documents\dev\alpha\src\runtime\resolver.cpp
 	<utility>
 	<iostream>
 	"../../include/runtime/resolver.h"
 	"../../include/commands/command.h"
 
-1581789277 source:c:\users\conor\documents\dev\alpha\src\runtime\searcher.cpp
+1581792877 source:c:\users\conor\documents\dev\alpha\src\runtime\searcher.cpp
 	<string>
 	<vector>
 	<memory>
@@ -658,11 +658,11 @@
 	"begin_code.h"
 	"close_code.h"
 
-1582297169 c:\users\conor\documents\dev\alpha\include\gui\window.h
+1582300769 c:\users\conor\documents\dev\alpha\include\gui\window.h
 	<string>
 	"SDL.h"
 
-1564029277 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl.h
+1564032877 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl.h
 	"SDL_main.h"
 	"SDL_stdinc.h"
 	"SDL_assert.h"
@@ -695,12 +695,12 @@
 	"begin_code.h"
 	"close_code.h"
 
-1564029277 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_main.h
+1564032877 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_main.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1564029277 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_stdinc.h
+1564032877 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_stdinc.h
 	"SDL_config.h"
 	<sys/types.h>
 	<stdio.h>
@@ -729,27 +729,27 @@
 	"begin_code.h"
 	"close_code.h"
 
-1564029277 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_config.h
+1564032877 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_config.h
 	"SDL_platform.h"
 
-1564029277 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_platform.h
+1564032877 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_platform.h
 	"AvailabilityMacros.h"
 	"TargetConditionals.h"
 	<winapifamily.h>
 	"begin_code.h"
 	"close_code.h"
 
-1564029277 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\begin_code.h
+1564032877 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\begin_code.h
 
-1564029277 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\close_code.h
+1564032877 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\close_code.h
 
-1564029277 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_assert.h
+1564032877 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_assert.h
 	"SDL_config.h"
 	"begin_code.h"
 	<signal.h>
 	"close_code.h"
 
-1564029277 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_atomic.h
+1564032877 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_atomic.h
 	"SDL_stdinc.h"
 	"SDL_platform.h"
 	"begin_code.h"
@@ -757,7 +757,7 @@
 	<mbarrier.h>
 	"close_code.h"
 
-1564029277 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_audio.h
+1564032877 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_audio.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_endian.h"
@@ -767,24 +767,24 @@
 	"begin_code.h"
 	"close_code.h"
 
-1564029277 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_error.h
+1564032877 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_error.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1564029277 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_endian.h
+1564032877 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_endian.h
 	"SDL_stdinc.h"
 	<endian.h>
 	"begin_code.h"
 	"close_code.h"
 
-1564029277 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_mutex.h
+1564032877 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_mutex.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1564029277 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_thread.h
+1564032877 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_thread.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_atomic.h"
@@ -795,18 +795,18 @@
 	<stdlib.h>
 	"close_code.h"
 
-1564029277 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_rwops.h
+1564032877 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_rwops.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1564029277 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_clipboard.h
+1564032877 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_clipboard.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1564029277 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_cpuinfo.h
+1564032877 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_cpuinfo.h
 	"SDL_stdinc.h"
 	<intrin.h>
 	<intrin.h>
@@ -825,7 +825,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1564029277 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_events.h
+1564032877 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_events.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_video.h"
@@ -839,7 +839,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1564029277 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_video.h
+1564032877 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_video.h
 	"SDL_stdinc.h"
 	"SDL_pixels.h"
 	"SDL_rect.h"
@@ -847,13 +847,13 @@
 	"begin_code.h"
 	"close_code.h"
 
-1564029277 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_pixels.h
+1564032877 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_pixels.h
 	"SDL_stdinc.h"
 	"SDL_endian.h"
 	"begin_code.h"
 	"close_code.h"
 
-1564029277 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_rect.h
+1564032877 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_rect.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_pixels.h"
@@ -861,7 +861,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1564029277 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_surface.h
+1564032877 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_surface.h
 	"SDL_stdinc.h"
 	"SDL_pixels.h"
 	"SDL_rect.h"
@@ -870,11 +870,11 @@
 	"begin_code.h"
 	"close_code.h"
 
-1564029277 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_blendmode.h
+1564032877 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_blendmode.h
 	"begin_code.h"
 	"close_code.h"
 
-1564029277 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_keyboard.h
+1564032877 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_keyboard.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_keycode.h"
@@ -882,27 +882,27 @@
 	"begin_code.h"
 	"close_code.h"
 
-1564029277 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_keycode.h
+1564032877 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_keycode.h
 	"SDL_stdinc.h"
 	"SDL_scancode.h"
 
-1564029277 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_scancode.h
+1564032877 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_scancode.h
 	"SDL_stdinc.h"
 
-1564029277 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_mouse.h
+1564032877 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_mouse.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_video.h"
 	"begin_code.h"
 	"close_code.h"
 
-1564029277 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_joystick.h
+1564032877 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_joystick.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1564029277 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_gamecontroller.h
+1564032877 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_gamecontroller.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_rwops.h"
@@ -910,11 +910,11 @@
 	"begin_code.h"
 	"close_code.h"
 
-1564029277 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_quit.h
+1564032877 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_quit.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 
-1564029277 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_gesture.h
+1564032877 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_gesture.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_video.h"
@@ -922,66 +922,66 @@
 	"begin_code.h"
 	"close_code.h"
 
-1564029277 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_touch.h
+1564032877 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_touch.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_video.h"
 	"begin_code.h"
 	"close_code.h"
 
-1564029277 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_filesystem.h
+1564032877 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_filesystem.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1564029277 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_haptic.h
+1564032877 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_haptic.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_joystick.h"
 	"begin_code.h"
 	"close_code.h"
 
-1564029277 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_hints.h
+1564032877 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_hints.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1564029277 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_loadso.h
+1564032877 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_loadso.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1564029277 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_log.h
+1564032877 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_log.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1564029277 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_messagebox.h
+1564032877 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_messagebox.h
 	"SDL_stdinc.h"
 	"SDL_video.h"
 	"begin_code.h"
 	"close_code.h"
 
-1564029277 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_power.h
+1564032877 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_power.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1564029277 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_render.h
+1564032877 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_render.h
 	"SDL_stdinc.h"
 	"SDL_rect.h"
 	"SDL_video.h"
 	"begin_code.h"
 	"close_code.h"
 
-1564029277 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_sensor.h
+1564032877 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_sensor.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1564029277 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_shape.h
+1564032877 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_shape.h
 	"SDL_stdinc.h"
 	"SDL_pixels.h"
 	"SDL_rect.h"
@@ -990,7 +990,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1564029277 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_system.h
+1564032877 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_system.h
 	"SDL_stdinc.h"
 	"SDL_keyboard.h"
 	"SDL_render.h"
@@ -998,40 +998,40 @@
 	"begin_code.h"
 	"close_code.h"
 
-1564029277 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_timer.h
+1564032877 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_timer.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1564029277 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_version.h
+1564032877 c:\users\conor\documents\dev\sdl2-2.0.10\x32bit_mingw\include\sdl2\sdl_version.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1582298230 source:c:\users\conor\documents\dev\alpha\src\gui\window.cpp
+1582301830 source:c:\users\conor\documents\dev\alpha\src\gui\window.cpp
 	"../../include/gui/window.h"
 	<stdexcept>
 
-1583354151 source:c:\users\conor\documents\dev\alpha\src\commands\console_out_ln.cpp
+1583357751 source:c:\users\conor\documents\dev\alpha\src\commands\console_out_ln.cpp
 	"../../include/commands/console_out_ln.h"
 	<iostream>
 
-1583354368 c:\users\conor\documents\dev\alpha\include\commands\console_out_ln.h
+1583357968 c:\users\conor\documents\dev\alpha\include\commands\console_out_ln.h
 	"console_out.h"
 	<string>
 	<memory>
 
-1583749888 source:c:\users\conor\documents\dev\alpha\src\commands\show_window.cpp
+1583753488 source:c:\users\conor\documents\dev\alpha\src\commands\show_window.cpp
 	"../../include/commands/show_window.h"
 	"../../include/exception/syntax_error.h"
 
-1583354368 c:\users\conor\documents\dev\alpha\include\commands\show_window.h
+1583357968 c:\users\conor\documents\dev\alpha\include\commands\show_window.h
 	"command.h"
 	<string>
 	<vector>
 
-1583749824 source:c:\users\conor\documents\dev\alpha\src\commands\create_window.cpp
+1583753424 source:c:\users\conor\documents\dev\alpha\src\commands\create_window.cpp
 	"../../include/commands/create_window.h"
 	"../../include/commands/command.h"
 	"../../include/runtime/resolver.h"
@@ -1039,74 +1039,74 @@
 	<vector>
 	<string>
 
-1583354368 c:\users\conor\documents\dev\alpha\include\commands\create_window.h
+1583357968 c:\users\conor\documents\dev\alpha\include\commands\create_window.h
 	"command.h"
 	<string>
 	<vector>
 
-1583749897 source:c:\users\conor\documents\dev\alpha\src\commands\wait.cpp
+1583753497 source:c:\users\conor\documents\dev\alpha\src\commands\wait.cpp
 	"../../include/commands/wait.h"
 	"../../include/exception/syntax_error.h"
 	<vector>
 	<string>
 
-1583354368 c:\users\conor\documents\dev\alpha\include\commands\wait.h
+1583357968 c:\users\conor\documents\dev\alpha\include\commands\wait.h
 	"command.h"
 	<string>
 	<vector>
 
-1583749872 source:c:\users\conor\documents\dev\alpha\src\commands\hide_window.cpp
+1583753472 source:c:\users\conor\documents\dev\alpha\src\commands\hide_window.cpp
 	"../../include/commands/hide_window.h"
 	"../../include/exception/syntax_error.h"
 
-1583354368 c:\users\conor\documents\dev\alpha\include\commands\hide_window.h
+1583357968 c:\users\conor\documents\dev\alpha\include\commands\hide_window.h
 	"command.h"
 	<string>
 	<vector>
 
-1583749866 source:c:\users\conor\documents\dev\alpha\src\commands\draw_rect.cpp
+1583753466 source:c:\users\conor\documents\dev\alpha\src\commands\draw_rect.cpp
 	"../../include/commands/draw_rect.h"
 	"../../include/runtime/environment.h"
 	"../../include/exception/syntax_error.h"
 
-1583354368 c:\users\conor\documents\dev\alpha\include\commands\draw_rect.h
+1583357968 c:\users\conor\documents\dev\alpha\include\commands\draw_rect.h
 	"command.h"
 	<string>
 	<vector>
 
-1583749880 source:c:\users\conor\documents\dev\alpha\src\commands\render_window.cpp
+1583753480 source:c:\users\conor\documents\dev\alpha\src\commands\render_window.cpp
 	"../../include/commands/render_window.h"
 	"../../include/runtime/environment.h"
 	"../../include/exception/syntax_error.h"
 
-1583354368 c:\users\conor\documents\dev\alpha\include\commands\render_window.h
+1583357968 c:\users\conor\documents\dev\alpha\include\commands\render_window.h
 	"command.h"
 	<string>
 	<vector>
 
-1583749374 source:c:\users\conor\documents\dev\alpha\src\commands\clear_window.cpp
+1583752974 source:c:\users\conor\documents\dev\alpha\src\commands\clear_window.cpp
 	"../../include/commands/clear_window.h"
 	"../../include/runtime/environment.h"
 	"../../include/exception/syntax_error.h"
 
-1583354368 c:\users\conor\documents\dev\alpha\include\commands\clear_window.h
+1583357968 c:\users\conor\documents\dev\alpha\include\commands\clear_window.h
 	"command.h"
 	<string>
 	<vector>
 
-1583003161 c:\users\conor\documents\dev\alpha\include\runtime\data_pool.h
+1583006761 c:\users\conor\documents\dev\alpha\include\runtime\data_pool.h
 	<string>
 	<map>
 	<vector>
 
-1583003215 source:c:\users\conor\documents\dev\alpha\src\runtime\data_pool.cpp
+1583006815 source:c:\users\conor\documents\dev\alpha\src\runtime\data_pool.cpp
 	"../../include/runtime/data_pool.h"
 
 1583353673 source:c:\users\conor\documents\dev\alpha\syntax_error.cpp
 
-1583674972 source:c:\users\conor\documents\dev\alpha\src\exception\syntax_error.cpp
+1583678572 source:c:\users\conor\documents\dev\alpha\src\exception\syntax_error.cpp
 	"../../include/exception/syntax_error.h"
 
-1583675594 c:\users\conor\documents\dev\alpha\include\exception\syntax_error.h
+1583679194 c:\users\conor\documents\dev\alpha\include\exception\syntax_error.h
 	<stdexcept>
 
