@@ -35,40 +35,39 @@ std::string Calculator::calculate(std::vector<std::pair<std::string, int>> param
         maybe having a concatenation operator will help, since only need to do int calcs if theres no concat op
      Should return type as well?
      */
-    std::string result(params[0].first);
-    if(params.size() > 1){
-        int intResult = 0;
-        std::string strResult;
-        bool isString = false;
-        intOp currentOp = add;
-        for(auto param : params){
-            std::string paramStr = param.first;
-            int paramType = param.second;
-            if(isSymbol(paramStr[0])){ /** && if length == 1 ?? */
-                currentOp = setCurrentOperation(paramStr);
-                continue;
-            }
-            if(paramType == Command::Type::STRING){
-                isString = true;
-                if(intResult != 0){
-                    strResult = std::to_string(intResult);
-                }
-            }
-            if(isString){
-                strResult += paramStr;
-            }else{
-                (this->*currentOp)(&intResult, std::stoi(paramStr));
-            }
+    if(params.size() < 2){
+        return params[0].first;
+    }
 
+    int intResult = 0;
+    std::string strResult;
+    bool isString = false;
+    intOp currentOp = add;
+    for(auto param : params){
+        std::string paramStr = param.first;
+        int paramType = param.second;
+        if(isSymbol(paramStr[0])){ /** && if length == 1 ?? */
+            currentOp = setCurrentOperation(paramStr);
+            continue;
+        }
+        if(paramType == Command::Type::STRING){
+            isString = true;
+            if(intResult != 0){
+                strResult = std::to_string(intResult);
+            }
         }
         if(isString){
-            result = strResult;
+            strResult += paramStr;
         }else{
-            result = std::to_string(intResult);
+            (this->*currentOp)(&intResult, std::stoi(paramStr));
         }
     }
 
-    return result;
+    if(isString){
+        return strResult;
+    }
+
+    return std::to_string(intResult);
 }
 
 Calculator::intOp Calculator::setCurrentOperation(std::string paramStr)
