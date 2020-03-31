@@ -40,13 +40,13 @@ std::pair<std::string, int> & Resolver::resolveVariable(std::string variableName
 
 std::pair<std::string, int> Resolver::resolveParam(std::string param, DataPool & dataPool)
 {
-    std::pair<std::string, int> p;
     if(param[0] == '@'){
-        p = resolveVariable(param, dataPool);
-    }else{
-        p.first = param;
-        p.second = determineType(param);
+        return resolveVariable(param, dataPool);
     }
+
+    std::pair<std::string, int> p;
+    p.first = param;
+    p.second = determineType(param);
 
     return p;
 }
@@ -60,13 +60,14 @@ void Resolver::addParam(std::vector<std::pair<std::string, int>> & parsedParam, 
 {
     std::pair<std::string, int> varData;
     varData = resolveParam(strVal, dataPool);
-    if(varData.second != Command::Type::STRING && varData.first.length() > 1){
-        if(varData.first[0] == '-'){
-            varData.first = varData.first.substr(1);
-            std::string minusSymbol = "-";
-            std::pair<std::string, int> symbol(minusSymbol, Command::Type::SYMBOL);
-            parsedParam.push_back(symbol);
-        }
+    if(
+       varData.second != Command::Type::STRING && varData.first.length() > 1 &&
+       varData.first[0] == '-'
+    ){
+        varData.first = varData.first.substr(1);
+        std::string minusSymbol = "-";
+        std::pair<std::string, int> symbol(minusSymbol, Command::Type::SYMBOL);
+        parsedParam.push_back(symbol);
     }
     parsedParam.push_back(varData);
 }
@@ -100,7 +101,8 @@ std::vector<std::pair<std::string, int>> Resolver::parseParam(std::string param,
             addParam(parsedParam, dataPool, symbolStr);
             currentStrVal = "";
             continue;
-        }else if(charIndex == lastCharIndex){
+        }
+        if(charIndex == lastCharIndex){
             addChar(currentStrVal, paramChar);
             addParam(parsedParam, dataPool, currentStrVal);
             break;
