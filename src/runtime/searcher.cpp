@@ -14,13 +14,12 @@ Searcher::Searcher(std::vector<std::string> labels):
 
 }
 
-int Searcher::findLabel(std::string startLabel, std::string endLabel, int direction, int * cmdPtr)
+int Searcher::findLabel(std::string startLabel, std::string endLabel, int reqDirection, int * cmdPtr)
 {
     int nestedLevel = 0;
-    if(direction > 0 ){
+    int direction = -1;
+    if(reqDirection > 0 ){
         direction = 1;
-    }else{
-        direction = -1;
     }
     for(int i = (*cmdPtr) + direction; i < labels.size(); i += direction){
         if(labels[i] == startLabel){
