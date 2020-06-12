@@ -5,6 +5,7 @@
 #include <memory>
 #include <utility>
 
+#include "../include/init/initialiser.h"
 #include "../include/init/file_loader.h"
 #include "../include/formatter/formatter.h"
 #include "../include/init/parser.h"
@@ -16,14 +17,13 @@
 
 int main(int argc, char * argv[])
 {
-    std::cout << "Alpha Interpreter v 0.1" << std::endl;
-    if(argc != 2){
-        std::cout << "Usage: alpha <filename>" << std::endl;
+    Initialiser initialiser;
+
+    if (!initialiser.initialiseCmdArgs(argc)) {
         return -1;
     }
 
-    if(SDL_Init(SDL_INIT_VIDEO) < 0){
-        std::cout << "Error: SDL could not be initialised" << std::endl;
+    if (!initialiser.initialiseSDL()) {
         return -3;
     }
 

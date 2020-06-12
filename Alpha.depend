@@ -251,12 +251,13 @@
 	<string>
 	"../runtime/command_data.h"
 
-1583944731 source:c:\users\conor\documents\dev\alpha\src\main.cpp
+1591976792 source:c:\users\conor\documents\dev\alpha\src\main.cpp
 	<stdexcept>
 	<iostream>
 	<vector>
 	<memory>
 	<utility>
+	"../include/init/initialiser.h"
 	"../include/init/file_loader.h"
 	"../include/formatter/formatter.h"
 	"../include/init/parser.h"
@@ -304,7 +305,7 @@
 	"../../include/runtime/resolver.h"
 	"../../include/commands/command.h"
 
-1585683634 source:c:\users\conor\documents\dev\alpha\src\runtime\searcher.cpp
+1591975796 source:c:\users\conor\documents\dev\alpha\src\runtime\searcher.cpp
 	<string>
 	<vector>
 	<memory>
@@ -1109,4 +1110,11 @@
 
 1583679194 c:\users\conor\documents\dev\alpha\include\exception\syntax_error.h
 	<stdexcept>
+
+1591976605 c:\users\conor\documents\dev\alpha\include\init\initialiser.h
+
+1591976707 source:c:\users\conor\documents\dev\alpha\src\init\initialiser.cpp
+	"../../include/init/initialiser.h"
+	<iostream>
+	<SDL.h>
 

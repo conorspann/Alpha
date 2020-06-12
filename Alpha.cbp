@@ -73,6 +73,7 @@
 		<Unit filename="include/init/command_extractor.h" />
 		<Unit filename="include/init/extracted_line.h" />
 		<Unit filename="include/init/file_loader.h" />
+		<Unit filename="include/init/initialiser.h" />
 		<Unit filename="include/init/mapper.h" />
 		<Unit filename="include/init/parser.h" />
 		<Unit filename="include/init/preprocessor.h" />
@@ -112,6 +113,7 @@
 		<Unit filename="src/init/file_loader_test.cpp">
 			<Option target="Debug" />
 		</Unit>
+		<Unit filename="src/init/initialiser.cpp" />
 		<Unit filename="src/init/mapper.cpp" />
 		<Unit filename="src/init/parser.cpp" />
 		<Unit filename="src/init/parser_test.cpp">
