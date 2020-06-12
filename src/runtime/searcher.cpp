@@ -17,10 +17,7 @@ Searcher::Searcher(std::vector<std::string> labels):
 int Searcher::findLabel(std::string startLabel, std::string endLabel, int reqDirection, int * cmdPtr)
 {
     int nestedLevel = 0;
-    int direction = -1;
-    if(reqDirection > 0 ){
-        direction = 1;
-    }
+    int direction = reqDirection > 0 ? 1 : -1;
     for(int i = (*cmdPtr) + direction; i < labels.size(); i += direction){
         if(labels[i] == startLabel){
             nestedLevel++;
@@ -35,6 +32,12 @@ int Searcher::findLabel(std::string startLabel, std::string endLabel, int reqDir
             nestedLevel--;
         }
     }
+
+    throwLabelError(startLabel, endLabel);
+}
+
+void Searcher::throwLabelError(std::string startLabel, std::string endLabel)
+{
     std::string errMsg = "Error: ";
     errMsg += startLabel;
     errMsg += " statement has no ";

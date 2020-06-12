@@ -11,6 +11,7 @@ public:
     int findLabel(std::string startLabel, std::string endLabel, int, int *);
 private:
     std::vector<std::string> labels;
+    void throwLabelError(std::string startLabel, std::string endLabel);
 };
 
 #endif // SEARCHER_H
