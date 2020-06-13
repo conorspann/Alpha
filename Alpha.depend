@@ -251,19 +251,9 @@
 	<string>
 	"../runtime/command_data.h"
 
-1591976792 source:c:\users\conor\documents\dev\alpha\src\main.cpp
-	<stdexcept>
-	<iostream>
-	<vector>
-	<memory>
-	<utility>
+1592058593 source:c:\users\conor\documents\dev\alpha\src\main.cpp
 	"../include/init/initialiser.h"
-	"../include/init/file_loader.h"
-	"../include/formatter/formatter.h"
-	"../include/init/parser.h"
-	"../include/init/preprocessor.h"
-	"../include/runtime/interpreter.h"
-	"../include/gui/window.h"
+	"../include/init/tool_chain.h"
 
 1585509642 c:\users\conor\documents\dev\alpha\include\runtime\interpreter.h
 	"../commands/command.h"
@@ -1117,4 +1107,21 @@
 	"../../include/init/initialiser.h"
 	<iostream>
 	<SDL.h>
+
+1592058584 c:\users\conor\documents\dev\alpha\include\init\tool_chain.h
+
+1592058575 source:c:\users\conor\documents\dev\alpha\src\init\tool_chain.cpp
+	"../../include/init/tool_chain.h"
+	"../../include/init/file_loader.h"
+	"../../include/formatter/formatter.h"
+	"../../include/init/parser.h"
+	"../../include/init/preprocessor.h"
+	"../../include/runtime/interpreter.h"
+	"../../include/gui/window.h"
+	<iostream>
+	<vector>
+	<string>
+	<stdexcept>
+	<memory>
+	<utility>
 
