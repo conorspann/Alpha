@@ -36,7 +36,7 @@ int ToolChain::start(char * argv[])
         std::cout << "Exception: " << e.what() << std::endl << "Exiting" << std::endl;
         SDL_Quit();
 
-        return -1;
+        return -2;
     }
     SDL_Quit();
 
