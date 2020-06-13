@@ -17,14 +17,19 @@ std::vector<std::pair<int, std::string>> Formatter::removeBlankLines(std::vector
     for(int lineNumber = 0; lineNumber < lines.size(); lineNumber++){
         int preservedLineNumber = lines[lineNumber].first;
         std::string line = lines[lineNumber].second;
-        if(
-            line.find_first_not_of(whiteSpaceChars) != std::string::npos
-        ){
-            formattedLines.push_back(std::pair<int, std::string>(preservedLineNumber, line));
-        }
+        addNonBlankLine(line, preservedLineNumber, formattedLines);
     }
 
     return formattedLines;
+}
+
+void Formatter::addNonBlankLine(std::string line, int preservedLineNumber, std::vector<std::pair<int, std::string>> & formattedLines)
+{
+    if(
+        line.find_first_not_of(whiteSpaceChars) != std::string::npos
+    ){
+        formattedLines.push_back(std::pair<int, std::string>(preservedLineNumber, line));
+    }
 }
 
 std::vector<std::pair<int, std::vector<std::string>>> Formatter::tokeniseLines(std::vector<std::pair<int, std::string>> rawLines)
@@ -47,15 +52,11 @@ std::vector<std::string> Formatter::tokeniseLine(std::string rawLine, int preser
     for(int charNumber = 0; charNumber < rawLine.length(); charNumber++){
         char c = rawLine[charNumber];
         if(c == '\"'){
-            std::string extractedString = extractString(rawLine, charNumber, preservedLineNumber);
-            tokenisedLine.push_back(extractedString);
-            charNumber += extractedString.length() - 1;
+            tokeniseInlineString(rawLine, &charNumber, preservedLineNumber, tokenisedLine);
         }
         if(!isWhiteSpace(c)){
             if(isSymbol(c)){
-                addSegment(tokenisedLine, token);
-                std::string symbol(1, c);
-                tokenisedLine.push_back(symbol);
+                addSymbol(tokenisedLine, token, c);
             }else{
                 token += c;
             }
@@ -66,6 +67,13 @@ std::vector<std::string> Formatter::tokeniseLine(std::string rawLine, int preser
     }
 
     return tokenisedLine;
+}
+
+void Formatter::tokeniseInlineString(std::string rawLine, int * charNumber, int preservedLineNumber, std::vector<std::string> & tokenisedLine)
+{
+    std::string extractedString = extractString(rawLine, *charNumber, preservedLineNumber);
+    tokenisedLine.push_back(extractedString);
+    *charNumber += extractedString.length() - 1;
 }
 
 std::string Formatter::extractString(std::string rawLine, int currentCharNumber, int preservedLineNumber)
@@ -79,11 +87,23 @@ std::string Formatter::extractString(std::string rawLine, int currentCharNumber,
             break;
         }
     }
+    checkForMissingEndQuote(quotePos, rawLine, preservedLineNumber);
+
+    return extractedStr;
+}
+
+void Formatter::checkForMissingEndQuote(int quotePos, std::string rawLine, int preservedLineNumber)
+{
     if(quotePos == rawLine.length()){
         throw SyntaxError("Error: String is missing end-quote.", preservedLineNumber);
     }
+}
 
-    return extractedStr;
+void Formatter::addSymbol(std::vector<std::string> & tokenisedLine, std::string & token, char c)
+{
+    addSegment(tokenisedLine, token);
+    std::string symbol(1, c);
+    tokenisedLine.push_back(symbol);
 }
 
 bool Formatter::isWhiteSpace(char c)

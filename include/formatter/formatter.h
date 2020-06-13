@@ -12,8 +12,12 @@ public:
     static bool isWhiteSpace(char c);
     static bool isSymbol(char c);
 private:
+    void addNonBlankLine(std::string line, int preservedLineNumber, std::vector<std::pair<int, std::string>> & formattedLines);
     std::vector<std::string> tokeniseLine(std::string line, int);
+    void tokeniseInlineString(std::string rawLine, int * charNumber, int preservedLineNumber, std::vector<std::string> & tokenisedLine);
     std::string extractString(std::string, int, int);
+    void checkForMissingEndQuote(int quotePos, std::string rawLine, int preservedLineNumber);
+    void addSymbol(std::vector<std::string> & tokenisedLine, std::string & token, char c);
     void addSegment(std::vector<std::string> &, std::string &);
 };
 
