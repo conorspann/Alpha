@@ -6,14 +6,11 @@
 #include "../../include/runtime/resolver.h"
 #include "../../include/commands/command.h"
 
-/** Maybe could use some sort of rule table? Similar rules e.g. for strings in Formatter
+/**
+    Maybe could use some sort of rule table? Similar rules e.g. for strings in Formatter
     Could then pass between classes, maybe in main or smth
-  */
+*/
 
-Resolver::Resolver()
-{
-
-}
 
 /** TODO: Add more types + refactor */
 int Resolver::determineType(std::string param)
@@ -61,15 +58,26 @@ void Resolver::addParam(std::vector<std::pair<std::string, int>> & parsedParam, 
     std::pair<std::string, int> varData;
     varData = resolveParam(strVal, dataPool);
     if(
-       varData.second != Command::Type::STRING && varData.first.length() > 1 &&
-       varData.first[0] == '-'
+        variableIsMinusNumber(varData)
     ){
         varData.first = varData.first.substr(1);
-        std::string minusSymbol = "-";
-        std::pair<std::string, int> symbol(minusSymbol, Command::Type::SYMBOL);
-        parsedParam.push_back(symbol);
+        addMinusSymbol(parsedParam);
     }
     parsedParam.push_back(varData);
+}
+
+bool Resolver::variableIsMinusNumber(std::pair<std::string, int> varData)
+{
+    return varData.second != Command::Type::STRING &&
+           varData.first.length() > 1 &&
+           varData.first[0] == '-';
+}
+
+void Resolver::addMinusSymbol(std::vector<std::pair<std::string, int>> & parsedParam)
+{
+    std::string minusSymbol = "-";
+    std::pair<std::string, int> symbol(minusSymbol, Command::Type::SYMBOL);
+    parsedParam.push_back(symbol);
 }
 
 void Resolver::addChar(std::string & currentParam, char paramChar)
@@ -79,37 +87,56 @@ void Resolver::addChar(std::string & currentParam, char paramChar)
     }
 }
 
-/**
-    REFACTOR !!
-*/
+
 std::vector<std::pair<std::string, int>> Resolver::parseParam(std::string param, DataPool & dataPool)
 {
     std::vector<std::pair<std::string, int>> parsedParam;
     std::string currentStrVal;
-    bool isString = false;
+    bool insideString = false;
     int lastCharIndex = param.length() - 1;
     for(int charIndex = 0; charIndex < param.length(); charIndex++){
         char paramChar = param[charIndex];
         if(paramChar == '\"'){
-            isString = !isString;
+            insideString = !insideString;
         }
-        if(calculator.isSymbol(paramChar) && !isString){
-            if(!currentStrVal.empty()){
-                addParam(parsedParam, dataPool, currentStrVal);
-            }
-            std::string symbolStr(std::string(1, paramChar));
-            addParam(parsedParam, dataPool, symbolStr);
-            currentStrVal = "";
+        if(calculator.isSymbol(paramChar) && !insideString){
+            addParamAndSymbol(currentStrVal, paramChar, parsedParam, dataPool);
             continue;
         }
         if(charIndex == lastCharIndex){
-            addChar(currentStrVal, paramChar);
-            addParam(parsedParam, dataPool, currentStrVal);
+            addFinalParam(currentStrVal, paramChar, parsedParam, dataPool);
             break;
         }
         addChar(currentStrVal, paramChar);
     }
 
     return parsedParam;
+}
+
+
+void Resolver::addParamAndSymbol(std::string & currentStrVal, char paramChar, std::vector<std::pair<std::string, int>> & parsedParam, DataPool & dataPool)
+{
+    addPreviousParam(currentStrVal, parsedParam, dataPool);
+    addSymbolParam(paramChar, parsedParam, dataPool);
+    currentStrVal = "";
+}
+
+void Resolver::addFinalParam(std::string & currentStrVal, char paramChar, std::vector<std::pair<std::string, int>> & parsedParam, DataPool & dataPool)
+{
+    addChar(currentStrVal, paramChar);
+    addParam(parsedParam, dataPool, currentStrVal);
+}
+
+void Resolver::addPreviousParam(std::string & currentStrVal, std::vector<std::pair<std::string, int>> & parsedParam, DataPool & dataPool)
+{
+    if(!currentStrVal.empty()){
+        addParam(parsedParam, dataPool, currentStrVal);
+    }
+}
+
+void Resolver::addSymbolParam(char paramChar, std::vector<std::pair<std::string, int>> & parsedParam, DataPool & dataPool)
+{
+    std::string symbolStr(std::string(1, paramChar));
+    addParam(parsedParam, dataPool, symbolStr);
 }
 
