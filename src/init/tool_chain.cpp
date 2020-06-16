@@ -6,6 +6,7 @@
 #include "../../include/init/preprocessor.h"
 #include "../../include/runtime/interpreter.h"
 #include "../../include/gui/window.h"
+#include "../../include/error_codes.h"
 
 #include <iostream>
 #include <vector>
@@ -36,9 +37,9 @@ int ToolChain::start(char * argv[])
         std::cout << "Exception: " << e.what() << std::endl << "Exiting" << std::endl;
         SDL_Quit();
 
-        return -2;
+        return ERR_RUNTIME;
     }
     SDL_Quit();
 
-    return 0;
+    return SUCCESS;
 }

@@ -67,6 +67,7 @@
 		<Unit filename="include/commands/show_window.h" />
 		<Unit filename="include/commands/wait.h" />
 		<Unit filename="include/commands/while.h" />
+		<Unit filename="include/error_codes.h" />
 		<Unit filename="include/exception/syntax_error.h" />
 		<Unit filename="include/formatter/formatter.h" />
 		<Unit filename="include/gui/window.h" />
