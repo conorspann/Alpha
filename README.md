@@ -16,6 +16,12 @@ alpha <filename>
 @<varname> = X
 ```
 
+### PreProcessor
+
+```
+#gimme "filename.txt"
+```
+
 ### General
 
 ```
