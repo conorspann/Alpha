@@ -9,7 +9,7 @@
 
 class Command{
 public:
-    enum Type{ // change to better solution, since this is needed by Command sub clas and Resolver
+    enum Type{ // change to better solution, since this is needed by Command sub class and Resolver
         STRING,
         INT,
         SYMBOL,
@@ -21,6 +21,7 @@ public:
     virtual std::string getName() =0;
     bool hasCorrectNumParams();
     int getPreservedLineNumber();
+    std::string toString();
 protected:
     std::vector<std::string> params;
     int preservedLineNumber;

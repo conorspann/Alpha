@@ -9,7 +9,7 @@
 	<string>
 	<vector>
 
-1583357657 c:\users\conor\documents\dev\alpha\include\commands\command.h
+1592499811 c:\users\conor\documents\dev\alpha\include\commands\command.h
 	<string>
 	<vector>
 	"../runtime/environment.h"
@@ -47,7 +47,7 @@
 	<string>
 	<vector>
 
-1583357640 source:c:\users\conor\documents\dev\alpha\src\commands\command.cpp
+1592500599 source:c:\users\conor\documents\dev\alpha\src\commands\command.cpp
 	<string>
 	<vector>
 	"../../include/commands/command.h"
@@ -241,7 +241,7 @@
 	<map>
 	<memory>
 
-1592488301 source:c:\users\conor\documents\dev\alpha\src\init\preprocessor.cpp
+1592490136 source:c:\users\conor\documents\dev\alpha\src\init\preprocessor.cpp
 	"../../include/init/preprocessor.h"
 	<iostream>
 
@@ -281,7 +281,7 @@
 	"../../include/runtime/searcher.h"
 	"../../include/runtime/resolver.h"
 
-1585509659 source:c:\users\conor\documents\dev\alpha\src\runtime\interpreter.cpp
+1592501608 source:c:\users\conor\documents\dev\alpha\src\runtime\interpreter.cpp
 	<vector>
 	<memory>
 	<utility>
