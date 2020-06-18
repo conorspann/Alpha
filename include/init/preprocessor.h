@@ -18,6 +18,9 @@ private:
     std::vector<std::pair<int, std::string>> getFilenames(std::vector<std::string> rawData);
     std::vector<std::pair<int, std::string>> addLineNumbers(std::vector<std::string> rawData);
     std::string formatIncludeFilename(std::string rawFilename);
+    void formatIncludeFilenames(std::vector<std::pair<int, std::string>> & rawFilenames);
+    std::string extractFilename(std::string rawFilename, int startPosition);
+    void insertIncludeData(std::vector<std::string> & rawData, std::vector<std::string> dataToInclude, int lineIndex);
     void adjustIncludeFileLineNumbers(std::vector<std::pair<int, std::string>> & files, int startFileIndex, int adjustment);
 };
 

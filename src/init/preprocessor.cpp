@@ -14,10 +14,7 @@ std::vector<std::pair<int, std::string>> PreProcessor::includeFiles(std::string 
         return addLineNumbers(rawData);
     }
 
-    for (int fileNumber = 0; fileNumber < filesToInclude.size(); fileNumber++) {
-        filesToInclude[fileNumber].second = formatIncludeFilename(filesToInclude[fileNumber].second);
-    }
-
+    formatIncludeFilenames(filesToInclude);
 
     for ( int fileNumber = 0; fileNumber < filesToInclude.size(); fileNumber++ ) {
         std::pair<int, std::string> fileLineNumberPair = filesToInclude[fileNumber];
@@ -26,16 +23,7 @@ std::vector<std::pair<int, std::string>> PreProcessor::includeFiles(std::string 
         for ( int lineIndex = 0; lineIndex < rawData.size(); lineIndex++ ) {
 
             if ( lineIndex == fileLineNumberPair.first ) {
-                rawData[lineIndex] = dataToInclude[0];
-                int startLineIndex = lineIndex + 1;
-
-                std::vector<std::string>::iterator rawDataIterator;
-                rawDataIterator = rawData.begin() + startLineIndex;
-
-                for (int dataToIncludeIndex = 1; dataToIncludeIndex < dataToInclude.size(); dataToIncludeIndex++) {
-                    rawDataIterator = rawData.insert(rawDataIterator, dataToInclude[dataToIncludeIndex]);
-                    rawDataIterator++;
-                }
+                insertIncludeData(rawData, dataToInclude, lineIndex);
 
                 if (fileNumber < filesToInclude.size() - 1) {
                     adjustIncludeFileLineNumbers(filesToInclude, fileNumber + 1, dataToInclude.size() - 1);
@@ -104,18 +92,49 @@ std::string PreProcessor::formatIncludeFilename(std::string rawFilename)
     for (int charNumber = 0; charNumber < rawFilename.length(); charNumber++) {
         char symbol = rawFilename[charNumber];
         if (symbol == '\"') {
-            for (int charToAddNumber = charNumber + 1; charToAddNumber < rawFilename.length(); charToAddNumber++) {
-                symbol = rawFilename[charToAddNumber];
-                if (symbol == '\"') {
-                    break;
-                }
-
-                formattedFilename += symbol;
-            }
+            formattedFilename = extractFilename(rawFilename, charNumber + 1);
 
             break;
         }
     }
 
     return formattedFilename;
+}
+
+std::string PreProcessor::extractFilename(std::string rawFilename, int startPosition)
+{
+    std::string formattedFilename;
+
+    for (int charToAddNumber = startPosition; charToAddNumber < rawFilename.length(); charToAddNumber++) {
+        char symbol = rawFilename[charToAddNumber];
+        if (symbol == '\"') {
+            break;
+        }
+
+        formattedFilename += symbol;
+    }
+
+    return formattedFilename;
+}
+
+void PreProcessor::formatIncludeFilenames(std::vector<std::pair<int, std::string>> & filesToInclude)
+{
+    for (int fileNumber = 0; fileNumber < filesToInclude.size(); fileNumber++) {
+        filesToInclude[fileNumber].second = formatIncludeFilename(filesToInclude[fileNumber].second);
+    }
+}
+
+
+void PreProcessor::insertIncludeData(std::vector<std::string> & rawData, std::vector<std::string> dataToInclude, int lineIndex)
+{
+    rawData[lineIndex] = dataToInclude[0];
+    int startLineIndex = lineIndex + 1;
+
+    std::vector<std::string>::iterator rawDataIterator;
+    rawDataIterator = rawData.begin() + startLineIndex;
+
+    for (int dataToIncludeIndex = 1; dataToIncludeIndex < dataToInclude.size(); dataToIncludeIndex++) {
+        rawDataIterator = rawData.insert(rawDataIterator, dataToInclude[dataToIncludeIndex]);
+        rawDataIterator++;
+    }
 }
