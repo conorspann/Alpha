@@ -1,0 +1,4 @@
+
+Cmd doThing()
+	ConsoleOutLn("im in a func")
+EndCmd

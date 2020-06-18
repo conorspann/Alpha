@@ -1,6 +1,5 @@
 
 #include "../../include/init/tool_chain.h"
-#include "../../include/init/file_loader.h"
 #include "../../include/formatter/formatter.h"
 #include "../../include/init/parser.h"
 #include "../../include/init/preprocessor.h"
@@ -19,10 +18,8 @@ int ToolChain::start(char * argv[])
 {
     try
     {
-        PreProcessor preProcessor; /** TODO: implement include files */
-
-        FileLoader loader;
-        std::vector<std::pair<int, std::string>> rawData = loader.load(argv[1]);
+        PreProcessor preProcessor;
+        std::vector<std::pair<int, std::string>> rawData = preProcessor.includeFiles(argv[1]);
 
         Formatter formatter;
         std::vector<std::pair<int, std::string>> statements = formatter.removeBlankLines(rawData);
