@@ -5,7 +5,7 @@ A BASIC-style interpreter written in C++. Currently runs scripts as console appl
 ## Usage
 
 ```
-alpha <filename>
+alpha <inputFilename> [outputFilename]
 ```
 
 ## Current Commands
