@@ -20,5 +20,5 @@ int main(int argc, char * argv[])
 
     ToolChain toolchain;
 
-    return toolchain.start(argv);
+    return toolchain.start(argc, argv);
 }

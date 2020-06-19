@@ -8,8 +8,8 @@
 bool Initialiser::initialiseCmdArgs(int argc)
 {
     std::cout << "Alpha Interpreter v 0.1" << std::endl;
-    if (argc != 2) {
-        std::cout << "Usage: alpha <filename>" << std::endl;
+    if (argc != 2 && argc != 3) {
+        std::cout << "Usage: alpha <inputFilename> [outputFilename]" << std::endl;
 
         return false;
     }

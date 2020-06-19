@@ -4,7 +4,7 @@
 
 class ToolChain{
 public:
-    int start(char * argv[]);
+    int start(int argc, char * argv[]);
 };
 
 #endif // TOOL_CHAIN_H
