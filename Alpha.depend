@@ -1134,3 +1134,117 @@
 	<vector>
 	"../../include/init/command_data.h"
 
+1583678572 source:c:\users\conor\documents\dev\alphaparser\src\exception\syntax_error.cpp
+	"../../include/exception/syntax_error.h"
+
+1583679194 c:\users\conor\documents\dev\alphaparser\include\exception\syntax_error.h
+	<stdexcept>
+
+1592060887 source:c:\users\conor\documents\dev\alphaparser\src\formatter\formatter.cpp
+	<iostream>
+	<vector>
+	<string>
+	"../../include/formatter/formatter.h"
+	"../../include/exception/syntax_error.h"
+
+1592060892 c:\users\conor\documents\dev\alphaparser\include\formatter\formatter.h
+	<string>
+	<vector>
+
+1594486114 source:c:\users\conor\documents\dev\alphaparser\src\init\command_data.cpp
+	<string>
+	<vector>
+	"../../include/init/command_data.h"
+
+1579639161 c:\users\conor\documents\dev\alphaparser\include\init\command_data.h
+	<string>
+	<vector>
+
+1584050783 source:c:\users\conor\documents\dev\alphaparser\src\init\command_extractor.cpp
+	<iostream>
+	<vector>
+	<string>
+	"../../include/init/command_extractor.h"
+	"../../include/init/extracted_line.h"
+	"../../include/formatter/formatter.h"
+	"../../include/exception/syntax_error.h"
+
+1594485972 c:\users\conor\documents\dev\alphaparser\include\init\command_extractor.h
+	<string>
+	<vector>
+	"../init/extracted_line.h"
+	"../init/command_data.h"
+
+1579375062 c:\users\conor\documents\dev\alphaparser\include\init\extracted_line.h
+	<string>
+	<vector>
+
+1580577786 source:c:\users\conor\documents\dev\alphaparser\src\init\extracted_line.cpp
+	<string>
+	<vector>
+	"../../include/init/extracted_line.h"
+
+1592391046 source:c:\users\conor\documents\dev\alphaparser\src\init\file_loader.cpp
+	<fstream>
+	<stdexcept>
+	"../../include/init/file_loader.h"
+
+1592391085 c:\users\conor\documents\dev\alphaparser\include\init\file_loader.h
+	<string>
+	<vector>
+
+1594736633 source:c:\users\conor\documents\dev\alphaparser\src\init\initialiser.cpp
+	"../../include/init/initialiser.h"
+	<iostream>
+	<SDL.h>
+
+1591976605 c:\users\conor\documents\dev\alphaparser\include\init\initialiser.h
+
+1594487831 source:c:\users\conor\documents\dev\alphaparser\src\init\parser.cpp
+	<iostream>
+	<stdexcept>
+	<memory>
+	<utility>
+	"../../include/init/parser.h"
+
+1594486023 c:\users\conor\documents\dev\alphaparser\include\init\parser.h
+	"command_extractor.h"
+	<vector>
+	<string>
+	<map>
+	<memory>
+
+1592490136 source:c:\users\conor\documents\dev\alphaparser\src\init\preprocessor.cpp
+	"../../include/init/preprocessor.h"
+	<iostream>
+
+1594486030 c:\users\conor\documents\dev\alphaparser\include\init\preprocessor.h
+	<vector>
+	<string>
+	"../init/command_data.h"
+	"../../include/init/file_loader.h"
+
+1594486059 source:c:\users\conor\documents\dev\alphaparser\src\init\tool_chain.cpp
+	"../../include/init/tool_chain.h"
+	"../../include/formatter/formatter.h"
+	"../../include/init/parser.h"
+	"../../include/init/preprocessor.h"
+	"../../include/error_codes.h"
+	<iostream>
+	<fstream>
+	<vector>
+	<string>
+	<stdexcept>
+	<memory>
+	<utility>
+	<SDL.h>
+
+1592570613 c:\users\conor\documents\dev\alphaparser\include\init\tool_chain.h
+
+1592315318 c:\users\conor\documents\dev\alphaparser\include\error_codes.h
+
+1592570610 source:c:\users\conor\documents\dev\alphaparser\src\main.cpp
+	"../include/init/initialiser.h"
+	"../include/init/tool_chain.h"
+	"../include/error_codes.h"
+
