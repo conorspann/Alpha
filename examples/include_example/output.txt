@@ -1,0 +1,1 @@
+{[0]doThing();}{[4]Cmd();[5]ConsoleOutLn("im in a func"");[6]EndCmd();[8]doThing();}

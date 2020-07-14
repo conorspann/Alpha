@@ -6,7 +6,7 @@
 #include <vector>
 
 #include "../init/extracted_line.h"
-#include "../runtime/command_data.h"
+#include "../init/command_data.h"
 
 class CommandExtractor{
 public:

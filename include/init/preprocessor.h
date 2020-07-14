@@ -5,7 +5,7 @@
 #include <vector>
 #include <string>
 
-#include "../runtime/command_data.h"
+#include "../init/command_data.h"
 #include "../../include/init/file_loader.h"
 
 class PreProcessor{

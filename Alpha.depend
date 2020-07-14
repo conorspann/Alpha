@@ -160,11 +160,11 @@
 	"../../include/formatter/formatter.h"
 	"../../include/exception/syntax_error.h"
 
-1584050764 c:\users\conor\documents\dev\alpha\include\init\command_extractor.h
+1594485972 c:\users\conor\documents\dev\alpha\include\init\command_extractor.h
 	<string>
 	<vector>
 	"../init/extracted_line.h"
-	"../runtime/command_data.h"
+	"../init/command_data.h"
 
 1579375062 c:\users\conor\documents\dev\alpha\include\init\extracted_line.h
 	<string>
@@ -224,18 +224,15 @@
 	<string>
 	<memory>
 
-1592061835 source:c:\users\conor\documents\dev\alpha\src\init\parser.cpp
+1594487831 source:c:\users\conor\documents\dev\alpha\src\init\parser.cpp
 	<iostream>
 	<stdexcept>
 	<memory>
 	<utility>
 	"../../include/init/parser.h"
-	"../../include/commands/console_out.h"
 
-1592061840 c:\users\conor\documents\dev\alpha\include\init\parser.h
+1594486023 c:\users\conor\documents\dev\alpha\include\init\parser.h
 	"command_extractor.h"
-	"../commands/command.h"
-	"mapper.h"
 	<vector>
 	<string>
 	<map>
@@ -245,13 +242,13 @@
 	"../../include/init/preprocessor.h"
 	<iostream>
 
-1592490077 c:\users\conor\documents\dev\alpha\include\init\preprocessor.h
+1594486030 c:\users\conor\documents\dev\alpha\include\init\preprocessor.h
 	<vector>
 	<string>
-	"../runtime/command_data.h"
+	"../init/command_data.h"
 	"../../include/init/file_loader.h"
 
-1592315358 source:c:\users\conor\documents\dev\alpha\src\main.cpp
+1592570610 source:c:\users\conor\documents\dev\alpha\src\main.cpp
 	"../include/init/initialiser.h"
 	"../include/init/tool_chain.h"
 	"../include/error_codes.h"
@@ -1104,20 +1101,18 @@
 
 1591976605 c:\users\conor\documents\dev\alpha\include\init\initialiser.h
 
-1591976707 source:c:\users\conor\documents\dev\alpha\src\init\initialiser.cpp
+1592570604 source:c:\users\conor\documents\dev\alpha\src\init\initialiser.cpp
 	"../../include/init/initialiser.h"
 	<iostream>
 	<SDL.h>
 
-1592058584 c:\users\conor\documents\dev\alpha\include\init\tool_chain.h
+1592570613 c:\users\conor\documents\dev\alpha\include\init\tool_chain.h
 
-1592567456 source:c:\users\conor\documents\dev\alpha\src\init\tool_chain.cpp
+1594486059 source:c:\users\conor\documents\dev\alpha\src\init\tool_chain.cpp
 	"../../include/init/tool_chain.h"
 	"../../include/formatter/formatter.h"
 	"../../include/init/parser.h"
 	"../../include/init/preprocessor.h"
-	"../../include/runtime/interpreter.h"
-	"../../include/gui/window.h"
 	"../../include/error_codes.h"
 	<iostream>
 	<fstream>
@@ -1126,6 +1121,16 @@
 	<stdexcept>
 	<memory>
 	<utility>
+	<SDL.h>
 
 1592315318 c:\users\conor\documents\dev\alpha\include\error_codes.h
+
+1579639161 c:\users\conor\documents\dev\alpha\include\init\command_data.h
+	<string>
+	<vector>
+
+1594486114 source:c:\users\conor\documents\dev\alpha\src\init\command_data.cpp
+	<string>
+	<vector>
+	"../../include/init/command_data.h"
 

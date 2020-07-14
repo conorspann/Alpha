@@ -3,8 +3,6 @@
 #include "../../include/formatter/formatter.h"
 #include "../../include/init/parser.h"
 #include "../../include/init/preprocessor.h"
-#include "../../include/runtime/interpreter.h"
-#include "../../include/gui/window.h"
 #include "../../include/error_codes.h"
 
 #include <iostream>
@@ -14,6 +12,8 @@
 #include <stdexcept>
 #include <memory>
 #include <utility>
+
+#include <SDL.h>
 
 int ToolChain::start(int argc, char * argv[])
 {
@@ -27,24 +27,18 @@ int ToolChain::start(int argc, char * argv[])
         std::vector<std::pair<int, std::vector<std::string>>> formattedLines = formatter.tokeniseLines(statements);
 
         Parser parser;
-        std::vector<std::unique_ptr<Command>> commands = std::move(parser.parse(formattedLines));
+        std::string alphaLang = parser.parse(formattedLines);
 
         if (argc == 3) {
-            std::string commandLangOutput;
-            for (int commandNumber = 0; commandNumber < commands.size(); commandNumber++) {
-                commandLangOutput += commands[commandNumber]->toString();
-                commandLangOutput += ";";
-            }
-
             std::ofstream outputFile(argv[2], std::ofstream::binary);
-            outputFile << commandLangOutput;
+            outputFile << alphaLang;
             outputFile.close();
 
             return SUCCESS;
         }
 
-        Interpreter interpreter(std::move(commands));
-        interpreter.execute();
+        std::cout << alphaLang << std::endl;
+
     }
     catch(const std::runtime_error & e)
     {
